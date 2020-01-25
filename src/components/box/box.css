@@ -1,26 +1,60 @@
 :host {
-  --sui-button-width: 100%;
-  width: var(--sui-button-width);
-  display: block;
-  background: blue;
-  color: white;
+  --sui-box-width: 100%;
+  --sui-box-height: auto;
+  --sui-box-display: block;
+  --sui-box-padding: 0;
+  --sui-box-margin: 0;
+  --sui-box-color: var(--sui-colors-text, #000);
+  --sui-box-background-color: var(--sui-colors-bg, transparent);
+  --sui-box-font-size: var(--sui-fonts-sizes-body, inherit);
+
+  --sui-box-align-items: center;
+  --sui-box-align-content: center;
+  --sui-box-flex-direction: row;
+  --sui-box-flex-wrap: wrap;
+
+  width: var(--sui-box-width);
+  height: var(--sui-box-width);
+  display: var(--sui-box-display);
+  padding: var(--sui-box-padding);
+  margin: var(--sui-box-margin);
+  color: var(--sui-box-color);
+  background-color: var(--sui-box-background-color);
+  font-size: var(--sui-box-font-size);
+
+  align-items: var(--sui-box-align-items);
+  align-content: var(--sui-box-align-content);
+  flex-direction: var(--sui-box-flex-direction);
+  flex-wrap: var(--sui-box-flex-wrap);
 }
 
 @media only screen and (min-width: 400px) {
   :host {
-    width: var(--sui-button-width-mobile, var(--sui-button-width));
+    width: var(--sui-box-width-mobile, var(--sui-box-width));
+    height: var(--sui-box-height-mobile, var(--sui-box-height));
+    padding: var(--sui-box-padding-mobile, var(--sui-box-padding));
+    margin: var(--sui-box-margin-mobile, var(--sui-box-margin));
+    font-size: var(--sui-box-font-size-mobile, var(--sui-box-font-size));
   }
 }
 
 @media only screen and (min-width: 800px) {
   :host {
-    width: var(--sui-button-width-tablet, var(--sui-button-width));
+    width: var(--sui-box-width-tablet, var(--sui-box-width));
+    height: var(--sui-box-height-tablet, var(--sui-box-height));
+    padding: var(--sui-box-padding-tablet, var(--sui-box-padding));
+    margin: var(--sui-box-margin-tablet, var(--sui-box-margin));
+    font-size: var(--sui-box-font-size-tablet, var(--sui-box-font-size));
   }
 }
 
 @media only screen and (min-width: 1200px) {
   :host {
-    width: var(--sui-button-width-desktop, var(--sui-button-width));
+    width: var(--sui-box-width-desktop, var(--sui-box-width));
+    height: var(--sui-box-height-desktop, var(--sui-box-height));
+    padding: var(--sui-box-padding-desktop, var(--sui-box-padding));
+    margin: var(--sui-box-margin-desktop, var(--sui-box-margin));
+    font-size: var(--sui-box-font-size-desktop, var(--sui-box-font-size));
   }
 }
 

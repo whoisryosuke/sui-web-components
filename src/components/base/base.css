@@ -6,6 +6,7 @@
 
 
   /* sizes */
+  --sui-spacing: 8;
   --sui-spacing-1: 0;
   --sui-spacing-2: 4;
   --sui-spacing-3: 8;
@@ -38,6 +39,14 @@
   --sui-fonts-monospace: Fira Code,
     Menlo,
     monospace;
+
+  /* Fonts: Size */
+  --sui-fonts-sizes-body: 16px;
+  --sui-fonts-sizes-h1: calc(var(--sui-spacing, 8) * 5)px;
+  --sui-fonts-sizes-h2: calc(var(--sui-spacing, 8) * 4)px;
+  --sui-fonts-sizes-h3: calc(var(--sui-spacing, 8) * 3)px;
+  --sui-fonts-sizes-h4: calc(var(--sui-spacing, 8) * 2)px;
+  --sui-fonts-sizes-h5: calc(var(--sui-spacing, 8) * 1)px;
 
   /* Fonts: Weight */
   --sui-fonts-weights-body: 400;
@@ -72,9 +81,9 @@
   --sui-colors-grey: #767676;
 
   --sui-colors-primary: blue;
-  --sui-colors-text: #111212;
-  --sui-colors-background: #fff;
   --sui-colors-secondary: #6D59F0;
+  --sui-colors-text: #111212;
+  --sui-colors-bg: #fff;
   --sui-colors-muted: #f6f6f9;
   --sui-colors-gray: #D3D7DA;
   --sui-colors-highlight: hsla(205, 100%, 40%, 0.125);

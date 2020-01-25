@@ -27,9 +27,55 @@ export namespace Components {
   interface SuiBase {}
   interface SuiBox {
     /**
+    * Flex property align-content
+    */
+    'alignContent': string;
+    /**
+    * Flex property align-items
+    */
+    'alignItems': string;
+    /**
+    * Text bg
+    */
+    'bg': string;
+    /**
+    * Text color
+    */
+    'color': string;
+    /**
+    * CSS property display
+    */
+    'display': string;
+    /**
+    * Flex property flex-direction
+    */
+    'flexDirection': string;
+    /**
+    * Flex property flex-wrap
+    */
+    'flexWrap': string;
+    /**
+    * Responsive fontSize
+    */
+    'fontSize': string | string[] | number | number[];
+    /**
+    * Responsive height
+    */
+    'height': string | string[] | number | number[];
+    'm': string | string[] | number | number[];
+    /**
+    * Responsive margin
+    */
+    'margin': string | string[] | number | number[];
+    'p': string | string[] | number | number[];
+    /**
+    * Responsive padding
+    */
+    'padding': string | string[] | number | number[];
+    /**
     * Responsive width
     */
-    'width': string | string[];
+    'width': string | string[] | number | number[];
   }
   interface SuiButton {
     /**
@@ -119,9 +165,55 @@ declare namespace LocalJSX {
   interface SuiBase {}
   interface SuiBox {
     /**
+    * Flex property align-content
+    */
+    'alignContent'?: string;
+    /**
+    * Flex property align-items
+    */
+    'alignItems'?: string;
+    /**
+    * Text bg
+    */
+    'bg'?: string;
+    /**
+    * Text color
+    */
+    'color'?: string;
+    /**
+    * CSS property display
+    */
+    'display'?: string;
+    /**
+    * Flex property flex-direction
+    */
+    'flexDirection'?: string;
+    /**
+    * Flex property flex-wrap
+    */
+    'flexWrap'?: string;
+    /**
+    * Responsive fontSize
+    */
+    'fontSize'?: string | string[] | number | number[];
+    /**
+    * Responsive height
+    */
+    'height'?: string | string[] | number | number[];
+    'm'?: string | string[] | number | number[];
+    /**
+    * Responsive margin
+    */
+    'margin'?: string | string[] | number | number[];
+    'p'?: string | string[] | number | number[];
+    /**
+    * Responsive padding
+    */
+    'padding'?: string | string[] | number | number[];
+    /**
     * Responsive width
     */
-    'width'?: string | string[];
+    'width'?: string | string[] | number | number[];
   }
   interface SuiButton {
     /**
