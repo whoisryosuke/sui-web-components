@@ -1,1 +1,5 @@
-
+:host {
+  font: var(--sui-fonts-body);
+  background: var(--sui-colors-blue);
+  display: block;
+}

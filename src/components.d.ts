@@ -24,6 +24,47 @@ export namespace Components {
     */
     'middle': string;
   }
+  interface SuiBase {}
+  interface SuiBox {
+    /**
+    * Responsive width
+    */
+    'width': string | string[];
+  }
+  interface SuiButton {
+    /**
+    * HTML element to use as basis
+    */
+    'as': string;
+    /**
+    * Background color
+    */
+    'color': string;
+    /**
+    * Is disabled?
+    */
+    'disabled': boolean;
+    /**
+    * Displays button as link
+    */
+    'href': string | undefined;
+    /**
+    * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+    */
+    'target': string | undefined;
+    /**
+    * Sets button content to this text
+    */
+    'text': string | undefined;
+    /**
+    * The button or input type (usually submit)
+    */
+    'type': "submit" | "reset" | "button";
+    /**
+    * Optional prop for input to show text
+    */
+    'value': string;
+  }
 }
 
 declare global {
@@ -34,8 +75,29 @@ declare global {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
+
+  interface HTMLSuiBaseElement extends Components.SuiBase, HTMLStencilElement {}
+  var HTMLSuiBaseElement: {
+    prototype: HTMLSuiBaseElement;
+    new (): HTMLSuiBaseElement;
+  };
+
+  interface HTMLSuiBoxElement extends Components.SuiBox, HTMLStencilElement {}
+  var HTMLSuiBoxElement: {
+    prototype: HTMLSuiBoxElement;
+    new (): HTMLSuiBoxElement;
+  };
+
+  interface HTMLSuiButtonElement extends Components.SuiButton, HTMLStencilElement {}
+  var HTMLSuiButtonElement: {
+    prototype: HTMLSuiButtonElement;
+    new (): HTMLSuiButtonElement;
+  };
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'sui-base': HTMLSuiBaseElement;
+    'sui-box': HTMLSuiBoxElement;
+    'sui-button': HTMLSuiButtonElement;
   }
 }
 
@@ -54,9 +116,53 @@ declare namespace LocalJSX {
     */
     'middle'?: string;
   }
+  interface SuiBase {}
+  interface SuiBox {
+    /**
+    * Responsive width
+    */
+    'width'?: string | string[];
+  }
+  interface SuiButton {
+    /**
+    * HTML element to use as basis
+    */
+    'as'?: string;
+    /**
+    * Background color
+    */
+    'color'?: string;
+    /**
+    * Is disabled?
+    */
+    'disabled'?: boolean;
+    /**
+    * Displays button as link
+    */
+    'href'?: string | undefined;
+    /**
+    * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+    */
+    'target'?: string | undefined;
+    /**
+    * Sets button content to this text
+    */
+    'text'?: string | undefined;
+    /**
+    * The button or input type (usually submit)
+    */
+    'type'?: "submit" | "reset" | "button";
+    /**
+    * Optional prop for input to show text
+    */
+    'value'?: string;
+  }
 
   interface IntrinsicElements {
     'my-component': MyComponent;
+    'sui-base': SuiBase;
+    'sui-box': SuiBox;
+    'sui-button': SuiButton;
   }
 }
 
@@ -67,6 +173,9 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'sui-base': LocalJSX.SuiBase & JSXBase.HTMLAttributes<HTMLSuiBaseElement>;
+      'sui-box': LocalJSX.SuiBox & JSXBase.HTMLAttributes<HTMLSuiBoxElement>;
+      'sui-button': LocalJSX.SuiButton & JSXBase.HTMLAttributes<HTMLSuiButtonElement>;
     }
   }
 }

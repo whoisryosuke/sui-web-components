@@ -1,0 +1,29 @@
+:host {
+  --sui-button-width: 100%;
+  width: var(--sui-button-width);
+  display: block;
+  background: blue;
+  color: white;
+}
+
+@media only screen and (min-width: 400px) {
+  :host {
+    width: var(--sui-button-width-mobile, var(--sui-button-width));
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  :host {
+    width: var(--sui-button-width-tablet, var(--sui-button-width));
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :host {
+    width: var(--sui-button-width-desktop, var(--sui-button-width));
+  }
+}
+
+#test {
+  color: red;
+}

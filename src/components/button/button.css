@@ -1,0 +1,103 @@
+:host {
+  display: block;
+
+  /*******************************
+            Button Themes
+  *******************************/
+  /*-------------------
+        Element
+  --------------------*/
+
+  /* Button */
+  --sui-button-margin-vertical: 0em;
+  --sui-button-margin-horizontal: 0.25em;
+  --sui-button-bg-color: #e0e1e2;
+  --sui-button-bg-image: none;
+  --sui-button-bg: var(--sui-button-bg-color) var(--sui-button-bg-image);
+  --sui-button-line: 1em;
+
+  /* Button defaults to using same height as input globally */
+  --sui-button-padding-vertical: calc(var(--sui-sizes-tiny) * 1em);
+  --sui-button-padding-horizontal: calc(var(--sui-sizes-huge) * 1em);
+
+  /* Text */
+  --sui-button-text-transform: none;
+  --sui-button-tap-color: transparent;
+  --sui-button-font-family: var(--sui-fonts-body);
+  --sui-button-font-weight: var(--sui-fonts-weight-bold);
+  --sui-button-text-color: rgba(0, 0, 0, 0.6);
+  --sui-button-text-shadow: none;
+  --sui-button-text-shadow-inverted: var(--sui-shadows-text);
+  --sui-button-border-radius: var(--sui-borders-radius);
+  --sui-button-vertical-align: baseline;
+
+  /* Internal Shadow */
+  --sui-button-shadow-distance: 0em;
+  --sui-button-shadow-offset: (var(--sui-button-shadow-distance) / 2);
+  --sui-button-shadow-box-shadow: 0px calc(var(--sui-button-shadow-distance) * -1) 0px 0px var(--sui-borders-color) inset;
+
+  /* Box Shadow */
+  --sui-button-border-box-shadow-color: transparent;
+  --sui-button-border-box-shadow-width: 1px;
+  --sui-button-border-box-shadow: 0px 0px 0px var(--sui-button-border-box-shadow-width) var(--sui-button-border-box-shadow-color) inset;
+  --sui-button-box-shadow: var(--sui-button-border-box-shadow),
+    var(--sui-button-shadow-box-shadow);
+
+  /* Icon */
+  --sui-button-icon-height: var(--sui-sizes-tiny);
+  --sui-button-icon-opacity: 0.8;
+  --sui-button-icon-distance: 0.4em;
+  --sui-button-icon-color: "";
+  --sui-button-icon-transition: opacity var(--sui-animation-duration) var(--sui-animation-easing);
+  --sui-button-icon-vertical-align: "";
+
+  --sui-button-icon-margin: 0em var(--sui-button-icon-distance) 0em - (var(--sui-button-icon-distance) / 2);
+  --sui-button-right-icon-margin: 0em - (var(--sui-button-icon-distance) / 2) 0em var(--sui-button-icon-distance);
+
+  /* Loader */
+  --sui-button-inverted-loader-fill-color: rgba(0, 0, 0, 0.15);
+
+  --sui-button-transition: opacity var(--sui-animation-duration) var(--sui-animation-easing),
+    background-color var(--sui-animation-duration) var(--sui-animation-easing),
+    color var(--sui-animation-duration) var(--sui-animation-easing),
+    box-shadow var(--sui-animation-duration) var(--sui-animation-easing),
+    background var(--sui-animation-duration) var(--sui-animation-easing);
+
+  --sui-button-will-change: "";
+
+  /*******************************
+            Button Styles
+  *******************************/
+  cursor: pointer;
+  display: inline-block;
+
+  min-height: 1em;
+
+  outline: none;
+  border: none;
+  vertical-align: var(--sui-button-vertical-align);
+  background: var(--sui-button-bg);
+  color: var(--sui-button-text-color);
+
+  font-family: var(--sui-button-font-family);
+
+  margin: 0em var(--sui-button-margin-horizontal) var(--sui-button-margin-vertical) 0em;
+  padding: var(--sui-button-padding-vertical) var(--sui-button-padding-horizontal) calc(var(--sui-button-padding-vertical) + var(--sui-button-shadow-offset));
+
+  text-transform: var(--sui-button-text-transform);
+  text-shadow: var(--sui-button-text-shadow);
+  font-weight: var(--sui-button-font-weight);
+  line-height: var(--sui-button-line);
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+
+  border-radius: var(--sui-button-border-radius);
+  box-shadow: var(--sui-button-box-shadow);
+
+  user-select: none;
+  transition: var(--sui-button-transition);
+  will-change: var(--sui-button-will-change);
+
+  -webkit-tap-highlight-color: var(--sui-button-tap-color);
+}
