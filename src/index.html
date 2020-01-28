@@ -17,10 +17,28 @@
     <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
     <sui-button text="Submit"></sui-button>
     <sui-box display="flex">
-      <sui-box color="white" bg="black">Box</sui-box>
-      <sui-box color="white" bg="blue">Box</sui-box>
-      <sui-box color="white" bg="red">Box</sui-box>
-    </sui-box>
+      <sui-box color="white" bg="black" letter-spacing="10px">
+        Box
+      </sui-box>
+      <sui-box color="white" bg="blue" font-size="24px" text-align="center" border-top="4px solid red">
+        Box
+      </sui-box>
+      <sui-box color="white" bg="red" text-align="right" font-weight="bold" border-bottom="5px solid red">
+        Box
+      </sui-box>
+
+      <sui-box display="flex" flex-direction="column">
+        <sui-box color="white" bg="black" letter-spacing="10px" height="30px">
+          Box
+        </sui-box>
+        <sui-box color="white" bg="blue" font-size="24px" text-align="center" border-top="4px solid red" height="30px">
+          Box
+        </sui-box>
+        <sui-box color="white" bg="red" text-align="right" font-weight="bold" border-bottom="5px solid red"
+          height="30px">
+          Box
+        </sui-box>
+      </sui-box>
   </sui-base>
 
   <script>
