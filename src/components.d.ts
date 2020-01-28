@@ -35,11 +35,49 @@ export namespace Components {
     */
     'alignItems': string;
     /**
-    * Text bg
+    * CSS property for background color
     */
+    'background': string;
     'bg': string;
     /**
-    * Text color
+    * CSS property for border
+    */
+    'border': string | number;
+    /**
+    * CSS property for borderBottom
+    */
+    'borderBottom': string | number;
+    /**
+    * CSS property for borderColor
+    */
+    'borderColor': string;
+    /**
+    * CSS property for borderLeft
+    */
+    'borderLeft': string | number;
+    /**
+    * CSS property for borderRadius
+    */
+    'borderRadius': string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'borderRight': string | number;
+    /**
+    * CSS property for borderStyle
+    */
+    'borderStyle': string;
+    /**
+    * CSS property for borderTop
+    */
+    'borderTop': string | number;
+    /**
+    * CSS property for borderWidth
+    */
+    'borderWidth': string | number;
+    'bottom': string | number;
+    /**
+    * CSS property for text color
     */
     'color': string;
     /**
@@ -59,19 +97,65 @@ export namespace Components {
     */
     'fontSize': string | string[] | number | number[];
     /**
+    * CSS property for fontWeight
+    */
+    'fontWeight': string | string[] | number | number[];
+    /**
     * Responsive height
     */
     'height': string | string[] | number | number[];
+    /**
+    * Flex property justify-content
+    */
+    'justifyContent': string;
+    'left': string | number;
+    /**
+    * CSS property for letterSpacing
+    */
+    'letterSpacing': string | string[] | number | number[];
+    /**
+    * CSS property for lineHeight
+    */
+    'lineHeight': string | string[] | number | number[];
     'm': string | string[] | number | number[];
     /**
-    * Responsive margin
+    * CSS property for responsive margin
     */
     'margin': string | string[] | number | number[];
+    /**
+    * Responsive max-height
+    */
+    'maxHeight': string | string[] | number | number[];
+    /**
+    * Responsive max-width
+    */
+    'maxWidth': string | string[] | number | number[];
+    /**
+    * Responsive min-height
+    */
+    'minHeight': string | string[] | number | number[];
+    /**
+    * Responsive min-width
+    */
+    'minWidth': string | string[] | number | number[];
     'p': string | string[] | number | number[];
     /**
-    * Responsive padding
+    * CSS property for responsive padding
     */
     'padding': string | string[] | number | number[];
+    /**
+    * CSS property position
+    */
+    'position': string;
+    'right': string | number;
+    /**
+    * Responsive textAlign
+    */
+    'textAlign': string | string[] | number | number[];
+    /**
+    * CSS properties for positioning
+    */
+    'top': string | number;
     /**
     * Responsive width
     */
@@ -173,11 +257,49 @@ declare namespace LocalJSX {
     */
     'alignItems'?: string;
     /**
-    * Text bg
+    * CSS property for background color
     */
+    'background'?: string;
     'bg'?: string;
     /**
-    * Text color
+    * CSS property for border
+    */
+    'border'?: string | number;
+    /**
+    * CSS property for borderBottom
+    */
+    'borderBottom'?: string | number;
+    /**
+    * CSS property for borderColor
+    */
+    'borderColor'?: string;
+    /**
+    * CSS property for borderLeft
+    */
+    'borderLeft'?: string | number;
+    /**
+    * CSS property for borderRadius
+    */
+    'borderRadius'?: string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'borderRight'?: string | number;
+    /**
+    * CSS property for borderStyle
+    */
+    'borderStyle'?: string;
+    /**
+    * CSS property for borderTop
+    */
+    'borderTop'?: string | number;
+    /**
+    * CSS property for borderWidth
+    */
+    'borderWidth'?: string | number;
+    'bottom'?: string | number;
+    /**
+    * CSS property for text color
     */
     'color'?: string;
     /**
@@ -197,19 +319,65 @@ declare namespace LocalJSX {
     */
     'fontSize'?: string | string[] | number | number[];
     /**
+    * CSS property for fontWeight
+    */
+    'fontWeight'?: string | string[] | number | number[];
+    /**
     * Responsive height
     */
     'height'?: string | string[] | number | number[];
+    /**
+    * Flex property justify-content
+    */
+    'justifyContent'?: string;
+    'left'?: string | number;
+    /**
+    * CSS property for letterSpacing
+    */
+    'letterSpacing'?: string | string[] | number | number[];
+    /**
+    * CSS property for lineHeight
+    */
+    'lineHeight'?: string | string[] | number | number[];
     'm'?: string | string[] | number | number[];
     /**
-    * Responsive margin
+    * CSS property for responsive margin
     */
     'margin'?: string | string[] | number | number[];
+    /**
+    * Responsive max-height
+    */
+    'maxHeight'?: string | string[] | number | number[];
+    /**
+    * Responsive max-width
+    */
+    'maxWidth'?: string | string[] | number | number[];
+    /**
+    * Responsive min-height
+    */
+    'minHeight'?: string | string[] | number | number[];
+    /**
+    * Responsive min-width
+    */
+    'minWidth'?: string | string[] | number | number[];
     'p'?: string | string[] | number | number[];
     /**
-    * Responsive padding
+    * CSS property for responsive padding
     */
     'padding'?: string | string[] | number | number[];
+    /**
+    * CSS property position
+    */
+    'position'?: string;
+    'right'?: string | number;
+    /**
+    * Responsive textAlign
+    */
+    'textAlign'?: string | string[] | number | number[];
+    /**
+    * CSS properties for positioning
+    */
+    'top'?: string | number;
     /**
     * Responsive width
     */
