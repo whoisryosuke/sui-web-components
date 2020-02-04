@@ -7,15 +7,15 @@
 
   /* sizes */
   --sui-spacing: 8;
-  --sui-spacing-1: 0;
-  --sui-spacing-2: 4;
-  --sui-spacing-3: 8;
-  --sui-spacing-4: 16;
-  --sui-spacing-5: 32;
-  --sui-spacing-6: 64;
-  --sui-spacing-7: 128;
-  --sui-spacing-8: 256;
-  --sui-spacing-9: 512;
+  --sui-spacing-0: 0;
+  --sui-spacing-1: 4;
+  --sui-spacing-2: 8;
+  --sui-spacing-3: 16;
+  --sui-spacing-4: 32;
+  --sui-spacing-5: 64;
+  --sui-spacing-6: 128;
+  --sui-spacing-7: 256;
+  --sui-spacing-8: 512;
   --sui-sizes-mini: 11 / 14;
   --sui-sizes-tiny: 12 / 14;
   --sui-sizes-small: 13 / 14;
@@ -82,7 +82,8 @@
 
   --sui-colors-primary: blue;
   --sui-colors-secondary: #6D59F0;
-  --sui-colors-text: #111212;
+  --sui-colors-text: rgba(0, 0, 0, 0.6);
+  --sui-colors-text-inverted: rgba(255, 255, 255, 0.9);
   --sui-colors-bg: #fff;
   --sui-colors-muted: #f6f6f9;
   --sui-colors-gray: #D3D7DA;
