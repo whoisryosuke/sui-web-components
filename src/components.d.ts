@@ -160,6 +160,7 @@ export namespace Components {
     * Responsive width
     */
     'width': string | string[] | number | number[];
+    'zIndex': string | number;
   }
   interface SuiButton {
     /**
@@ -167,7 +168,12 @@ export namespace Components {
     */
     'as': string;
     /**
-    * Background color
+    * CSS property for background color
+    */
+    'background': string;
+    'bg': string;
+    /**
+    * CSS property for text color
     */
     'color': string;
     /**
@@ -175,9 +181,55 @@ export namespace Components {
     */
     'disabled': boolean;
     /**
+    * Responsive fontSize
+    */
+    'fontSize': string | string[] | number | number[];
+    /**
+    * CSS property for fontWeight
+    */
+    'fontWeight': string | string[] | number | number[];
+    /**
+    * Responsive height
+    */
+    'height': string | string[] | number | number[];
+    /**
     * Displays button as link
     */
     'href': string | undefined;
+    /**
+    * CSS property for letterSpacing
+    */
+    'letterSpacing': string | string[] | number | number[];
+    /**
+    * CSS property for lineHeight
+    */
+    'lineHeight': string | string[] | number | number[];
+    'm': string | string[] | number | number[];
+    /**
+    * CSS property for responsive margin
+    */
+    'margin': string | string[] | number | number[];
+    /**
+    * Responsive max-height
+    */
+    'maxHeight': string | string[] | number | number[];
+    /**
+    * Responsive max-width
+    */
+    'maxWidth': string | string[] | number | number[];
+    /**
+    * Responsive min-height
+    */
+    'minHeight': string | string[] | number | number[];
+    /**
+    * Responsive min-width
+    */
+    'minWidth': string | string[] | number | number[];
+    'p': string | string[] | number | number[];
+    /**
+    * CSS property for responsive padding
+    */
+    'padding': string | string[] | number | number[];
     /**
     * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
     */
@@ -187,6 +239,10 @@ export namespace Components {
     */
     'text': string | undefined;
     /**
+    * Responsive textAlign
+    */
+    'textAlign': string | string[] | number | number[];
+    /**
     * The button or input type (usually submit)
     */
     'type': "submit" | "reset" | "button";
@@ -194,6 +250,10 @@ export namespace Components {
     * Optional prop for input to show text
     */
     'value': string;
+    /**
+    * Responsive width
+    */
+    'width': string | string[] | number | number[];
   }
 }
 
@@ -382,6 +442,7 @@ declare namespace LocalJSX {
     * Responsive width
     */
     'width'?: string | string[] | number | number[];
+    'zIndex'?: string | number;
   }
   interface SuiButton {
     /**
@@ -389,7 +450,12 @@ declare namespace LocalJSX {
     */
     'as'?: string;
     /**
-    * Background color
+    * CSS property for background color
+    */
+    'background'?: string;
+    'bg'?: string;
+    /**
+    * CSS property for text color
     */
     'color'?: string;
     /**
@@ -397,9 +463,55 @@ declare namespace LocalJSX {
     */
     'disabled'?: boolean;
     /**
+    * Responsive fontSize
+    */
+    'fontSize'?: string | string[] | number | number[];
+    /**
+    * CSS property for fontWeight
+    */
+    'fontWeight'?: string | string[] | number | number[];
+    /**
+    * Responsive height
+    */
+    'height'?: string | string[] | number | number[];
+    /**
     * Displays button as link
     */
     'href'?: string | undefined;
+    /**
+    * CSS property for letterSpacing
+    */
+    'letterSpacing'?: string | string[] | number | number[];
+    /**
+    * CSS property for lineHeight
+    */
+    'lineHeight'?: string | string[] | number | number[];
+    'm'?: string | string[] | number | number[];
+    /**
+    * CSS property for responsive margin
+    */
+    'margin'?: string | string[] | number | number[];
+    /**
+    * Responsive max-height
+    */
+    'maxHeight'?: string | string[] | number | number[];
+    /**
+    * Responsive max-width
+    */
+    'maxWidth'?: string | string[] | number | number[];
+    /**
+    * Responsive min-height
+    */
+    'minHeight'?: string | string[] | number | number[];
+    /**
+    * Responsive min-width
+    */
+    'minWidth'?: string | string[] | number | number[];
+    'p'?: string | string[] | number | number[];
+    /**
+    * CSS property for responsive padding
+    */
+    'padding'?: string | string[] | number | number[];
     /**
     * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
     */
@@ -409,6 +521,10 @@ declare namespace LocalJSX {
     */
     'text'?: string | undefined;
     /**
+    * Responsive textAlign
+    */
+    'textAlign'?: string | string[] | number | number[];
+    /**
     * The button or input type (usually submit)
     */
     'type'?: "submit" | "reset" | "button";
@@ -416,6 +532,10 @@ declare namespace LocalJSX {
     * Optional prop for input to show text
     */
     'value'?: string;
+    /**
+    * Responsive width
+    */
+    'width'?: string | string[] | number | number[];
   }
 
   interface IntrinsicElements {
