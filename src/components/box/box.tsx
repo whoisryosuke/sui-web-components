@@ -145,6 +145,7 @@ export class Box {
   @Prop() bottom: string | number;
   @Prop() left: string | number;
   @Prop() right: string | number;
+  @Prop() zIndex: string | number;
 
   /**
    * CSS property for border
