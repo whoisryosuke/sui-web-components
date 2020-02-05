@@ -1,0 +1,184 @@
+:host {
+  --sui-text-width: auto;
+  --sui-text-height: auto;
+  --sui-text-display: block;
+  --sui-text-padding: 0;
+  --sui-text-margin: 0;
+  --sui-text-color: var(--sui-colors-text, var(--sui-colors-black));
+  --sui-text-background-color: transparent;
+  --sui-text-font-size: var(--sui-fonts-sizes-body, inherit);
+
+  width: var(--sui-text-width);
+  min-width: var(--sui-text-min-width);
+  max-width: var(--sui-text-max-width);
+  height: var(--sui-text-height);
+  max-height: var(--sui-text-max-height);
+  min-height: var(--sui-text-min-height);
+
+  padding: var(--sui-text-padding);
+  margin: var(--sui-text-margin);
+
+  color: var(--sui-text-color);
+  background-color: var(--sui-text-background-color);
+
+  font-size: var(--sui-text-font-size);
+  text-align: var(--sui-text-text-align);
+  line-height: var(--sui-text-line-height);
+  font-weight: var(--sui-text-font-weight);
+  letter-spacing: var(--sui-text-letter-spacing);
+
+  border: var(--sui-text-border);
+  border-top: var(--sui-text-border-top);
+  border-bottom: var(--sui-text-border-bottom);
+  border-left: var(--sui-text-border-left);
+  border-right: var(--sui-text-border-right);
+  border-width: var(--sui-text-border-width);
+  border-style: var(--sui-text-border-style);
+  border-color: var(--sui-text-border-color);
+  border-radius: var(--sui-text-border-radius);
+
+  /* Text */
+  --sui-text-text-transform: none;
+  --sui-text-tap-color: transparent;
+  --sui-text-text-shadow: none;
+  --sui-text-text-shadow-inverted: var(--sui-shadows-text);
+  --sui-text-vertical-align: baseline;
+
+  /* Internal Shadow */
+  --sui-text-shadow-distance: 0em;
+  --sui-text-shadow-offset: (var(--sui-text-shadow-distance) / 2);
+  --sui-text-shadow-box-shadow: 0px calc(var(--sui-text-shadow-distance) * -1) 0px 0px var(--sui-borders-color) inset;
+
+  --sui-text-transition: opacity var(--sui-animation-duration) var(--sui-animation-easing),
+    background-color var(--sui-animation-duration) var(--sui-animation-easing),
+    color var(--sui-animation-duration) var(--sui-animation-easing),
+    box-shadow var(--sui-animation-duration) var(--sui-animation-easing),
+    background var(--sui-animation-duration) var(--sui-animation-easing);
+
+  --sui-text-will-change: "";
+
+  /*******************************
+            Text Styles
+  *******************************/
+  display: var(--sui-text-display);
+
+  vertical-align: var(--sui-text-vertical-align);
+
+  font-family: var(--sui-text-font-family);
+
+  text-transform: var(--sui-text-text-transform);
+  text-shadow: var(--sui-text-text-shadow);
+  text-decoration: var(--sui-text-text-decoration, none);
+  font-style: normal;
+
+  border-radius: var(--sui-text-border-radius);
+  box-shadow: var(--sui-text-box-shadow);
+  transition: var(--sui-text-transition);
+  will-change: var(--sui-text-will-change);
+
+  -webkit-tap-highlight-color: var(--sui-text-tap-color);
+}
+
+.sui-text {
+  width: 100%;
+  display: block;
+  background: transparent;
+  border: none;
+  color: inherit;
+  text-decoration: inherit;
+  font: inherit;
+}
+
+@media only screen and (min-width: 400px) {
+  :host {
+    width: var(--sui-text-width-mobile, var(--sui-text-width));
+    max-width: var(--sui-text-max-width-mobile, var(--sui-text-max-width));
+    min-width: var(--sui-text-min-width-mobile, var(--sui-text-min-width));
+    height: var(--sui-text-height-mobile, var(--sui-text-height));
+    max-height: var(--sui-text-max-height-mobile, var(--sui-text-max-height));
+    min-height: var(--sui-text-min-height-mobile, var(--sui-text-min-height));
+
+    font-size: var(--sui-text-font-size-mobile, var(--sui-text-font-size));
+    text-align: var(--sui-text-text-align-mobile, var(--sui-text-text-align));
+  }
+
+  .sui-text {
+    padding: var(--sui-text-padding-mobile, var(--sui-text-padding));
+    margin: var(--sui-text-margin-mobile, var(--sui-text-margin));
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  :host {
+    width: var(--sui-text-width-tablet, var(--sui-text-width));
+    max-width: var(--sui-text-max-width-tablet, var(--sui-text-max-width));
+    min-width: var(--sui-text-min-width-tablet, var(--sui-text-min-width));
+    height: var(--sui-text-height-tablet, var(--sui-text-height));
+    max-height: var(--sui-text-max-height-tablet, var(--sui-text-max-height));
+    min-height: var(--sui-text-min-height-tablet, var(--sui-text-min-height));
+
+    font-size: var(--sui-text-font-size-tablet, var(--sui-text-font-size));
+    text-align: var(--sui-text-text-align-tablet, var(--sui-text-text-align));
+  }
+
+  .sui-text {
+    padding: var(--sui-text-padding-tablet, var(--sui-text-padding));
+    margin: var(--sui-text-margin-tablet, var(--sui-text-margin));
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :host {
+    width: var(--sui-text-width-desktop, var(--sui-text-width));
+    max-width: var(--sui-text-max-width-desktop, var(--sui-text-max-width));
+    min-width: var(--sui-text-min-width-desktop, var(--sui-text-min-width));
+    height: var(--sui-text-height-desktop, var(--sui-text-height));
+    max-height: var(--sui-text-max-height-desktop, var(--sui-text-max-height));
+    min-height: var(--sui-text-min-height-desktop, var(--sui-text-min-height));
+
+    font-size: var(--sui-text-font-size-desktop, var(--sui-text-font-size));
+    text-align: var(--sui-text-text-align-desktop, var(--sui-text-text-align));
+  }
+
+  .sui-text {
+    padding: var(--sui-text-padding-desktop, var(--sui-text-padding));
+    margin: var(--sui-text-margin-desktop, var(--sui-text-margin));
+  }
+}
+
+/*******************************
+      Type Element Styles
+  *******************************/
+
+:host p {
+  font-size: var(--sui-fonts-sizes-body);
+  font-weight: var(--sui-text-font-weight, var(--sui-fonts-weights-body));
+}
+
+:host h1 {
+  font-size: var(--sui-fonts-sizes-h1);
+}
+
+:host h2 {
+  font-size: var(--sui-fonts-sizes-h2);
+}
+
+:host h3 {
+  font-size: var(--sui-fonts-sizes-h3);
+}
+
+:host h4 {
+  font-size: var(--sui-fonts-sizes-h4);
+}
+
+:host h5 {
+  font-size: var(--sui-fonts-sizes-h5);
+}
+
+:host h1,
+:host h2,
+:host h3,
+:host h4,
+:host h5 {
+  font-weight: var(--sui-text-font-weight, var(--sui-fonts-weights-heading));
+}

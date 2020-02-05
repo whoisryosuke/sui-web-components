@@ -15,9 +15,6 @@
   max-height: var(--sui-button-max-height);
   min-height: var(--sui-button-min-height);
 
-  padding: var(--sui-button-padding);
-  margin: var(--sui-button-margin);
-
   color: var(--sui-button-color);
   background-color: var(--sui-button-background-color);
 
@@ -38,8 +35,6 @@
   border-radius: var(--sui-button-border-radius);
 
   /* Button */
-  --sui-button-margin-vertical: 0em;
-  --sui-button-margin-horizontal: 0.25em;
   --sui-button-bg-image: none;
 
   /* Text */
@@ -88,7 +83,7 @@
             Button Styles
   *******************************/
   cursor: pointer;
-  display: inline-block;
+  display: var(--sui-button-display);
 
   min-height: 1em;
 
@@ -121,6 +116,9 @@
   background: transparent;
   border: none;
   color: inherit;
+
+  padding: var(--sui-button-padding);
+  margin: var(--sui-button-margin);
 }
 
 @media only screen and (min-width: 400px) {
@@ -132,11 +130,13 @@
     max-height: var(--sui-button-max-height-mobile, var(--sui-button-max-height));
     min-height: var(--sui-button-min-height-mobile, var(--sui-button-min-height));
 
-    padding: var(--sui-button-padding-mobile, var(--sui-button-padding));
-    margin: var(--sui-button-margin-mobile, var(--sui-button-margin));
-
     font-size: var(--sui-button-font-size-mobile, var(--sui-button-font-size));
     text-align: var(--sui-button-text-align-mobile, var(--sui-button-text-align));
+  }
+
+  .sui-button {
+    padding: var(--sui-button-padding-mobile, var(--sui-button-padding));
+    margin: var(--sui-button-margin-mobile, var(--sui-button-margin));
   }
 }
 
@@ -149,11 +149,13 @@
     max-height: var(--sui-button-max-height-tablet, var(--sui-button-max-height));
     min-height: var(--sui-button-min-height-tablet, var(--sui-button-min-height));
 
-    padding: var(--sui-button-padding-tablet, var(--sui-button-padding));
-    margin: var(--sui-button-margin-tablet, var(--sui-button-margin));
-
     font-size: var(--sui-button-font-size-tablet, var(--sui-button-font-size));
     text-align: var(--sui-button-text-align-tablet, var(--sui-button-text-align));
+  }
+
+  .sui-button {
+    padding: var(--sui-button-padding-tablet, var(--sui-button-padding));
+    margin: var(--sui-button-margin-tablet, var(--sui-button-margin));
   }
 }
 
@@ -166,10 +168,12 @@
     max-height: var(--sui-button-max-height-desktop, var(--sui-button-max-height));
     min-height: var(--sui-button-min-height-desktop, var(--sui-button-min-height));
 
-    padding: var(--sui-button-padding-desktop, var(--sui-button-padding));
-    margin: var(--sui-button-margin-desktop, var(--sui-button-margin));
-
     font-size: var(--sui-button-font-size-desktop, var(--sui-button-font-size));
     text-align: var(--sui-button-text-align-desktop, var(--sui-button-text-align));
+  }
+
+  .sui-button {
+    padding: var(--sui-button-padding-desktop, var(--sui-button-padding));
+    margin: var(--sui-button-margin-desktop, var(--sui-button-margin));
   }
 }

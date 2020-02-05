@@ -42,11 +42,11 @@
 
   /* Fonts: Size */
   --sui-fonts-sizes-body: 16px;
-  --sui-fonts-sizes-h1: calc(var(--sui-spacing, 8) * 5)px;
-  --sui-fonts-sizes-h2: calc(var(--sui-spacing, 8) * 4)px;
-  --sui-fonts-sizes-h3: calc(var(--sui-spacing, 8) * 3)px;
-  --sui-fonts-sizes-h4: calc(var(--sui-spacing, 8) * 2)px;
-  --sui-fonts-sizes-h5: calc(var(--sui-spacing, 8) * 1)px;
+  --sui-fonts-sizes-h1: calc(var(--sui-spacing, 8) * 5px);
+  --sui-fonts-sizes-h2: calc(var(--sui-spacing, 8) * 4px);
+  --sui-fonts-sizes-h3: calc(var(--sui-spacing, 8) * 3px);
+  --sui-fonts-sizes-h4: calc(var(--sui-spacing, 8) * 2px);
+  --sui-fonts-sizes-h5: calc(var(--sui-spacing, 8) * 1px);
 
   /* Fonts: Weight */
   --sui-fonts-weights-body: 400;

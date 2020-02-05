@@ -29,52 +29,25 @@ import {
 } from "../../utils/props";
 
 @Component({
-  tag: "sui-button",
-  styleUrl: "button.css",
+  tag: "sui-text",
+  styleUrl: "text.css",
   shadow: true
 })
-export class Button {
+export class Text {
   /**
    * Ref to component in DOM
    */
   @Element() el: HTMLElement;
 
   /**
-   * Displays button as link
-   */
-  @Prop() href: string | undefined;
-
-  /**
-   * Specifies where to display the linked URL.
-   * Only applies when an `href` is provided.
-   * Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
-   */
-  @Prop() target: string | undefined;
-
-  /**
-   * Sets button content to this text
-   */
-  @Prop() text: string | undefined;
-
-  /**
-   * Is disabled?
-   */
-  @Prop() disabled: boolean;
-
-  /**
    * HTML element to use as basis
    */
-  @Prop() as: string;
+  @Prop() as?: string;
 
   /**
-   * The button or input type (usually submit)
+   * Sets component content to this text. Alternative to slots.
    */
-  @Prop() type: "submit" | "reset" | "button";
-
-  /**
-   * Optional prop for input to show text
-   */
-  @Prop() value: string;
+  @Prop() text: string | undefined;
 
   /**
    * Responsive width
@@ -200,50 +173,47 @@ export class Button {
 
   componentWillRender() {
     // Sizing
-    width("button", this.width, this.el.style);
-    height("button", this.height, this.el.style);
-    maxWidth("button", this.maxWidth, this.el.style);
-    minWidth("button", this.minWidth, this.el.style);
-    maxHeight("button", this.maxHeight, this.el.style);
-    minHeight("button", this.minHeight, this.el.style);
+    width("text", this.width, this.el.style);
+    height("text", this.height, this.el.style);
+    maxWidth("text", this.maxWidth, this.el.style);
+    minWidth("text", this.minWidth, this.el.style);
+    maxHeight("text", this.maxHeight, this.el.style);
+    minHeight("text", this.minHeight, this.el.style);
     const paddingProp = this.padding || this.p;
     const marginProp = this.margin || this.m;
-    margin("button", marginProp, this.el.style);
-    padding("button", paddingProp, this.el.style);
-    display("button", this.display, this.el.style);
+    margin("text", marginProp, this.el.style);
+    padding("text", paddingProp, this.el.style);
+    display("text", this.display, this.el.style);
 
     // Color
-    color("button", this.color, this.el.style);
+    color("text", this.color, this.el.style);
     const bgProp = this.background || this.bg;
-    bg("button", bgProp, this.el.style);
+    bg("text", bgProp, this.el.style);
 
     // Fonts
-    fontSize("button", this.fontSize, this.el.style);
-    textAlign("button", this.textAlign, this.el.style);
-    lineHeight("button", this.lineHeight, this.el.style);
-    fontWeight("button", this.fontWeight, this.el.style);
-    letterSpacing("button", this.letterSpacing, this.el.style);
+    fontSize("text", this.fontSize, this.el.style);
+    textAlign("text", this.textAlign, this.el.style);
+    lineHeight("text", this.lineHeight, this.el.style);
+    fontWeight("text", this.fontWeight, this.el.style);
+    letterSpacing("text", this.letterSpacing, this.el.style);
 
     // Border
-    border("button", this.border, this.el.style);
-    borderTop("button", this.borderTop, this.el.style);
-    borderBottom("button", this.borderBottom, this.el.style);
-    borderLeft("button", this.borderLeft, this.el.style);
-    borderRight("button", this.borderRight, this.el.style);
-    borderWidth("button", this.borderWidth, this.el.style);
-    borderStyle("button", this.borderStyle, this.el.style);
-    borderColor("button", this.borderColor, this.el.style);
-    borderRadius("button", this.borderRadius, this.el.style);
+    border("text", this.border, this.el.style);
+    borderTop("text", this.borderTop, this.el.style);
+    borderBottom("text", this.borderBottom, this.el.style);
+    borderLeft("text", this.borderLeft, this.el.style);
+    borderRight("text", this.borderRight, this.el.style);
+    borderWidth("text", this.borderWidth, this.el.style);
+    borderStyle("text", this.borderStyle, this.el.style);
+    borderColor("text", this.borderColor, this.el.style);
+    borderRadius("text", this.borderRadius, this.el.style);
   }
 
   render() {
-    const { color, disabled, href, target, text, type, value } = this;
+    const { text } = this;
     // Determine what element will be displayed
-    // Defaults to button, `as` prop takes precedence
-    let TagType = "button";
-    if (href !== undefined) {
-      TagType = "a";
-    }
+    // Defaults to paragraph, `as` prop takes precedence
+    let TagType = "p";
     if (this.as !== undefined) {
       TagType = this.as;
     }
@@ -251,17 +221,10 @@ export class Button {
       <Host>
         <TagType
           class={{
-            "sui-button": true,
-            [color]: color !== undefined,
-            disabled: disabled
+            "sui-text": true
           }}
-          aria-disabled={disabled ? "true" : null}
-          href={href}
-          type={type}
-          value={value}
-          target={target}
         >
-          {value === undefined && (text || <slot />)}
+          {text || <slot />}
         </TagType>
       </Host>
     );
