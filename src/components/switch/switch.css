@@ -1,0 +1,50 @@
+:host {
+  display: block;
+}
+
+:host>button {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  width: 40px;
+  height: 24px;
+  color: var(--sui-colors-primary);
+  background: transparent;
+  border: 1px solid;
+  border-color: var(--sui-colors-primary);
+  border-radius: 9999px;
+}
+
+:host>button[aria-checked="true"] {
+  background: var(--sui-colors-primary);
+}
+
+:host>button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px;
+}
+
+
+:host>button>div {
+  box-sizing: border-box;
+  min-width: 0px;
+  width: 24px;
+  height: 24px;
+  margin: -1px 0px 0px -1px;
+  border-radius: 9999;
+  border: 1px solid;
+  border-color: var(--sui-colors-primary);
+  background: var(--sui-colors-bg);
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  transition-duration: 0.1s;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-style: solid;
+  border-image: initial;
+  transform: translateX(0);
+}
+
+:host>button[aria-checked="true"]>div {
+  transform: translateX(16px);
+}

@@ -1,0 +1,175 @@
+:host .sui-textarea {
+  display: block;
+  width: 100%;
+  padding: var(--sui-textarea-padding);
+  appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+
+  border: var(--sui-textarea-border);
+  border-top: var(--sui-textarea-border-top);
+  border-bottom: var(--sui-textarea-border-bottom);
+  border-left: var(--sui-textarea-border-left);
+  border-right: var(--sui-textarea-border-right);
+  border-width: var(--sui-textarea-border-width);
+  border-style: var(--sui-textarea-border-style);
+  border-color: var(--sui-textarea-border-color);
+  border-radius: var(--sui-textarea-border-radius);
+}
+
+:host>svg {
+  fill: var(--sui-colors-text, #010101);
+  margin-left: -28px;
+  align-self: center;
+}
+
+:host {
+  --sui-textarea-width: auto;
+  --sui-textarea-height: auto;
+  --sui-textarea-display: flex;
+  --sui-textarea-padding: var(--sui-spacing-2);
+  --sui-textarea-margin: 0;
+  --sui-textarea-color: var(--sui-colors-text, var(--sui-colors-black));
+  --sui-textarea-background-color: transparent;
+  --sui-textarea-font-family: var(--sui-fonts-body);
+  --sui-textarea-font-size: inherit;
+  --sui-textarea-font-weight: var(--sui-fonts-weights-body);
+  --sui-textarea-line-height: var(--sui-fonts-line-body);
+
+  --sui-textarea-border-top: var(--sui-textarea-border, 0);
+  --sui-textarea-border-bottom: var(--sui-textarea-border, 0);
+  --sui-textarea-border-left: var(--sui-textarea-border, 0);
+  --sui-textarea-border-right: var(--sui-textarea-border, 0);
+  --sui-textarea-border-style: solid;
+  --sui-textarea-border-color: var(--sui-colors-black);
+  --sui-textarea-border-radius: var(--sui-borders-radius);
+  --sui-textarea-border-width: 1px;
+
+  width: var(--sui-textarea-width);
+  min-width: var(--sui-textarea-min-width);
+  max-width: var(--sui-textarea-max-width);
+  height: var(--sui-textarea-height);
+  max-height: var(--sui-textarea-max-height);
+  min-height: var(--sui-textarea-min-height);
+
+  margin: var(--sui-textarea-margin, auto);
+
+  color: var(--sui-textarea-color);
+  background-color: var(--sui-textarea-background-color, var(--sui-colors-bg));
+
+  font-family: var(--sui-textarea-font-family);
+  font-size: var(--sui-textarea-font-size);
+  text-align: var(--sui-textarea-text-align);
+  line-height: var(--sui-textarea-line-height);
+  font-weight: var(--sui-textarea-font-weight);
+  letter-spacing: var(--sui-textarea-letter-spacing);
+
+  /* Text */
+  --sui-textarea-text-transform: none;
+  --sui-textarea-tap-color: transparent;
+  --sui-textarea-text-shadow: none;
+  --sui-textarea-text-shadow-inverted: var(--sui-shadows-text);
+  --sui-textarea-vertical-align: baseline;
+
+  /* Internal Shadow */
+  --sui-textarea-shadow-distance: 0em;
+  --sui-textarea-shadow-offset: (var(--sui-textarea-shadow-distance) / 2);
+  --sui-textarea-shadow-box-shadow: 0px calc(var(--sui-textarea-shadow-distance) * -1) 0px 0px var(--sui-borders-color) inset;
+
+  --sui-textarea-transition: opacity var(--sui-animation-duration) var(--sui-animation-easing),
+    background-color var(--sui-animation-duration) var(--sui-animation-easing),
+    color var(--sui-animation-duration) var(--sui-animation-easing),
+    box-shadow var(--sui-animation-duration) var(--sui-animation-easing),
+    background var(--sui-animation-duration) var(--sui-animation-easing);
+
+  --sui-textarea-will-change: "";
+
+  /*******************************
+            Button Styles
+  *******************************/
+  display: var(--sui-textarea-display);
+
+  vertical-align: var(--sui-textarea-vertical-align);
+
+  text-transform: var(--sui-textarea-text-transform);
+  text-shadow: var(--sui-textarea-text-shadow);
+  text-decoration: var(--sui-textarea-text-decoration, none);
+  font-style: normal;
+
+  border-radius: var(--sui-textarea-border-radius);
+  box-shadow: var(--sui-textarea-box-shadow);
+
+  transition: var(--sui-textarea-transition);
+  will-change: var(--sui-textarea-will-change);
+
+  -webkit-tap-highlight-color: var(--sui-textarea-tap-color);
+}
+
+.sui-textarea {
+  width: 100%;
+  display: block;
+  background: transparent;
+  border: none;
+  color: inherit;
+  text-decoration: inherit;
+  font: inherit;
+}
+
+@media only screen and (min-width: 400px) {
+  :host {
+    width: var(--sui-textarea-width-mobile, var(--sui-textarea-width));
+    max-width: var(--sui-textarea-max-width-mobile, var(--sui-textarea-max-width));
+    min-width: var(--sui-textarea-min-width-mobile, var(--sui-textarea-min-width));
+    height: var(--sui-textarea-height-mobile, var(--sui-textarea-height));
+    max-height: var(--sui-textarea-max-height-mobile, var(--sui-textarea-max-height));
+    min-height: var(--sui-textarea-min-height-mobile, var(--sui-textarea-min-height));
+
+    font-size: var(--sui-textarea-font-size-mobile, var(--sui-textarea-font-size));
+    text-align: var(--sui-textarea-text-align-mobile, var(--sui-textarea-text-align));
+  }
+
+  .sui-textarea {
+    padding: var(--sui-textarea-padding-mobile, var(--sui-textarea-padding));
+    margin: var(--sui-textarea-margin-mobile, var(--sui-textarea-margin));
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  :host {
+    width: var(--sui-textarea-width-tablet, var(--sui-textarea-width));
+    max-width: var(--sui-textarea-max-width-tablet, var(--sui-textarea-max-width));
+    min-width: var(--sui-textarea-min-width-tablet, var(--sui-textarea-min-width));
+    height: var(--sui-textarea-height-tablet, var(--sui-textarea-height));
+    max-height: var(--sui-textarea-max-height-tablet, var(--sui-textarea-max-height));
+    min-height: var(--sui-textarea-min-height-tablet, var(--sui-textarea-min-height));
+
+    font-size: var(--sui-textarea-font-size-tablet, var(--sui-textarea-font-size));
+    text-align: var(--sui-textarea-text-align-tablet, var(--sui-textarea-text-align));
+  }
+
+  .sui-textarea {
+    padding: var(--sui-textarea-padding-tablet, var(--sui-textarea-padding));
+    margin: var(--sui-textarea-margin-tablet, var(--sui-textarea-margin));
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :host {
+    width: var(--sui-textarea-width-desktop, var(--sui-textarea-width));
+    max-width: var(--sui-textarea-max-width-desktop, var(--sui-textarea-max-width));
+    min-width: var(--sui-textarea-min-width-desktop, var(--sui-textarea-min-width));
+    height: var(--sui-textarea-height-desktop, var(--sui-textarea-height));
+    max-height: var(--sui-textarea-max-height-desktop, var(--sui-textarea-max-height));
+    min-height: var(--sui-textarea-min-height-desktop, var(--sui-textarea-min-height));
+
+    font-size: var(--sui-textarea-font-size-desktop, var(--sui-textarea-font-size));
+    text-align: var(--sui-textarea-text-align-desktop, var(--sui-textarea-text-align));
+  }
+
+  .sui-textarea {
+    padding: var(--sui-textarea-padding-desktop, var(--sui-textarea-padding));
+    margin: var(--sui-textarea-margin-desktop, var(--sui-textarea-margin));
+  }
+}

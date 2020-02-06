@@ -29,18 +29,30 @@ import {
 } from "../../utils/props";
 
 @Component({
-  tag: "sui-select",
-  styleUrl: "select.css"
+  tag: "sui-textarea",
+  styleUrl: "textarea.css",
+  shadow: true
 })
-export class Select {
+export class Textarea {
   /**
    * Ref to component in DOM
    */
   @Element() el: HTMLElement;
+
   /**
-   * Automatically sets focus to dropdown
+   * Text to display inside textarea
+   */
+  @Prop() text?: string;
+
+  /**
+   * Automatically sets focus to textarea
    */
   @Prop() autofocus?: boolean;
+
+  /**
+   * Visible width of a text area
+   */
+  @Prop() cols?: number;
 
   /**
    * Is disabled?
@@ -53,14 +65,19 @@ export class Select {
   @Prop() form?: string;
 
   /**
-   * Allows multiple options to be selected at once
-   */
-  @Prop() multiple?: boolean;
-
-  /**
-   * The name of the dropdown
+   * The name of the textarea
    */
   @Prop() name?: string;
+
+  /**
+   * Instructional text that shows before the textarea has a value.
+   */
+  @Prop() placeholder?: string;
+
+  /**
+   * Sets dropdown as a readonly field
+   */
+  @Prop() readonly?: boolean;
 
   /**
    * Sets dropdown as a required field
@@ -68,14 +85,14 @@ export class Select {
   @Prop() required?: boolean;
 
   /**
-   * Number of visible options
+   * The visible number of lines in a text area
    */
-  @Prop() size?: number;
+  @Prop() rows?: number;
 
   /**
-   * HTML element to use as basis
+   * Add newlines to your form submission (soft by default)
    */
-  @Prop() as: string;
+  @Prop() wrap?: "hard" | "soft";
 
   /**
    * Responsive width
@@ -201,74 +218,62 @@ export class Select {
 
   componentWillRender() {
     // Sizing
-    width("select", this.width, this.el.style);
-    height("select", this.height, this.el.style);
-    maxWidth("select", this.maxWidth, this.el.style);
-    minWidth("select", this.minWidth, this.el.style);
-    maxHeight("select", this.maxHeight, this.el.style);
-    minHeight("select", this.minHeight, this.el.style);
+    width("textarea", this.width, this.el.style);
+    height("textarea", this.height, this.el.style);
+    maxWidth("textarea", this.maxWidth, this.el.style);
+    minWidth("textarea", this.minWidth, this.el.style);
+    maxHeight("textarea", this.maxHeight, this.el.style);
+    minHeight("textarea", this.minHeight, this.el.style);
     const paddingProp = this.padding || this.p;
     const marginProp = this.margin || this.m;
-    margin("select", marginProp, this.el.style);
-    padding("select", paddingProp, this.el.style);
-    display("select", this.display, this.el.style);
+    margin("textarea", marginProp, this.el.style);
+    padding("textarea", paddingProp, this.el.style);
+    display("textarea", this.display, this.el.style);
 
     // Color
-    color("select", this.color, this.el.style);
+    color("textarea", this.color, this.el.style);
     const bgProp = this.background || this.bg;
-    bg("select", bgProp, this.el.style);
+    bg("textarea", bgProp, this.el.style);
 
     // Fonts
-    fontSize("select", this.fontSize, this.el.style);
-    textAlign("select", this.textAlign, this.el.style);
-    lineHeight("select", this.lineHeight, this.el.style);
-    fontWeight("select", this.fontWeight, this.el.style);
-    letterSpacing("select", this.letterSpacing, this.el.style);
+    fontSize("textarea", this.fontSize, this.el.style);
+    textAlign("textarea", this.textAlign, this.el.style);
+    lineHeight("textarea", this.lineHeight, this.el.style);
+    fontWeight("textarea", this.fontWeight, this.el.style);
+    letterSpacing("textarea", this.letterSpacing, this.el.style);
 
     // Border
-    border("select", this.border, this.el.style);
-    borderTop("select", this.borderTop, this.el.style);
-    borderBottom("select", this.borderBottom, this.el.style);
-    borderLeft("select", this.borderLeft, this.el.style);
-    borderRight("select", this.borderRight, this.el.style);
-    borderWidth("select", this.borderWidth, this.el.style);
-    borderStyle("select", this.borderStyle, this.el.style);
-    borderColor("select", this.borderColor, this.el.style);
-    borderRadius("select", this.borderRadius, this.el.style);
+    border("textarea", this.border, this.el.style);
+    borderTop("textarea", this.borderTop, this.el.style);
+    borderBottom("textarea", this.borderBottom, this.el.style);
+    borderLeft("textarea", this.borderLeft, this.el.style);
+    borderRight("textarea", this.borderRight, this.el.style);
+    borderWidth("textarea", this.borderWidth, this.el.style);
+    borderStyle("textarea", this.borderStyle, this.el.style);
+    borderColor("textarea", this.borderColor, this.el.style);
+    borderRadius("textarea", this.borderRadius, this.el.style);
   }
 
   render() {
-    const { autofocus, disabled, form, multiple, name, required, size } = this;
-    // Determine what element will be displayed
-    // Defaults to select, `as` prop takes precedence
-    let TagType = "select";
-    if (this.as !== undefined) {
-      TagType = this.as;
-    }
     return (
       <Host>
-        <TagType
+        <textarea
           class={{
-            "sui-select": true
+            "sui-textarea": true
           }}
-          {...autofocus}
-          disabled={disabled}
-          form={form}
-          multiple={multiple}
-          name={name}
-          required={required}
-          size={size}
+          autofocus={this.autofocus}
+          cols={this.cols}
+          disabled={this.disabled}
+          form={this.form}
+          name={this.name}
+          placeholder={this.placeholder}
+          readonly={this.readonly}
+          required={this.required}
+          rows={this.rows}
+          wrap={this.wrap}
         >
-          <slot></slot>
-        </TagType>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={24}
-          height={24}
-          viewBox="0 0 24 24"
-        >
-          <path d="M7 10l5 5 5-5z" />
-        </svg>
+          {this.text}
+        </textarea>
       </Host>
     );
   }

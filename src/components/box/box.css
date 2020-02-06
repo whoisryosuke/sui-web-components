@@ -7,6 +7,9 @@
   --sui-box-color: var(--sui-colors-text, #000);
   --sui-box-background-color: var(--sui-colors-bg, transparent);
   --sui-box-font-size: var(--sui-fonts-sizes-body, inherit);
+  --sui-box-font-family: var(--sui-fonts-body);
+  --sui-box-font-weight: var(--sui-fonts-weights-body);
+  --sui-box-line-height: var(--sui-fonts-line-body);
 
   --sui-box-align-items: center;
   --sui-box-align-content: center;
@@ -34,6 +37,7 @@
   color: var(--sui-box-color);
   background-color: var(--sui-box-background-color);
 
+  font-family: var(--sui-box-font-family);
   font-size: var(--sui-box-font-size);
   text-align: var(--sui-box-text-align);
   line-height: var(--sui-box-line-height);
@@ -106,8 +110,4 @@
     font-size: var(--sui-box-font-size-desktop, var(--sui-box-font-size));
     text-align: var(--sui-box-text-align-desktop, var(--sui-box-text-align));
   }
-}
-
-#test {
-  color: red;
 }

@@ -2,7 +2,7 @@
   --sui-button-width: auto;
   --sui-button-height: auto;
   --sui-button-display: inline-block;
-  --sui-button-padding: calc(var(--sui-spacing-1) * 1px) calc(var(--sui-spacing-1) * 1px);
+  --sui-button-padding: var(--sui-spacing-1) var(--sui-spacing-1);
   --sui-button-margin: 0;
   --sui-button-color: var(--sui-colors-text-inverted, var(--sui-colors-white));
   --sui-button-background-color: var(--sui-colors-primary, transparent);

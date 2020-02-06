@@ -6,7 +6,10 @@
   --sui-text-margin: 0;
   --sui-text-color: var(--sui-colors-text, var(--sui-colors-black));
   --sui-text-background-color: transparent;
-  --sui-text-font-size: var(--sui-fonts-sizes-body, inherit);
+  --sui-text-font-size: inherit;
+  --sui-text-font-family: var(--sui-fonts-body);
+  --sui-text-font-weight: var(--sui-fonts-weights-body);
+  --sui-text-line-height: var(--sui-fonts-line-body);
 
   width: var(--sui-text-width);
   min-width: var(--sui-text-min-width);
@@ -21,6 +24,7 @@
   color: var(--sui-text-color);
   background-color: var(--sui-text-background-color);
 
+  font-family: var(--sui-text-font-family);
   font-size: var(--sui-text-font-size);
   text-align: var(--sui-text-text-align);
   line-height: var(--sui-text-line-height);
@@ -63,8 +67,6 @@
   display: var(--sui-text-display);
 
   vertical-align: var(--sui-text-vertical-align);
-
-  font-family: var(--sui-text-font-family);
 
   text-transform: var(--sui-text-text-transform);
   text-shadow: var(--sui-text-text-shadow);

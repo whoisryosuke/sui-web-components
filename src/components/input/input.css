@@ -1,3 +1,228 @@
-:host {
+:host .sui-input {
   display: block;
+  width: 100%;
+  padding: var(--sui-input-padding);
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+
+  border: var(--sui-input-border);
+  border-top: var(--sui-input-border-top);
+  border-bottom: var(--sui-input-border-bottom);
+  border-left: var(--sui-input-border-left);
+  border-right: var(--sui-input-border-right);
+  border-width: var(--sui-input-border-width);
+  border-style: var(--sui-input-border-style);
+  border-color: var(--sui-input-border-color);
+  border-radius: var(--sui-input-border-radius);
+}
+
+:host {
+  --sui-input-width: auto;
+  --sui-input-height: auto;
+  --sui-input-display: block;
+  --sui-input-padding: var(--sui-spacing-2);
+  --sui-input-margin: 0 0 var(--sui-spacing-1) 0;
+  --sui-input-color: var(--sui-colors-text, var(--sui-colors-black));
+  --sui-input-background-color: transparent;
+  --sui-input-font-family: var(--sui-fonts-body);
+  --sui-input-font-size: inherit;
+  --sui-input-font-weight: var(--sui-fonts-weights-body);
+  --sui-input-line-height: var(--sui-fonts-line-body);
+
+  --sui-input-border-top: var(--sui-input-border, 0);
+  --sui-input-border-bottom: var(--sui-input-border, 0);
+  --sui-input-border-left: var(--sui-input-border, 0);
+  --sui-input-border-right: var(--sui-input-border, 0);
+  --sui-input-border-style: solid;
+  --sui-input-border-color: var(--sui-colors-black);
+  --sui-input-border-radius: var(--sui-borders-radius);
+  --sui-input-border-width: 1px;
+
+  width: var(--sui-input-width);
+  min-width: var(--sui-input-min-width);
+  max-width: var(--sui-input-max-width);
+  height: var(--sui-input-height);
+  max-height: var(--sui-input-max-height);
+  min-height: var(--sui-input-min-height);
+
+  margin: var(--sui-input-margin, auto);
+
+  color: var(--sui-input-color);
+  background-color: var(--sui-input-background-color, var(--sui-colors-bg));
+
+  font-family: var(--sui-input-font-family);
+  font-size: var(--sui-input-font-size);
+  text-align: var(--sui-input-text-align);
+  line-height: var(--sui-input-line-height);
+  font-weight: var(--sui-input-font-weight);
+  letter-spacing: var(--sui-input-letter-spacing);
+
+  position: var(--sui-input-position, relative);
+
+  /* Text */
+  --sui-input-text-transform: none;
+  --sui-input-tap-color: transparent;
+  --sui-input-text-shadow: none;
+  --sui-input-text-shadow-inverted: var(--sui-shadows-text);
+  --sui-input-vertical-align: baseline;
+
+  /* Internal Shadow */
+  --sui-input-shadow-distance: 0em;
+  --sui-input-shadow-offset: (var(--sui-input-shadow-distance) / 2);
+  --sui-input-shadow-box-shadow: 0px calc(var(--sui-input-shadow-distance) * -1) 0px 0px var(--sui-borders-color) inset;
+
+  --sui-input-transition: opacity var(--sui-animation-duration) var(--sui-animation-easing),
+    background-color var(--sui-animation-duration) var(--sui-animation-easing),
+    color var(--sui-animation-duration) var(--sui-animation-easing),
+    box-shadow var(--sui-animation-duration) var(--sui-animation-easing),
+    background var(--sui-animation-duration) var(--sui-animation-easing);
+
+  --sui-input-will-change: "";
+
+  /*******************************
+            Button Styles
+  *******************************/
+  display: var(--sui-input-display);
+
+  vertical-align: var(--sui-input-vertical-align);
+
+  text-transform: var(--sui-input-text-transform);
+  text-shadow: var(--sui-input-text-shadow);
+  text-decoration: var(--sui-input-text-decoration, none);
+  font-style: normal;
+
+  border-radius: var(--sui-input-border-radius);
+  box-shadow: var(--sui-input-box-shadow);
+
+  transition: var(--sui-input-transition);
+  will-change: var(--sui-input-will-change);
+
+  -webkit-tap-highlight-color: var(--sui-input-tap-color);
+}
+
+.sui-input {
+  width: 100%;
+  display: block;
+  background: transparent;
+  border: none;
+  color: inherit;
+  text-decoration: inherit;
+  font: inherit;
+}
+
+/* Slider */
+.sui-input[type='range'] {
+  --sui-input-border: 0;
+  --sui-input-border-width: 0;
+  --sui-input-padding: 0;
+
+  box-sizing: border-box;
+  min-width: 0px;
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  color: inherit;
+  background-color: var(--sui-colors-grey);
+  border-radius: 9999px;
+  margin: 8px 0px;
+}
+
+/* Radio & Checkbox */
+.sui-input[type='radio'],
+.sui-input[type='checkbox'] {
+  /** Hide appearance and maintain functionality */
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+:host svg {
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  min-width: 0px;
+  margin: 0px 8px 0px 0px;
+  border-radius: 4px;
+  color: var(--sui-colors-grey);
+}
+
+input:checked~svg {
+  color: var(--sui-colors-primary);
+}
+
+input:focus~svg {
+  color: var(--sui-colors-primary);
+  background-color: var(--sui-colors-muted);
+}
+
+.checked,
+input:checked~.unchecked {
+  display: none;
+}
+
+.unchecked,
+input:checked~.checked {
+  display: block;
+}
+
+@media only screen and (min-width: 400px) {
+  :host {
+    width: var(--sui-input-width-mobile, var(--sui-input-width));
+    max-width: var(--sui-input-max-width-mobile, var(--sui-input-max-width));
+    min-width: var(--sui-input-min-width-mobile, var(--sui-input-min-width));
+    height: var(--sui-input-height-mobile, var(--sui-input-height));
+    max-height: var(--sui-input-max-height-mobile, var(--sui-input-max-height));
+    min-height: var(--sui-input-min-height-mobile, var(--sui-input-min-height));
+
+    font-size: var(--sui-input-font-size-mobile, var(--sui-input-font-size));
+    text-align: var(--sui-input-text-align-mobile, var(--sui-input-text-align));
+  }
+
+  .sui-input {
+    padding: var(--sui-input-padding-mobile, var(--sui-input-padding));
+    margin: var(--sui-input-margin-mobile, var(--sui-input-margin));
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  :host {
+    width: var(--sui-input-width-tablet, var(--sui-input-width));
+    max-width: var(--sui-input-max-width-tablet, var(--sui-input-max-width));
+    min-width: var(--sui-input-min-width-tablet, var(--sui-input-min-width));
+    height: var(--sui-input-height-tablet, var(--sui-input-height));
+    max-height: var(--sui-input-max-height-tablet, var(--sui-input-max-height));
+    min-height: var(--sui-input-min-height-tablet, var(--sui-input-min-height));
+
+    font-size: var(--sui-input-font-size-tablet, var(--sui-input-font-size));
+    text-align: var(--sui-input-text-align-tablet, var(--sui-input-text-align));
+  }
+
+  .sui-input {
+    padding: var(--sui-input-padding-tablet, var(--sui-input-padding));
+    margin: var(--sui-input-margin-tablet, var(--sui-input-margin));
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :host {
+    width: var(--sui-input-width-desktop, var(--sui-input-width));
+    max-width: var(--sui-input-max-width-desktop, var(--sui-input-max-width));
+    min-width: var(--sui-input-min-width-desktop, var(--sui-input-min-width));
+    height: var(--sui-input-height-desktop, var(--sui-input-height));
+    max-height: var(--sui-input-max-height-desktop, var(--sui-input-max-height));
+    min-height: var(--sui-input-min-height-desktop, var(--sui-input-min-height));
+
+    font-size: var(--sui-input-font-size-desktop, var(--sui-input-font-size));
+    text-align: var(--sui-input-text-align-desktop, var(--sui-input-text-align));
+  }
+
+  .sui-input {
+    padding: var(--sui-input-padding-desktop, var(--sui-input-padding));
+    margin: var(--sui-input-margin-desktop, var(--sui-input-margin));
+  }
 }

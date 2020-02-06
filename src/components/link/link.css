@@ -1,12 +1,15 @@
 :host {
   --sui-link-width: auto;
   --sui-link-height: auto;
-  --sui-link-display: block;
+  --sui-link-display: inline-block;
   --sui-link-padding: 0;
   --sui-link-margin: 0;
   --sui-link-color: var(--sui-colors-text, var(--sui-colors-black));
   --sui-link-background-color: transparent;
-  --sui-link-font-size: var(--sui-fonts-sizes-body, inherit);
+  --sui-link-font-size: inherit;
+  --sui-link-font-family: var(--sui-fonts-body);
+  --sui-link-font-weight: var(--sui-fonts-weights-body);
+  --sui-link-line-height: var(--sui-fonts-line-body);
 
   width: var(--sui-link-width);
   min-width: var(--sui-link-min-width);
@@ -21,6 +24,7 @@
   color: var(--sui-link-color);
   background-color: var(--sui-link-background-color);
 
+  font-family: var(--sui-link-font-family);
   font-size: var(--sui-link-font-size);
   text-align: var(--sui-link-text-align);
   line-height: var(--sui-link-line-height);
@@ -63,11 +67,6 @@
   display: var(--sui-link-display);
 
   vertical-align: var(--sui-link-vertical-align);
-
-  font-family: var(--sui-link-font-family);
-
-  /* margin: 0em var(--sui-link-margin-horizontal) var(--sui-link-margin-vertical) 0em; */
-  /* padding: var(--sui-link-padding-vertical) var(--sui-link-padding-horizontal) calc(var(--sui-link-padding-vertical) + var(--sui-link-shadow-offset)); */
 
   text-transform: var(--sui-link-text-transform);
   text-shadow: var(--sui-link-text-shadow);

@@ -11,7 +11,35 @@ import {
   h
 } from "@stencil/core";
 
-import { InputChangeEventDetail } from "../../interfaces";
+import {
+  width,
+  height,
+  maxWidth,
+  minWidth,
+  maxHeight,
+  minHeight,
+  color,
+  bg,
+  fontSize,
+  textAlign,
+  lineHeight,
+  fontWeight,
+  letterSpacing,
+  display,
+  margin,
+  padding,
+  border,
+  borderTop,
+  borderBottom,
+  borderLeft,
+  borderRight,
+  borderWidth,
+  borderStyle,
+  borderColor,
+  borderRadius
+} from "../../utils/props";
+
+import { InputChangeEventDetail, TextFieldTypes } from "../../interfaces";
 
 @Component({
   tag: "sui-input",
@@ -140,16 +168,7 @@ export class Input {
   /**
    * The type of control to display. The default type is text.
    */
-  @Prop() type:
-    | "date"
-    | "email"
-    | "number"
-    | "password"
-    | "search"
-    | "tel"
-    | "text"
-    | "url"
-    | "time" = "text";
+  @Prop() type: TextFieldTypes = "text";
 
   /**
    * The value of the input.
@@ -213,6 +232,166 @@ export class Input {
     this.suiInput.emit(ev as KeyboardEvent);
   };
 
+  /**
+   * Responsive width
+   */
+  @Prop() width: string | string[] | number | number[];
+
+  /**
+   * Responsive min-width
+   */
+  @Prop() minWidth: string | string[] | number | number[];
+
+  /**
+   * Responsive max-width
+   */
+  @Prop() maxWidth: string | string[] | number | number[];
+
+  /**
+   * Responsive height
+   */
+  @Prop() height: string | string[] | number | number[];
+
+  /**
+   * Responsive min-height
+   */
+  @Prop() minHeight: string | string[] | number | number[];
+
+  /**
+   * Responsive max-height
+   */
+  @Prop() maxHeight: string | string[] | number | number[];
+
+  /**
+   * CSS property display
+   */
+  @Prop() display: string;
+
+  /**
+   * Responsive fontSize
+   */
+  @Prop() fontSize: string | string[] | number | number[];
+
+  /**
+   * Responsive textAlign
+   */
+  @Prop() textAlign: string | string[] | number | number[];
+
+  /**
+   * CSS property for lineHeight
+   */
+  @Prop() lineHeight: string | string[] | number | number[];
+
+  /**
+   * CSS property for fontWeight
+   */
+  @Prop() fontWeight: string | string[] | number | number[];
+
+  /**
+   * CSS property for letterSpacing
+   */
+  @Prop() letterSpacing: string | string[] | number | number[];
+
+  /**
+   * CSS property for responsive margin
+   */
+  @Prop() margin: string | string[] | number | number[];
+  @Prop() m: string | string[] | number | number[];
+
+  /**
+   * CSS property for responsive padding
+   */
+  @Prop() padding: string | string[] | number | number[];
+  @Prop() p: string | string[] | number | number[];
+
+  /**
+   * CSS property for text color
+   */
+  @Prop() color: string;
+
+  /**
+   * CSS property for background color
+   */
+  @Prop() background: string;
+  @Prop() bg: string;
+
+  /**
+   * CSS property for border
+   */
+  @Prop() border: string | number;
+
+  /**
+   * CSS property for borderTop
+   */
+  @Prop() borderTop: string | number;
+  /**
+   * CSS property for borderBottom
+   */
+  @Prop() borderBottom: string | number;
+  /**
+   * CSS property for borderLeft
+   */
+  @Prop() borderLeft: string | number;
+  /**
+   * CSS property for borderRight
+   */
+  @Prop() borderRight: string | number;
+
+  /**
+   * CSS property for borderWidth
+   */
+  @Prop() borderWidth: string | number;
+  /**
+   * CSS property for borderStyle
+   */
+  @Prop() borderStyle: string;
+  /**
+   * CSS property for borderColor
+   */
+  @Prop() borderColor: string;
+  /**
+   * CSS property for borderRadius
+   */
+  @Prop() borderRadius: string | number;
+
+  componentWillRender() {
+    // Sizing
+    width("input", this.width, this.el.style);
+    height("input", this.height, this.el.style);
+    maxWidth("input", this.maxWidth, this.el.style);
+    minWidth("input", this.minWidth, this.el.style);
+    maxHeight("input", this.maxHeight, this.el.style);
+    minHeight("input", this.minHeight, this.el.style);
+    const paddingProp = this.padding || this.p;
+    const marginProp = this.margin || this.m;
+    margin("input", marginProp, this.el.style);
+    padding("input", paddingProp, this.el.style);
+    display("input", this.display, this.el.style);
+
+    // Color
+    color("input", this.color, this.el.style);
+    const bgProp = this.background || this.bg;
+    bg("input", bgProp, this.el.style);
+
+    // Fonts
+    fontSize("input", this.fontSize, this.el.style);
+    textAlign("input", this.textAlign, this.el.style);
+    lineHeight("input", this.lineHeight, this.el.style);
+    fontWeight("input", this.fontWeight, this.el.style);
+    letterSpacing("input", this.letterSpacing, this.el.style);
+
+    // Border
+    border("input", this.border, this.el.style);
+    borderTop("input", this.borderTop, this.el.style);
+    borderBottom("input", this.borderBottom, this.el.style);
+    borderLeft("input", this.borderLeft, this.el.style);
+    borderRight("input", this.borderRight, this.el.style);
+    borderWidth("input", this.borderWidth, this.el.style);
+    borderStyle("input", this.borderStyle, this.el.style);
+    borderColor("input", this.borderColor, this.el.style);
+    borderRadius("input", this.borderRadius, this.el.style);
+  }
+
   render() {
     const value = this.getValue();
     const labelId = this.inputId + "-lbl";
@@ -225,7 +404,9 @@ export class Input {
         }}
       >
         <input
-          class="sui-input"
+          class={{
+            "sui-input": true
+          }}
           ref={input => (this.nativeInput = input)}
           aria-labelledby={labelId}
           disabled={this.disabled}
@@ -252,6 +433,50 @@ export class Input {
           value={value}
           onInput={this.onInput}
         />
+        {this.type === "checkbox" && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentcolor"
+            aria-hidden="true"
+            class="checked"
+          >
+            <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+          </svg>
+        )}
+        {this.type === "checkbox" && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentcolor"
+            aria-hidden="true"
+            class="unchecked"
+          >
+            <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
+          </svg>
+        )}
+        {this.type === "radio" && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentcolor"
+            aria-hidden="true"
+            class="checked"
+          >
+            <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path>
+          </svg>
+        )}
+        {this.type === "radio" && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentcolor"
+            aria-hidden="true"
+            class="unchecked"
+          >
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path>
+          </svg>
+        )}
       </Host>
     );
   }

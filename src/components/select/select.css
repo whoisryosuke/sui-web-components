@@ -1,24 +1,175 @@
-sui-select {
-  position: relative;
-  display: flex;
-  width: 100%;
-}
-
-sui-select select.sui-select {
+sui-select .sui-select {
   display: block;
   width: 100%;
-  padding: calc(var(--sui-spacing-2) * 1px);
+  padding: var(--sui-select-padding);
   appearance: none;
   font-size: inherit;
   line-height: inherit;
-  border: 1px solid;
-  border-radius: var(--sui-borders-radius);
   color: inherit;
   background-color: transparent;
+
+  border: var(--sui-select-border);
+  border-top: var(--sui-select-border-top);
+  border-bottom: var(--sui-select-border-bottom);
+  border-left: var(--sui-select-border-left);
+  border-right: var(--sui-select-border-right);
+  border-width: var(--sui-select-border-width);
+  border-style: var(--sui-select-border-style);
+  border-color: var(--sui-select-border-color);
+  border-radius: var(--sui-select-border-radius);
 }
 
-sui-select svg {
+sui-select>svg {
   fill: var(--sui-colors-text, #010101);
   margin-left: -28px;
   align-self: center;
+}
+
+sui-select {
+  --sui-select-width: auto;
+  --sui-select-height: auto;
+  --sui-select-display: flex;
+  --sui-select-padding: var(--sui-spacing-2);
+  --sui-select-margin: 0;
+  --sui-select-color: var(--sui-colors-text, var(--sui-colors-black));
+  --sui-select-background-color: transparent;
+  --sui-select-font-family: var(--sui-fonts-body);
+  --sui-select-font-size: inherit;
+  --sui-select-font-weight: var(--sui-fonts-weights-body);
+  --sui-select-line-height: var(--sui-fonts-line-body);
+
+  --sui-select-border-top: var(--sui-select-border, 0);
+  --sui-select-border-bottom: var(--sui-select-border, 0);
+  --sui-select-border-left: var(--sui-select-border, 0);
+  --sui-select-border-right: var(--sui-select-border, 0);
+  --sui-select-border-style: solid;
+  --sui-select-border-color: var(--sui-colors-black);
+  --sui-select-border-radius: var(--sui-borders-radius);
+  --sui-select-border-width: 1px;
+
+  width: var(--sui-select-width);
+  min-width: var(--sui-select-min-width);
+  max-width: var(--sui-select-max-width);
+  height: var(--sui-select-height);
+  max-height: var(--sui-select-max-height);
+  min-height: var(--sui-select-min-height);
+
+  margin: var(--sui-select-margin, auto);
+
+  color: var(--sui-select-color);
+  background-color: var(--sui-select-background-color, var(--sui-colors-bg));
+
+  font-family: var(--sui-select-font-family);
+  font-size: var(--sui-select-font-size);
+  text-align: var(--sui-select-text-align);
+  line-height: var(--sui-select-line-height);
+  font-weight: var(--sui-select-font-weight);
+  letter-spacing: var(--sui-select-letter-spacing);
+
+  /* Text */
+  --sui-select-text-transform: none;
+  --sui-select-tap-color: transparent;
+  --sui-select-text-shadow: none;
+  --sui-select-text-shadow-inverted: var(--sui-shadows-text);
+  --sui-select-vertical-align: baseline;
+
+  /* Internal Shadow */
+  --sui-select-shadow-distance: 0em;
+  --sui-select-shadow-offset: (var(--sui-select-shadow-distance) / 2);
+  --sui-select-shadow-box-shadow: 0px calc(var(--sui-select-shadow-distance) * -1) 0px 0px var(--sui-borders-color) inset;
+
+  --sui-select-transition: opacity var(--sui-animation-duration) var(--sui-animation-easing),
+    background-color var(--sui-animation-duration) var(--sui-animation-easing),
+    color var(--sui-animation-duration) var(--sui-animation-easing),
+    box-shadow var(--sui-animation-duration) var(--sui-animation-easing),
+    background var(--sui-animation-duration) var(--sui-animation-easing);
+
+  --sui-select-will-change: "";
+
+  /*******************************
+            Button Styles
+  *******************************/
+  display: var(--sui-select-display);
+
+  vertical-align: var(--sui-select-vertical-align);
+
+  text-transform: var(--sui-select-text-transform);
+  text-shadow: var(--sui-select-text-shadow);
+  text-decoration: var(--sui-select-text-decoration, none);
+  font-style: normal;
+
+  border-radius: var(--sui-select-border-radius);
+  box-shadow: var(--sui-select-box-shadow);
+
+  transition: var(--sui-select-transition);
+  will-change: var(--sui-select-will-change);
+
+  -webkit-tap-highlight-color: var(--sui-select-tap-color);
+}
+
+.sui-select {
+  width: 100%;
+  display: block;
+  background: transparent;
+  border: none;
+  color: inherit;
+  text-decoration: inherit;
+  font: inherit;
+}
+
+@media only screen and (min-width: 400px) {
+  sui-select {
+    width: var(--sui-select-width-mobile, var(--sui-select-width));
+    max-width: var(--sui-select-max-width-mobile, var(--sui-select-max-width));
+    min-width: var(--sui-select-min-width-mobile, var(--sui-select-min-width));
+    height: var(--sui-select-height-mobile, var(--sui-select-height));
+    max-height: var(--sui-select-max-height-mobile, var(--sui-select-max-height));
+    min-height: var(--sui-select-min-height-mobile, var(--sui-select-min-height));
+
+    font-size: var(--sui-select-font-size-mobile, var(--sui-select-font-size));
+    text-align: var(--sui-select-text-align-mobile, var(--sui-select-text-align));
+  }
+
+  .sui-select {
+    padding: var(--sui-select-padding-mobile, var(--sui-select-padding));
+    margin: var(--sui-select-margin-mobile, var(--sui-select-margin));
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  sui-select {
+    width: var(--sui-select-width-tablet, var(--sui-select-width));
+    max-width: var(--sui-select-max-width-tablet, var(--sui-select-max-width));
+    min-width: var(--sui-select-min-width-tablet, var(--sui-select-min-width));
+    height: var(--sui-select-height-tablet, var(--sui-select-height));
+    max-height: var(--sui-select-max-height-tablet, var(--sui-select-max-height));
+    min-height: var(--sui-select-min-height-tablet, var(--sui-select-min-height));
+
+    font-size: var(--sui-select-font-size-tablet, var(--sui-select-font-size));
+    text-align: var(--sui-select-text-align-tablet, var(--sui-select-text-align));
+  }
+
+  .sui-select {
+    padding: var(--sui-select-padding-tablet, var(--sui-select-padding));
+    margin: var(--sui-select-margin-tablet, var(--sui-select-margin));
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  sui-select {
+    width: var(--sui-select-width-desktop, var(--sui-select-width));
+    max-width: var(--sui-select-max-width-desktop, var(--sui-select-max-width));
+    min-width: var(--sui-select-min-width-desktop, var(--sui-select-min-width));
+    height: var(--sui-select-height-desktop, var(--sui-select-height));
+    max-height: var(--sui-select-max-height-desktop, var(--sui-select-max-height));
+    min-height: var(--sui-select-min-height-desktop, var(--sui-select-min-height));
+
+    font-size: var(--sui-select-font-size-desktop, var(--sui-select-font-size));
+    text-align: var(--sui-select-text-align-desktop, var(--sui-select-text-align));
+  }
+
+  .sui-select {
+    padding: var(--sui-select-padding-desktop, var(--sui-select-padding));
+    margin: var(--sui-select-margin-desktop, var(--sui-select-margin));
+  }
 }

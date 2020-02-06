@@ -14,7 +14,6 @@
 <body>
 
   <sui-base>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
     <sui-button text="Submit"></sui-button>
     <sui-link href="#">A link component</sui-link>
     <sui-text as="h1">Lorem ipsum or something right?</sui-text>
@@ -32,6 +31,13 @@
       <sui-select>
         <option value="first">First option</option>
       </sui-select>
+      <sui-textarea placeholder="Comments and reviews"></sui-textarea>
+      <sui-input type="radio"></sui-input>
+      <sui-input type="checkbox" display="inline-block"></sui-input>
+      <sui-input type="radio" display="inline-block"></sui-input>
+      <sui-input type="range"></sui-input>
+      <sui-switch></sui-switch>
+      <sui-switch></sui-switch>
     </form>
     <sui-box display="flex">
       <sui-box color="white" bg="black" letter-spacing="10px">
@@ -46,14 +52,14 @@
 
       <sui-box display="flex" flex-direction="column">
         <sui-box color="white" bg="black" letter-spacing="10px" height="30px">
-          Box
+          Stacked Box
         </sui-box>
         <sui-box color="white" bg="blue" font-size="24px" text-align="center" border-top="4px solid red" height="30px">
-          Box
+          Stacked Box
         </sui-box>
         <sui-box color="white" bg="red" text-align="right" font-weight="bold" border-bottom="5px solid red"
           height="30px">
-          Box
+          Stacked Box
         </sui-box>
       </sui-box>
   </sui-base>
@@ -66,6 +72,14 @@
     component[3].padding = 4;
     component[4].padding = 4;
     component[5].padding = 4;
+
+    function toggleSwitch() {
+      const switches = document.getElementsByTagName("sui-switch");
+      switches[1].checked = !switches[1].checked;
+    }
+
+    // setTimeout(toggleSwitch, 3000)
+    setInterval(toggleSwitch, 3000)
 
   </script>
 
