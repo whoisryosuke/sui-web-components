@@ -25,6 +25,11 @@ export class Switch {
   @Prop() name: string = this.switchId;
 
   /**
+   * If true, disables the checked toggle using internal onClick. For use with other state management solutions.
+   */
+  @Prop() external: boolean = false;
+
+  /**
    * The value of the input.
    */
   @Prop({ mutable: true }) checked: boolean = false;
@@ -67,6 +72,12 @@ export class Switch {
     return this.checked;
   }
 
+  handleClick(event: UIEvent) {
+    if(!this.external) {
+      this.checked = !this.checked;
+    }
+  }
+
   render() {
     const labelId = this.switchId + "-lbl";
     return (
@@ -76,6 +87,7 @@ export class Switch {
           role="switch"
           aria-checked={this.checked ? "true" : "false"}
           aria-labelledby={labelId}
+          onClick={(event: UIEvent) => this.handleClick(event)}
         >
           <div aria-hidden="true"></div>
         </button>
