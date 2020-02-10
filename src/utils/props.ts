@@ -20,7 +20,7 @@ const convertNumToUnit = number => {
     (typeof number === "string" &&
       (!number.includes("px") || !number.includes("em")))
   ) {
-    return `calc(var(--${namespace}-spacing-${number}) * 1px)`;
+    return `var(--${namespace}-spacing-${number})`;
   }
   return number;
 };
@@ -40,6 +40,8 @@ export function setCustomProperty(componentName, prop, propName, elementStyle) {
   }
 }
 
+export function convertProps
+
 /**
  * Sets CSS custom properties on component using elementStyle
  * Checks if prop is array, then loops to set CSS Custom Props
@@ -58,6 +60,8 @@ export function responsiveProps(componentName, prop, propName, elementStyle) {
     propName === "width" || propName === "height"
       ? convertNumToPercent
       : convertNumToUnit;
+
+  
 
   // Check if prop is an array we can loop through
   // Or sets prop to CSS var by default
