@@ -1,5 +1,4 @@
 const namespace = "sui";
-const unit = "em";
 const breakpoints = ["desktop", "tablet", "mobile"];
 
 const convertNumToPercent = number => {
@@ -10,58 +9,119 @@ const convertNumToPercent = number => {
 };
 
 /**
- * Checks if value is number and create spacing calculation
+ * Checks if value is color unit (hex, rgb, hsl)
+ * and returns custom property (or returns value)
+ * @param number Component prop
+ */
+const convertColorToUnit = color => {
+  if (
+    typeof color === "string" &&
+    (!color.includes("#") || !color.includes("hsl") || !color.includes("rgb"))
+  ) {
+    return `var(--${namespace}-colors-${color})`;
+  }
+  return color;
+};
+
+/**
+ * Checks if value is number and return spacing custom property
  * Or return value if possible CSS property (px/em)
  * @param number Component prop
  */
-const convertNumToUnit = number => {
+const convertSpacingToUnit = spacing => {
   if (
-    typeof number === "number" ||
-    (typeof number === "string" &&
-      (!number.includes("px") || !number.includes("em")))
+    (typeof spacing === "number" && spacing <= 9) ||
+    (typeof spacing === "string" &&
+      !spacing.includes("px") &&
+      parseInt(spacing) <= 9)
   ) {
-    return `var(--${namespace}-spacing-${number})`;
+    return `var(--${namespace}-spacing-${spacing})`;
   }
-  return number;
+  return spacing;
 };
 
 /**
  * Takes string and returns CSS var
+ * @param key CSS custom property namespace
  * @param string CSS custom property name
  */
-const convertStringToVar = string => `var(--${namespace}-[${string}])`;
+const convertStringToTheme = (key, string) =>
+  `var(--${namespace}-${key}-${string})`;
 
-export function setCustomProperty(componentName, prop, propName, elementStyle) {
-  if (prop !== undefined) {
-    return elementStyle.setProperty(
-      `--${namespace}-${componentName}-${propName}`,
-      prop
-    );
+/**
+ * Returns conversion function for the prop
+ * @param propName CSS property name
+ */
+export function convertProps(propName) {
+  switch (propName) {
+    case "width":
+    case "min-width":
+    case "max-width":
+    case "height":
+    case "min-height":
+    case "max-height":
+      return convertNumToPercent;
+
+    case "color":
+    case "background-color":
+    case "border-color":
+      return convertColorToUnit;
+
+    case "padding":
+    case "margin":
+    case "top":
+    case "bottom":
+    case "left":
+    case "right":
+    case "border-width":
+    case "border-top":
+    case "border-bottom":
+    case "border-left":
+    case "border-right":
+    case "line-height":
+    case "font-size":
+      return convertSpacingToUnit;
+
+    // By default return the prop value
+    default:
+      return prop => prop;
   }
 }
 
-export function convertProps
+/**
+ * Sets the custom property directly and converts prop to theme value if possible
+ *
+ * @param componentName Name of component, used for custom property namespacing
+ * @param prop The prop value
+ * @param propName The name of the CSS property to update
+ * @param elementStyle Ref to the element's style object (document.getElementById('component').style)
+ */
+export function setCustomProperty(componentName, prop, propName, elementStyle) {
+  const conversion = convertProps(propName);
+
+  if (prop !== undefined) {
+    return elementStyle.setProperty(
+      `--${namespace}-${componentName}-${propName}`,
+      conversion(prop)
+    );
+  }
+}
 
 /**
  * Sets CSS custom properties on component using elementStyle
  * Checks if prop is array, then loops to set CSS Custom Props
  * Converts any numbers to units based on prop name/type
  *
- * @param componentName
- * @param prop
- * @param propName
- * @param elementStyle
+ * @param componentName Name of component, used for custom property namespacing
+ * @param prop The prop value
+ * @param propName The name of the CSS property to update
+ * @param elementStyle Ref to the element's style object (document.getElementById('component').style)
  */
 export function responsiveProps(componentName, prop, propName, elementStyle) {
   const customProperty = `--${namespace}-${componentName}-${propName}`;
   // Convert width/height to percent
   // Or convert to unit (em/px)
-  const conversion =
-    propName === "width" || propName === "height"
-      ? convertNumToPercent
-      : convertNumToUnit;
-
-  
+  const conversion = convertProps(propName);
 
   // Check if prop is an array we can loop through
   // Or sets prop to CSS var by default
@@ -122,6 +182,10 @@ export function margin(componentName, prop, elementStyle) {
 }
 
 // Font
+
+export function fontFamily(componentName, prop, elementStyle) {
+  setCustomProperty(componentName, prop, "font-family", elementStyle);
+}
 
 export function fontSize(componentName, prop, elementStyle) {
   responsiveProps(componentName, prop, "font-size", elementStyle);
