@@ -59,6 +59,8 @@
   justify-content: var(--sui-box-justify-content);
   flex-direction: var(--sui-box-flex-direction);
   flex-wrap: var(--sui-box-flex-wrap);
+
+  box-sizing: border-box;
 }
 
 @media only screen and (min-width: 400px) {
