@@ -1,7 +1,7 @@
 {
   "name": "sui-web-components",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Web Components with Utility Props for styling",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
