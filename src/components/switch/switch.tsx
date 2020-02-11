@@ -68,11 +68,7 @@ export class Switch {
     return Promise.resolve(this.nativeSwitch!);
   }
 
-  private getChecked(): boolean {
-    return this.checked;
-  }
-
-  handleClick(event: UIEvent) {
+  handleClick() {
     if(!this.external) {
       this.checked = !this.checked;
     }
@@ -87,7 +83,7 @@ export class Switch {
           role="switch"
           aria-checked={this.checked ? "true" : "false"}
           aria-labelledby={labelId}
-          onClick={(event: UIEvent) => this.handleClick(event)}
+          onClick={() => this.handleClick()}
         >
           <div aria-hidden="true"></div>
         </button>
