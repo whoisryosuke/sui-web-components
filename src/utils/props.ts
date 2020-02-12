@@ -41,14 +41,6 @@ const convertSpacingToUnit = spacing => {
 };
 
 /**
- * Takes string and returns CSS var
- * @param key CSS custom property namespace
- * @param string CSS custom property name
- */
-const convertStringToTheme = (key, string) =>
-  `var(--${namespace}-${key}-${string})`;
-
-/**
  * Returns conversion function for the prop
  * @param propName CSS property name
  */
@@ -237,18 +229,6 @@ export function borderLeft(componentName, prop, elementStyle) {
 
 export function borderRight(componentName, prop, elementStyle) {
   setCustomProperty(componentName, prop, "border-right", elementStyle);
-}
-
-export function borderWidth(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "border-width", elementStyle);
-}
-
-export function borderStyle(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "border-style", elementStyle);
-}
-
-export function borderColor(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "border-color", elementStyle);
 }
 
 export function borderRadius(componentName, prop, elementStyle) {
