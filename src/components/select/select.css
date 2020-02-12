@@ -13,9 +13,6 @@ sui-select .sui-select {
   border-bottom: var(--sui-select-border-bottom);
   border-left: var(--sui-select-border-left);
   border-right: var(--sui-select-border-right);
-  border-width: var(--sui-select-border-width);
-  border-style: var(--sui-select-border-style);
-  border-color: var(--sui-select-border-color);
   border-radius: var(--sui-select-border-radius);
 }
 
@@ -38,13 +35,11 @@ sui-select {
   --sui-select-font-weight: var(--sui-fonts-weights-body);
   --sui-select-line-height: var(--sui-fonts-line-body);
 
+  --sui-select-border: 1px var(--sui-colors-black) solid;
   --sui-select-border-top: var(--sui-select-border, 0);
   --sui-select-border-bottom: var(--sui-select-border, 0);
   --sui-select-border-left: var(--sui-select-border, 0);
   --sui-select-border-right: var(--sui-select-border, 0);
-  --sui-select-border-style: solid;
-  --sui-select-border-color: var(--sui-colors-black);
-  --sui-select-border-radius: var(--sui-borders-radius);
   --sui-select-border-width: 1px;
 
   width: var(--sui-select-width);

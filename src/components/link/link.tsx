@@ -22,9 +22,6 @@ import {
   borderBottom,
   borderLeft,
   borderRight,
-  borderWidth,
-  borderStyle,
-  borderColor,
   borderRadius
 } from "../../utils/props";
 
@@ -172,18 +169,6 @@ export class Link {
   @Prop() borderRight: string | number;
 
   /**
-   * CSS property for borderWidth
-   */
-  @Prop() borderWidth: string | number;
-  /**
-   * CSS property for borderStyle
-   */
-  @Prop() borderStyle: string;
-  /**
-   * CSS property for borderColor
-   */
-  @Prop() borderColor: string;
-  /**
    * CSS property for borderRadius
    */
   @Prop() borderRadius: string | number;
@@ -220,9 +205,6 @@ export class Link {
     borderBottom("link", this.borderBottom, this.el.style);
     borderLeft("link", this.borderLeft, this.el.style);
     borderRight("link", this.borderRight, this.el.style);
-    borderWidth("link", this.borderWidth, this.el.style);
-    borderStyle("link", this.borderStyle, this.el.style);
-    borderColor("link", this.borderColor, this.el.style);
     borderRadius("link", this.borderRadius, this.el.style);
   }
 

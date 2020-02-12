@@ -49,9 +49,6 @@
   border-bottom: var(--sui-box-border-bottom);
   border-left: var(--sui-box-border-left);
   border-right: var(--sui-box-border-right);
-  border-width: var(--sui-box-border-width);
-  border-style: var(--sui-box-border-style);
-  border-color: var(--sui-box-border-color);
   border-radius: var(--sui-box-border-radius);
 
   align-items: var(--sui-box-align-items);

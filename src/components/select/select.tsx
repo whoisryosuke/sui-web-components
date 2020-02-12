@@ -22,9 +22,6 @@ import {
   borderBottom,
   borderLeft,
   borderRight,
-  borderWidth,
-  borderStyle,
-  borderColor,
   borderRadius
 } from "../../utils/props";
 
@@ -181,19 +178,6 @@ export class Select {
    * CSS property for borderRight
    */
   @Prop() borderRight: string | number;
-
-  /**
-   * CSS property for borderWidth
-   */
-  @Prop() borderWidth: string | number;
-  /**
-   * CSS property for borderStyle
-   */
-  @Prop() borderStyle: string;
-  /**
-   * CSS property for borderColor
-   */
-  @Prop() borderColor: string;
   /**
    * CSS property for borderRadius
    */
@@ -231,9 +215,6 @@ export class Select {
     borderBottom("select", this.borderBottom, this.el.style);
     borderLeft("select", this.borderLeft, this.el.style);
     borderRight("select", this.borderRight, this.el.style);
-    borderWidth("select", this.borderWidth, this.el.style);
-    borderStyle("select", this.borderStyle, this.el.style);
-    borderColor("select", this.borderColor, this.el.style);
     borderRadius("select", this.borderRadius, this.el.style);
   }
 
