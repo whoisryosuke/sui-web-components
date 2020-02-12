@@ -63,7 +63,7 @@ export class Switch {
     return Promise.resolve(this.nativeSwitch!);
   }
 
-  private getChecked(): boolean {
+  getChecked(): boolean {
     return this.checked;
   }
 
