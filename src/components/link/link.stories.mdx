@@ -1,11 +1,14 @@
 import { html } from "lit-html";
-import { Story, Preview, Meta, Props } from "@storybook/addon-docs";
+import { Story, Preview, Meta, Props } from "@storybook/addon-docs/blocks";
 import { action } from "@storybook/addon-actions";
 import { withWebComponentsKnobs } from "storybook-addon-web-components-knobs";
 import { withKnobs, text, number } from "@storybook/addon-knobs";
 
+import { Link } from "../../../dist/index.js";
+
 <Meta
   title="Components/Link"
+  component={Link}
   parameters={{
     component: "sui-link",
     decorators: [withKnobs, withWebComponentsKnobs],
@@ -13,7 +16,7 @@ import { withKnobs, text, number } from "@storybook/addon-knobs";
   }}
 />
 
-# Demo Web Component Card
+# &lt;sui-link&gt;
 
 A component meant to display small information with additional data on the back.
 
@@ -42,3 +45,7 @@ import "@foo/demo-wc-card/demo-wc-card.js";
     `}
   </Story>
 </Preview>
+
+## API
+
+<Props of="sui-link" />
