@@ -1,9 +1,20 @@
 const namespace = "sui";
 const breakpoints = ["desktop", "tablet", "mobile"];
 
+/**
+ * Converts number to percent
+ * or returns the value (for units with px/em/etc)
+ * @param number Number or string (of a number or CSS unit)
+ */
 const convertNumToPercent = number => {
-  if (typeof number == "number") {
-    return `${Math.floor(number * 100)}%`;
+  const parsedNum = parseFloat(number)
+  // If it's a number type, assume user wants percent
+  // If string passed, parsed num should be 1 or less, and contain no characters
+  if (
+      typeof number == "number" || 
+    (typeof number == 'string' && parsedNum <= 1 && !/[a-z]/i.test(number))
+    ) {
+    return `${Math.floor(parsedNum * 100)}%`;
   }
   return number;
 };
@@ -39,14 +50,6 @@ const convertSpacingToUnit = spacing => {
   }
   return spacing;
 };
-
-/**
- * Takes string and returns CSS var
- * @param key CSS custom property namespace
- * @param string CSS custom property name
- */
-const convertStringToTheme = (key, string) =>
-  `var(--${namespace}-${key}-${string})`;
 
 /**
  * Returns conversion function for the prop
@@ -123,17 +126,21 @@ export function responsiveProps(componentName, prop, propName, elementStyle) {
   // Or convert to unit (em/px)
   const conversion = convertProps(propName);
 
+  let processProp = prop
+  if(typeof prop === 'string' && prop.includes(",")) {
+    processProp = prop.split(",");
+  }
   // Check if prop is an array we can loop through
   // Or sets prop to CSS var by default
-  if (prop && (Array.isArray(prop) || typeof prop === "object")) {
+  if (processProp && (Array.isArray(processProp) || typeof processProp === "object")) {
     // Loop through array and set CSS vars
-    prop.reverse().map((currentValue, index) => {
+    processProp.reverse().map((currentValue, index) => {
       elementStyle.setProperty(
         `${customProperty}-${breakpoints[index]}`,
         conversion(currentValue)
       );
       // Sets last array value to default breakpoint prop value
-      if (prop.length - 1 === index) {
+      if (processProp.length - 1 === index) {
         elementStyle.setProperty(`${customProperty}`, conversion(currentValue));
       }
     });

@@ -85,6 +85,7 @@
 .sui-link {
   width: 100%;
   display: block;
+  box-sizing: border-box;
   background: transparent;
   border: none;
   color: inherit;

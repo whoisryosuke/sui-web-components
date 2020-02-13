@@ -761,6 +761,10 @@ export namespace Components {
     */
     'checked': boolean;
     /**
+    * If true, disables the checked toggle using internal onClick. For use with other state management solutions.
+    */
+    'external': boolean;
+    /**
     * Returns the native `<input>` element used under the hood.
     */
     'getInputElement': () => Promise<HTMLInputElement>;
@@ -1853,6 +1857,10 @@ declare namespace LocalJSX {
     * The value of the input.
     */
     'checked'?: boolean;
+    /**
+    * If true, disables the checked toggle using internal onClick. For use with other state management solutions.
+    */
+    'external'?: boolean;
     /**
     * The name of the control, which is submitted with the form data.
     */
