@@ -1,4 +1,7 @@
 :host {
+  /**
+    * @prop --sui-box-width: Width of the button. Can be set through utility props.
+  */
   --sui-box-width: 100%;
   --sui-box-height: auto;
   --sui-box-display: block;

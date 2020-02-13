@@ -50,6 +50,13 @@
 | `zIndex`         | `z-index`         |                                     | `number \| string`                         | `undefined` |
 
 
+## CSS Custom Properties
+
+| Name              | Description                                            |
+| ----------------- | ------------------------------------------------------ |
+| `--sui-box-width` | Width of the button. Can be set through utility props. |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
