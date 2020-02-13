@@ -1,16 +1,47 @@
 /* global window */
-
+import { html } from "lit-html";
 import {
   configure,
-  addParameters
-  // setCustomElements,
+  addDecorator,
+  addParameters,
+  setCustomElements
 } from "@storybook/web-components";
+import { withA11y } from "@storybook/addon-a11y";
 
 import customElements from "../custom-elements.json";
 
-// setCustomElements(customElements);
+import { applyPolyfills, defineCustomElements } from "../loader";
+
+// Load Stencil.JS Web Components
+applyPolyfills().then(() => {
+  defineCustomElements(window);
+});
+
+// Wrap all stories in the base component
+addDecorator(
+  storyFn =>
+    html`
+      <sui-base>${storyFn()}</sui-base>
+    `
+);
+
+// Load custom-element.json for documentation of props
+setCustomElements(customElements);
+
+// Check all components for a11y rules
+addDecorator(withA11y);
 
 addParameters({
+  a11y: {
+    config: {},
+    options: {
+      checks: { "color-contrast": { options: { noScroll: true } } },
+      restoreScroll: true
+    }
+  },
+  options: {
+    showRoots: true
+  },
   docs: {
     iframeHeight: "200px"
   }

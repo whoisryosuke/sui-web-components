@@ -28,9 +28,15 @@
     "@dcylabs/stencil-custom-elements-json": "^1.0.0",
     "@stencil/core": "^1.8.4",
     "@stencil/sass": "^1.1.1",
+    "@storybook/addon-a11y": "^5.3.13",
+    "@storybook/addon-actions": "^5.3.13",
+    "@storybook/addon-docs": "^5.3.13",
+    "@storybook/addon-knobs": "^5.3.13",
+    "@storybook/addon-links": "^5.3.13",
     "@storybook/web-components": "^5.3.13",
     "babel-loader": "^8.0.6",
-    "lit-html": "^1.1.2"
+    "lit-html": "^1.1.2",
+    "storybook-addon-web-components-knobs": "^0.2.8"
   },
   "license": "MIT",
   "dependencies": {}

@@ -1,0 +1,44 @@
+import { html } from "lit-html";
+import { Story, Preview, Meta, Props } from "@storybook/addon-docs";
+import { action } from "@storybook/addon-actions";
+import { withWebComponentsKnobs } from "storybook-addon-web-components-knobs";
+import { withKnobs, text, number } from "@storybook/addon-knobs";
+
+<Meta
+  title="Components/Link"
+  parameters={{
+    component: "sui-link",
+    decorators: [withKnobs, withWebComponentsKnobs],
+    options: { selectedPanel: "storybookjs/knobs/panel" }
+  }}
+/>
+
+# Demo Web Component Card
+
+A component meant to display small information with additional data on the back.
+
+## Features:
+
+- looks like a game card
+- content in the front
+- data in the back
+
+## How to use
+
+### Installation
+
+```bash
+yarn add @foo/demo-wc-card
+```
+
+```js
+import "@foo/demo-wc-card/demo-wc-card.js";
+```
+
+<Preview withToolbar>
+  <Story name="Simple">
+    {html`
+      <sui-link href="#">Hello World</sui-link>
+    `}
+  </Story>
+</Preview>

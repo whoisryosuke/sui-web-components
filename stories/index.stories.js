@@ -1,14 +1,12 @@
 import { html } from "lit-html";
-import { applyPolyfills, defineCustomElements } from "../loader";
-
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
-
-// import '../my-component.js';
+import { withKnobs } from "@storybook/addon-knobs";
+import { withWebComponentsKnobs } from "storybook-addon-web-components-knobs";
 
 export default {
-  title: "Demo"
+  title: "Demo",
+  component: "sui-button",
+  decorators: [withKnobs, withWebComponentsKnobs],
+  parameters: { options: { selectedPanel: "storybookjs/knobs/panel" } }
 };
 
 export const Heading = () => html`
