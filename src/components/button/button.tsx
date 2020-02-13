@@ -22,6 +22,9 @@ import {
   borderBottom,
   borderLeft,
   borderRight,
+  borderWidth,
+  borderStyle,
+  borderColor,
   borderRadius
 } from "../../utils/props";
 
@@ -179,6 +182,18 @@ export class Button {
   @Prop() borderRight: string | number;
 
   /**
+   * CSS property for borderWidth
+   */
+  @Prop() borderWidth: string | number;
+  /**
+   * CSS property for borderStyle
+   */
+  @Prop() borderStyle: string;
+  /**
+   * CSS property for borderColor
+   */
+  @Prop() borderColor: string;
+  /**
    * CSS property for borderRadius
    */
   @Prop() borderRadius: string | number;
@@ -215,6 +230,9 @@ export class Button {
     borderBottom("button", this.borderBottom, this.el.style);
     borderLeft("button", this.borderLeft, this.el.style);
     borderRight("button", this.borderRight, this.el.style);
+    borderWidth("button", this.borderWidth, this.el.style);
+    borderStyle("button", this.borderStyle, this.el.style);
+    borderColor("button", this.borderColor, this.el.style);
     borderRadius("button", this.borderRadius, this.el.style);
   }
 

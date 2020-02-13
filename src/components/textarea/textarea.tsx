@@ -22,6 +22,9 @@ import {
   borderBottom,
   borderLeft,
   borderRight,
+  borderWidth,
+  borderStyle,
+  borderColor,
   borderRadius
 } from "../../utils/props";
 
@@ -195,6 +198,19 @@ export class Textarea {
    * CSS property for borderRight
    */
   @Prop() borderRight: string | number;
+
+  /**
+   * CSS property for borderWidth
+   */
+  @Prop() borderWidth: string | number;
+  /**
+   * CSS property for borderStyle
+   */
+  @Prop() borderStyle: string;
+  /**
+   * CSS property for borderColor
+   */
+  @Prop() borderColor: string;
   /**
    * CSS property for borderRadius
    */
@@ -232,6 +248,9 @@ export class Textarea {
     borderBottom("textarea", this.borderBottom, this.el.style);
     borderLeft("textarea", this.borderLeft, this.el.style);
     borderRight("textarea", this.borderRight, this.el.style);
+    borderWidth("textarea", this.borderWidth, this.el.style);
+    borderStyle("textarea", this.borderStyle, this.el.style);
+    borderColor("textarea", this.borderColor, this.el.style);
     borderRadius("textarea", this.borderRadius, this.el.style);
   }
 

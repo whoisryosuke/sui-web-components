@@ -33,6 +33,9 @@ import {
   borderBottom,
   borderLeft,
   borderRight,
+  borderWidth,
+  borderStyle,
+  borderColor,
   borderRadius
 } from "../../utils/props";
 
@@ -335,6 +338,18 @@ export class Input {
   @Prop() borderRight: string | number;
 
   /**
+   * CSS property for borderWidth
+   */
+  @Prop() borderWidth: string | number;
+  /**
+   * CSS property for borderStyle
+   */
+  @Prop() borderStyle: string;
+  /**
+   * CSS property for borderColor
+   */
+  @Prop() borderColor: string;
+  /**
    * CSS property for borderRadius
    */
   @Prop() borderRadius: string | number;
@@ -371,6 +386,9 @@ export class Input {
     borderBottom("input", this.borderBottom, this.el.style);
     borderLeft("input", this.borderLeft, this.el.style);
     borderRight("input", this.borderRight, this.el.style);
+    borderWidth("input", this.borderWidth, this.el.style);
+    borderStyle("input", this.borderStyle, this.el.style);
+    borderColor("input", this.borderColor, this.el.style);
     borderRadius("input", this.borderRadius, this.el.style);
   }
 

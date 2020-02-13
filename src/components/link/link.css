@@ -36,6 +36,9 @@
   border-bottom: var(--sui-link-border-bottom);
   border-left: var(--sui-link-border-left);
   border-right: var(--sui-link-border-right);
+  border-width: var(--sui-link-border-width);
+  border-style: var(--sui-link-border-style);
+  border-color: var(--sui-link-border-color);
   border-radius: var(--sui-link-border-radius);
 
   /* Text */

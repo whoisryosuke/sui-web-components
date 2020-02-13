@@ -29,6 +29,9 @@
   border-bottom: var(--sui-button-border-bottom);
   border-left: var(--sui-button-border-left);
   border-right: var(--sui-button-border-right);
+  border-width: var(--sui-button-border-width);
+  border-style: var(--sui-button-border-style);
+  border-color: var(--sui-button-border-color);
   border-radius: var(--sui-button-border-radius);
 
   /* Button */

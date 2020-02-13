@@ -22,6 +22,9 @@ import {
   borderBottom,
   borderLeft,
   borderRight,
+  borderWidth,
+  borderStyle,
+  borderColor,
   borderRadius,
   position,
   zIndex,
@@ -170,6 +173,21 @@ export class Box {
   @Prop() borderRight: string | number;
 
   /**
+   * CSS property for borderWidth
+   */
+  @Prop() borderWidth: string | number;
+
+  /**
+   * CSS property for borderStyle
+   */
+  @Prop() borderStyle: string;
+
+  /**
+   * CSS property for borderColor
+   */
+  @Prop() borderColor: string;
+
+  /**
    * CSS property for borderRadius
    */
   @Prop() borderRadius: string | number;
@@ -230,6 +248,9 @@ export class Box {
     borderBottom("box", this.borderBottom, this.el.style);
     borderLeft("box", this.borderLeft, this.el.style);
     borderRight("box", this.borderRight, this.el.style);
+    borderWidth("box", this.borderWidth, this.el.style);
+    borderStyle("box", this.borderStyle, this.el.style);
+    borderColor("box", this.borderColor, this.el.style);
     borderRadius("box", this.borderRadius, this.el.style);
 
     // Position
