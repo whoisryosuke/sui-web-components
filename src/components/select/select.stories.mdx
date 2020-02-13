@@ -4,27 +4,26 @@ import { action } from "@storybook/addon-actions";
 import { withWebComponentsKnobs } from "storybook-addon-web-components-knobs";
 import { withKnobs, text, number } from "@storybook/addon-knobs";
 
-import { Link } from "../../../dist/index.js";
+import { Select } from "../../../dist/index.js";
 
 <Meta
-  title="Components/Link"
-  component={Link}
+  title="Components/Select"
+  component={Select}
   parameters={{
-    component: "sui-link",
+    component: "sui-select",
     decorators: [withKnobs, withWebComponentsKnobs],
     options: { selectedPanel: "storybookjs/knobs/panel" }
   }}
 />
 
-# &lt;sui-link&gt;
+# &lt;sui-select&gt;
 
-A component used for linking users between pages. Similar to the native `<a>` element.
+A component used for linking users between pages. Similar to the native `<select>` element.
 
 ## Features:
 
-- Defaults to `<a>` element
+- Defaults to `<select>` element
 - Redefine element using `as` prop
-- [WAI-ARIA compliant](https://www.w3.org/TR/wai-aria-practices-1.1/#link)
 
 <sui-button bg="gray" p="2" href="#">Source code on Github</sui-button>
 
@@ -35,11 +34,13 @@ A component used for linking users between pages. Similar to the native `<a>` el
 <Preview withToolbar>
   <Story name="Basic">
     {html`
-      <sui-link href="#">Hello World</sui-link>
+      <sui-select>
+        <option value="first">First option</option>
+      </sui-select>
     `}
   </Story>
 </Preview>
 
 ## API
 
-<Props of="sui-link" />
+<Props of="sui-select" />

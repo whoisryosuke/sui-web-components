@@ -4,27 +4,25 @@ import { action } from "@storybook/addon-actions";
 import { withWebComponentsKnobs } from "storybook-addon-web-components-knobs";
 import { withKnobs, text, number } from "@storybook/addon-knobs";
 
-import { Link } from "../../../dist/index.js";
+import { Textarea } from "../../../dist/index.js";
 
 <Meta
-  title="Components/Link"
-  component={Link}
+  title="Components/Textarea"
+  component={Textarea}
   parameters={{
-    component: "sui-link",
+    component: "sui-textarea",
     decorators: [withKnobs, withWebComponentsKnobs],
     options: { selectedPanel: "storybookjs/knobs/panel" }
   }}
 />
 
-# &lt;sui-link&gt;
+# &lt;sui-textarea&gt;
 
-A component used for linking users between pages. Similar to the native `<a>` element.
+A component used for displaying textarea. Contains styling for paragraph (`p`) and heading tags (`h1` through `h5`).
 
 ## Features:
 
-- Defaults to `<a>` element
-- Redefine element using `as` prop
-- [WAI-ARIA compliant](https://www.w3.org/TR/wai-aria-practices-1.1/#link)
+- Defaults to `<textarea>`
 
 <sui-button bg="gray" p="2" href="#">Source code on Github</sui-button>
 
@@ -35,11 +33,11 @@ A component used for linking users between pages. Similar to the native `<a>` el
 <Preview withToolbar>
   <Story name="Basic">
     {html`
-      <sui-link href="#">Hello World</sui-link>
+      <sui-textarea placeholder="Comments and reviews"></sui-textarea>
     `}
   </Story>
 </Preview>
 
 ## API
 
-<Props of="sui-link" />
+<Props of="sui-textarea" />

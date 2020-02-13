@@ -1,0 +1,76 @@
+import { html } from "lit-html";
+import { Story, Preview, Meta, Props } from "@storybook/addon-docs/blocks";
+import { action } from "@storybook/addon-actions";
+import { withWebComponentsKnobs } from "storybook-addon-web-components-knobs";
+import { withKnobs, text, number } from "@storybook/addon-knobs";
+
+import { Box } from "../../../dist/index.js";
+
+<Meta
+  title="Components/Box"
+  component={Box}
+  parameters={{
+    component: "sui-box",
+    decorators: [withKnobs, withWebComponentsKnobs],
+    options: { selectedPanel: "storybookjs/knobs/panel" }
+  }}
+/>
+
+# &lt;sui-box&gt;
+
+A component used for displaying content inside a box, the building block of layout.
+
+## Features:
+
+- Defaults to `<div>`
+- Redefine element using `as` prop
+
+<sui-button bg="gray" p="2" href="#">Source code on Github</sui-button>
+
+## Examples
+
+### Basic
+
+<Preview withToolbar>
+  <Story name="Basic">
+    {html`
+      <sui-box>Blaze it</sui-box>
+    `}
+  </Story>
+</Preview>
+
+### Flex
+
+<Preview withToolbar>
+  <Story name="Flex">
+    {html`
+      <sui-box display="flex">
+        <sui-box>
+          1/3 Width
+        </sui-box>
+        <sui-box>
+          1/3 Width
+        </sui-box>
+        <sui-box>
+          1/3 Width
+        </sui-box>
+      </sui-box>
+    `}
+  </Story>
+</Preview>
+
+### Styled
+
+<Preview withToolbar>
+  <Story name="Styled">
+    {html`
+      <sui-box color="white" bg="black" letter-spacing="10px" height="30px">
+        Black box with white text, spaced by 10px, with a height of 30px
+      </sui-box>
+    `}
+  </Story>
+</Preview>
+
+## API
+
+<Props of="sui-box" />

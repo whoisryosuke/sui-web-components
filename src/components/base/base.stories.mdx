@@ -4,27 +4,28 @@ import { action } from "@storybook/addon-actions";
 import { withWebComponentsKnobs } from "storybook-addon-web-components-knobs";
 import { withKnobs, text, number } from "@storybook/addon-knobs";
 
-import { Link } from "../../../dist/index.js";
+import { Base } from "../../../dist/index.js";
 
 <Meta
-  title="Components/Link"
-  component={Link}
+  title="Components/Base"
+  component={Base}
   parameters={{
-    component: "sui-link",
+    component: "sui-base",
     decorators: [withKnobs, withWebComponentsKnobs],
     options: { selectedPanel: "storybookjs/knobs/panel" }
   }}
 />
 
-# &lt;sui-link&gt;
+# &lt;sui-base&gt;
 
-A component used for linking users between pages. Similar to the native `<a>` element.
+A component used for passing theme values (or CSS custom properties) to nested components. Contains all "global" design tokens and theme logic, like colors and typography settings.
+
+Not required if you use your own CSS with any necessary custom properties (colors, spacing, etc). Required for using themed utility props, such as the `color` or `margin` utility props.
 
 ## Features:
 
-- Defaults to `<a>` element
-- Redefine element using `as` prop
-- [WAI-ARIA compliant](https://www.w3.org/TR/wai-aria-practices-1.1/#link)
+- Shadow DOM
+- Doesn't create a DOM element, only returns slotted content
 
 <sui-button bg="gray" p="2" href="#">Source code on Github</sui-button>
 
@@ -35,11 +36,13 @@ A component used for linking users between pages. Similar to the native `<a>` el
 <Preview withToolbar>
   <Story name="Basic">
     {html`
-      <sui-link href="#">Hello World</sui-link>
+      <sui-base>
+        Your app
+      </sui-base>
     `}
   </Story>
 </Preview>
 
 ## API
 
-<Props of="sui-link" />
+<Props of="sui-base" />

@@ -4,42 +4,51 @@ import { action } from "@storybook/addon-actions";
 import { withWebComponentsKnobs } from "storybook-addon-web-components-knobs";
 import { withKnobs, text, number } from "@storybook/addon-knobs";
 
-import { Link } from "../../../dist/index.js";
+import { Text } from "../../../dist/index.js";
 
 <Meta
-  title="Components/Link"
-  component={Link}
+  title="Components/Text"
+  component={Text}
   parameters={{
-    component: "sui-link",
+    component: "sui-text",
     decorators: [withKnobs, withWebComponentsKnobs],
     options: { selectedPanel: "storybookjs/knobs/panel" }
   }}
 />
 
-# &lt;sui-link&gt;
+# &lt;sui-text&gt;
 
-A component used for linking users between pages. Similar to the native `<a>` element.
+A component used for displaying text. Contains styling for paragraph (`p`) and heading tags (`h1` through `h5`).
 
 ## Features:
 
-- Defaults to `<a>` element
+- Defaults to `<p>`
 - Redefine element using `as` prop
-- [WAI-ARIA compliant](https://www.w3.org/TR/wai-aria-practices-1.1/#link)
 
 <sui-button bg="gray" p="2" href="#">Source code on Github</sui-button>
 
 ## Examples
 
-### Basic
+### Paragraph
 
 <Preview withToolbar>
-  <Story name="Basic">
+  <Story name="Paragraph">
     {html`
-      <sui-link href="#">Hello World</sui-link>
+      <sui-text>Lorem ipsum or something right?</sui-text>
+    `}
+  </Story>
+</Preview>
+
+### Heading
+
+<Preview withToolbar>
+  <Story name="Heading">
+    {html`
+      <sui-text as="h1">Lorem ipsum or something right?</sui-text>
     `}
   </Story>
 </Preview>
 
 ## API
 
-<Props of="sui-link" />
+<Props of="sui-text" />

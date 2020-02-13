@@ -1,0 +1,64 @@
+import { html } from "lit-html";
+import { Story, Preview, Meta, Props } from "@storybook/addon-docs/blocks";
+import { action } from "@storybook/addon-actions";
+import { withWebComponentsKnobs } from "storybook-addon-web-components-knobs";
+import { withKnobs, button, number } from "@storybook/addon-knobs";
+
+import { Button } from "../../../dist/index.js";
+
+<Meta
+  title="Components/Button"
+  component={Button}
+  parameters={{
+    component: "sui-button",
+    decorators: [withKnobs, withWebComponentsKnobs],
+    options: { selectedPanel: "storybookjs/knobs/panel" }
+  }}
+/>
+
+# &lt;sui-button&gt;
+
+A component used for enabling user click interactions. Can be used as a classic "button" (`<button>`) or as a linked button (`<a>`).
+
+## Features:
+
+- Defaults to `<button>`
+- Redefine element using `as` prop
+
+<sui-button bg="gray" p="2" href="#">Source code on Github</sui-button>
+
+## Examples
+
+### Basic
+
+<Preview withToolbar>
+  <Story name="Basic">
+    {html`
+      <sui-button text="Submit"></sui-button>
+    `}
+  </Story>
+</Preview>
+
+### Link
+
+<Preview withToolbar>
+  <Story name="Link">
+    {html`
+      <sui-button href="#">Linked button</sui-button>
+    `}
+  </Story>
+</Preview>
+
+### Styled
+
+<Preview withToolbar>
+  <Story name="Styled">
+    {html`
+      <sui-button bg="gray" p="2">Gray button</sui-button>
+    `}
+  </Story>
+</Preview>
+
+## API
+
+<Props of="sui-button" />
