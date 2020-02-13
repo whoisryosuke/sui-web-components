@@ -8,14 +8,14 @@ sui-select .sui-select {
   color: inherit;
   background-color: transparent;
 
+  border-width: var(--sui-select-border-width);
+  border-style: var(--sui-select-border-style);
+  border-color: var(--sui-select-border-color);
   border: var(--sui-select-border);
   border-top: var(--sui-select-border-top);
   border-bottom: var(--sui-select-border-bottom);
   border-left: var(--sui-select-border-left);
   border-right: var(--sui-select-border-right);
-  border-width: var(--sui-select-border-width);
-  border-style: var(--sui-select-border-style);
-  border-color: var(--sui-select-border-color);
   border-radius: var(--sui-select-border-radius);
 }
 

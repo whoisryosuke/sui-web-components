@@ -31,14 +31,14 @@
   font-weight: var(--sui-text-font-weight);
   letter-spacing: var(--sui-text-letter-spacing);
 
+  border-width: var(--sui-text-border-width);
+  border-style: var(--sui-text-border-style);
+  border-color: var(--sui-text-border-color);
   border: var(--sui-text-border);
   border-top: var(--sui-text-border-top);
   border-bottom: var(--sui-text-border-bottom);
   border-left: var(--sui-text-border-left);
   border-right: var(--sui-text-border-right);
-  border-width: var(--sui-text-border-width);
-  border-style: var(--sui-text-border-style);
-  border-color: var(--sui-text-border-color);
   border-radius: var(--sui-text-border-radius);
 
   /* Text */

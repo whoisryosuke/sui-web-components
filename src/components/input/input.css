@@ -7,14 +7,14 @@
   color: inherit;
   background-color: transparent;
 
+  border-width: var(--sui-input-border-width);
+  border-style: var(--sui-input-border-style);
+  border-color: var(--sui-input-border-color);
   border: var(--sui-input-border);
   border-top: var(--sui-input-border-top);
   border-bottom: var(--sui-input-border-bottom);
   border-left: var(--sui-input-border-left);
   border-right: var(--sui-input-border-right);
-  border-width: var(--sui-input-border-width);
-  border-style: var(--sui-input-border-style);
-  border-color: var(--sui-input-border-color);
   border-radius: var(--sui-input-border-radius);
 }
 

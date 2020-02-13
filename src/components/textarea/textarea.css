@@ -8,14 +8,14 @@
   color: inherit;
   background-color: transparent;
 
+  border-width: var(--sui-textarea-border-width);
+  border-style: var(--sui-textarea-border-style);
+  border-color: var(--sui-textarea-border-color);
   border: var(--sui-textarea-border);
   border-top: var(--sui-textarea-border-top);
   border-bottom: var(--sui-textarea-border-bottom);
   border-left: var(--sui-textarea-border-left);
   border-right: var(--sui-textarea-border-right);
-  border-width: var(--sui-textarea-border-width);
-  border-style: var(--sui-textarea-border-style);
-  border-color: var(--sui-textarea-border-color);
   border-radius: var(--sui-textarea-border-radius);
 }
 

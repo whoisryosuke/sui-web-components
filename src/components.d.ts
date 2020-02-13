@@ -618,7 +618,6 @@ export namespace Components {
     */
     'width': string | string[] | number | number[];
   }
-  interface SuiRadio {}
   interface SuiSelect {
     /**
     * HTML element to use as basis
@@ -1071,12 +1070,6 @@ declare global {
     new (): HTMLSuiLinkElement;
   };
 
-  interface HTMLSuiRadioElement extends Components.SuiRadio, HTMLStencilElement {}
-  var HTMLSuiRadioElement: {
-    prototype: HTMLSuiRadioElement;
-    new (): HTMLSuiRadioElement;
-  };
-
   interface HTMLSuiSelectElement extends Components.SuiSelect, HTMLStencilElement {}
   var HTMLSuiSelectElement: {
     prototype: HTMLSuiSelectElement;
@@ -1106,7 +1099,6 @@ declare global {
     'sui-button': HTMLSuiButtonElement;
     'sui-input': HTMLSuiInputElement;
     'sui-link': HTMLSuiLinkElement;
-    'sui-radio': HTMLSuiRadioElement;
     'sui-select': HTMLSuiSelectElement;
     'sui-switch': HTMLSuiSwitchElement;
     'sui-text': HTMLSuiTextElement;
@@ -1719,7 +1711,6 @@ declare namespace LocalJSX {
     */
     'width'?: string | string[] | number | number[];
   }
-  interface SuiRadio {}
   interface SuiSelect {
     /**
     * HTML element to use as basis
@@ -2140,7 +2131,6 @@ declare namespace LocalJSX {
     'sui-button': SuiButton;
     'sui-input': SuiInput;
     'sui-link': SuiLink;
-    'sui-radio': SuiRadio;
     'sui-select': SuiSelect;
     'sui-switch': SuiSwitch;
     'sui-text': SuiText;
@@ -2159,7 +2149,6 @@ declare module "@stencil/core" {
       'sui-button': LocalJSX.SuiButton & JSXBase.HTMLAttributes<HTMLSuiButtonElement>;
       'sui-input': LocalJSX.SuiInput & JSXBase.HTMLAttributes<HTMLSuiInputElement>;
       'sui-link': LocalJSX.SuiLink & JSXBase.HTMLAttributes<HTMLSuiLinkElement>;
-      'sui-radio': LocalJSX.SuiRadio & JSXBase.HTMLAttributes<HTMLSuiRadioElement>;
       'sui-select': LocalJSX.SuiSelect & JSXBase.HTMLAttributes<HTMLSuiSelectElement>;
       'sui-switch': LocalJSX.SuiSwitch & JSXBase.HTMLAttributes<HTMLSuiSwitchElement>;
       'sui-text': LocalJSX.SuiText & JSXBase.HTMLAttributes<HTMLSuiTextElement>;
