@@ -1,0 +1,1159 @@
+{
+  "tags": [
+    {
+      "name": "sui-base",
+      "properties": [],
+      "events": []
+    },
+    {
+      "name": "sui-box",
+      "properties": [
+        {
+          "name": "alignContent",
+          "type": "string"
+        },
+        {
+          "name": "alignItems",
+          "type": "string"
+        },
+        {
+          "name": "background",
+          "type": "string"
+        },
+        {
+          "name": "bg",
+          "type": "string"
+        },
+        {
+          "name": "border",
+          "type": "number | string"
+        },
+        {
+          "name": "borderBottom",
+          "type": "number | string"
+        },
+        {
+          "name": "borderColor",
+          "type": "string"
+        },
+        {
+          "name": "borderLeft",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRadius",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRight",
+          "type": "number | string"
+        },
+        {
+          "name": "borderStyle",
+          "type": "string"
+        },
+        {
+          "name": "borderTop",
+          "type": "number | string"
+        },
+        {
+          "name": "borderWidth",
+          "type": "number | string"
+        },
+        {
+          "name": "bottom",
+          "type": "number | string"
+        },
+        {
+          "name": "color",
+          "type": "string"
+        },
+        {
+          "name": "display",
+          "type": "string"
+        },
+        {
+          "name": "flexDirection",
+          "type": "string"
+        },
+        {
+          "name": "flexWrap",
+          "type": "string"
+        },
+        {
+          "name": "fontSize",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "fontWeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "height",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "justifyContent",
+          "type": "string"
+        },
+        {
+          "name": "left",
+          "type": "number | string"
+        },
+        {
+          "name": "letterSpacing",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "lineHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "m",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "margin",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "p",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "padding",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "position",
+          "type": "string"
+        },
+        {
+          "name": "right",
+          "type": "number | string"
+        },
+        {
+          "name": "textAlign",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "top",
+          "type": "number | string"
+        },
+        {
+          "name": "width",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "zIndex",
+          "type": "number | string"
+        }
+      ],
+      "events": []
+    },
+    {
+      "name": "sui-button",
+      "properties": [
+        {
+          "name": "as",
+          "type": "string"
+        },
+        {
+          "name": "background",
+          "type": "string"
+        },
+        {
+          "name": "bg",
+          "type": "string"
+        },
+        {
+          "name": "border",
+          "type": "number | string"
+        },
+        {
+          "name": "borderBottom",
+          "type": "number | string"
+        },
+        {
+          "name": "borderColor",
+          "type": "string"
+        },
+        {
+          "name": "borderLeft",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRadius",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRight",
+          "type": "number | string"
+        },
+        {
+          "name": "borderStyle",
+          "type": "string"
+        },
+        {
+          "name": "borderTop",
+          "type": "number | string"
+        },
+        {
+          "name": "borderWidth",
+          "type": "number | string"
+        },
+        {
+          "name": "color",
+          "type": "string"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean"
+        },
+        {
+          "name": "display",
+          "type": "string"
+        },
+        {
+          "name": "fontSize",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "fontWeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "height",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "href",
+          "type": "string"
+        },
+        {
+          "name": "letterSpacing",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "lineHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "m",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "margin",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "p",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "padding",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "target",
+          "type": "string"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "textAlign",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\""
+        },
+        {
+          "name": "value",
+          "type": "string"
+        },
+        {
+          "name": "width",
+          "type": "number | number[] | string | string[]"
+        }
+      ],
+      "events": []
+    },
+    {
+      "name": "sui-input",
+      "properties": [
+        {
+          "name": "accept",
+          "type": "string"
+        },
+        {
+          "name": "autocapitalize",
+          "type": "string",
+          "default": "\"off\"",
+          "defaultValue": "\"off\""
+        },
+        {
+          "name": "autocomplete",
+          "type": "\"off\" | \"on\"",
+          "default": "\"off\"",
+          "defaultValue": "\"off\""
+        },
+        {
+          "name": "autocorrect",
+          "type": "\"off\" | \"on\"",
+          "default": "\"off\"",
+          "defaultValue": "\"off\""
+        },
+        {
+          "name": "autofocus",
+          "type": "boolean",
+          "default": "false",
+          "defaultValue": "false"
+        },
+        {
+          "name": "background",
+          "type": "string"
+        },
+        {
+          "name": "bg",
+          "type": "string"
+        },
+        {
+          "name": "border",
+          "type": "number | string"
+        },
+        {
+          "name": "borderBottom",
+          "type": "number | string"
+        },
+        {
+          "name": "borderColor",
+          "type": "string"
+        },
+        {
+          "name": "borderLeft",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRadius",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRight",
+          "type": "number | string"
+        },
+        {
+          "name": "borderStyle",
+          "type": "string"
+        },
+        {
+          "name": "borderTop",
+          "type": "number | string"
+        },
+        {
+          "name": "borderWidth",
+          "type": "number | string"
+        },
+        {
+          "name": "color",
+          "type": "string"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "defaultValue": "false"
+        },
+        {
+          "name": "display",
+          "type": "string"
+        },
+        {
+          "name": "fontSize",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "fontWeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "height",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "inputmode",
+          "type": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\""
+        },
+        {
+          "name": "letterSpacing",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "lineHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "m",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "margin",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "max",
+          "type": "string"
+        },
+        {
+          "name": "maxHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxlength",
+          "type": "number"
+        },
+        {
+          "name": "min",
+          "type": "string"
+        },
+        {
+          "name": "minHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minlength",
+          "type": "number"
+        },
+        {
+          "name": "multiple",
+          "type": "boolean"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "default": "this.inputId",
+          "defaultValue": "this.inputId"
+        },
+        {
+          "name": "p",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "padding",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "pattern",
+          "type": "string"
+        },
+        {
+          "name": "placeholder",
+          "type": "string"
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "default": "false",
+          "defaultValue": "false"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "default": "false",
+          "defaultValue": "false"
+        },
+        {
+          "name": "size",
+          "type": "number"
+        },
+        {
+          "name": "spellcheck",
+          "type": "boolean",
+          "default": "false",
+          "defaultValue": "false"
+        },
+        {
+          "name": "step",
+          "type": "string"
+        },
+        {
+          "name": "textAlign",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "type",
+          "type": "\"checkbox\" | \"date\" | \"email\" | \"number\" | \"password\" | \"radio\" | \"range\" | \"search\" | \"tel\" | \"text\" | \"time\" | \"url\"",
+          "default": "\"text\"",
+          "defaultValue": "\"text\""
+        },
+        {
+          "name": "value",
+          "type": "number | string",
+          "default": "\"\"",
+          "defaultValue": "\"\""
+        },
+        {
+          "name": "width",
+          "type": "number | number[] | string | string[]"
+        }
+      ],
+      "events": [
+        {
+          "name": "suiChanged",
+          "type": "InputChangeEventDetail"
+        },
+        {
+          "name": "suiInput",
+          "type": "KeyboardEvent"
+        }
+      ]
+    },
+    {
+      "name": "sui-link",
+      "properties": [
+        {
+          "name": "as",
+          "type": "string"
+        },
+        {
+          "name": "background",
+          "type": "string"
+        },
+        {
+          "name": "bg",
+          "type": "string"
+        },
+        {
+          "name": "border",
+          "type": "number | string"
+        },
+        {
+          "name": "borderBottom",
+          "type": "number | string"
+        },
+        {
+          "name": "borderColor",
+          "type": "string"
+        },
+        {
+          "name": "borderLeft",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRadius",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRight",
+          "type": "number | string"
+        },
+        {
+          "name": "borderStyle",
+          "type": "string"
+        },
+        {
+          "name": "borderTop",
+          "type": "number | string"
+        },
+        {
+          "name": "borderWidth",
+          "type": "number | string"
+        },
+        {
+          "name": "color",
+          "type": "string"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean"
+        },
+        {
+          "name": "display",
+          "type": "string"
+        },
+        {
+          "name": "fontSize",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "fontWeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "height",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "href",
+          "type": "string"
+        },
+        {
+          "name": "letterSpacing",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "lineHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "m",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "margin",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "p",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "padding",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "target",
+          "type": "string"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "textAlign",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "width",
+          "type": "number | number[] | string | string[]"
+        }
+      ],
+      "events": []
+    },
+    {
+      "name": "sui-select",
+      "properties": [
+        {
+          "name": "as",
+          "type": "string"
+        },
+        {
+          "name": "autofocus",
+          "type": "boolean"
+        },
+        {
+          "name": "background",
+          "type": "string"
+        },
+        {
+          "name": "bg",
+          "type": "string"
+        },
+        {
+          "name": "border",
+          "type": "number | string"
+        },
+        {
+          "name": "borderBottom",
+          "type": "number | string"
+        },
+        {
+          "name": "borderColor",
+          "type": "string"
+        },
+        {
+          "name": "borderLeft",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRadius",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRight",
+          "type": "number | string"
+        },
+        {
+          "name": "borderStyle",
+          "type": "string"
+        },
+        {
+          "name": "borderTop",
+          "type": "number | string"
+        },
+        {
+          "name": "borderWidth",
+          "type": "number | string"
+        },
+        {
+          "name": "color",
+          "type": "string"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean"
+        },
+        {
+          "name": "display",
+          "type": "string"
+        },
+        {
+          "name": "fontSize",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "fontWeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "form",
+          "type": "string"
+        },
+        {
+          "name": "height",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "letterSpacing",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "lineHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "m",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "margin",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "multiple",
+          "type": "boolean"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "p",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "padding",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "required",
+          "type": "boolean"
+        },
+        {
+          "name": "size",
+          "type": "number"
+        },
+        {
+          "name": "textAlign",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "width",
+          "type": "number | number[] | string | string[]"
+        }
+      ],
+      "events": []
+    },
+    {
+      "name": "sui-switch",
+      "properties": [
+        {
+          "name": "checked",
+          "type": "boolean",
+          "default": "false",
+          "defaultValue": "false"
+        },
+        {
+          "name": "external",
+          "type": "boolean",
+          "default": "false",
+          "defaultValue": "false"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "default": "this.switchId",
+          "defaultValue": "this.switchId"
+        }
+      ],
+      "events": [
+        {
+          "name": "suiChanged",
+          "type": "SwitchChangeEventDetail"
+        }
+      ]
+    },
+    {
+      "name": "sui-text",
+      "properties": [
+        {
+          "name": "as",
+          "type": "string"
+        },
+        {
+          "name": "background",
+          "type": "string"
+        },
+        {
+          "name": "bg",
+          "type": "string"
+        },
+        {
+          "name": "border",
+          "type": "number | string"
+        },
+        {
+          "name": "borderBottom",
+          "type": "number | string"
+        },
+        {
+          "name": "borderColor",
+          "type": "string"
+        },
+        {
+          "name": "borderLeft",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRadius",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRight",
+          "type": "number | string"
+        },
+        {
+          "name": "borderStyle",
+          "type": "string"
+        },
+        {
+          "name": "borderTop",
+          "type": "number | string"
+        },
+        {
+          "name": "borderWidth",
+          "type": "number | string"
+        },
+        {
+          "name": "color",
+          "type": "string"
+        },
+        {
+          "name": "display",
+          "type": "string"
+        },
+        {
+          "name": "fontSize",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "fontWeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "height",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "letterSpacing",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "lineHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "m",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "margin",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "p",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "padding",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "textAlign",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "width",
+          "type": "number | number[] | string | string[]"
+        }
+      ],
+      "events": []
+    },
+    {
+      "name": "sui-textarea",
+      "properties": [
+        {
+          "name": "autofocus",
+          "type": "boolean"
+        },
+        {
+          "name": "background",
+          "type": "string"
+        },
+        {
+          "name": "bg",
+          "type": "string"
+        },
+        {
+          "name": "border",
+          "type": "number | string"
+        },
+        {
+          "name": "borderBottom",
+          "type": "number | string"
+        },
+        {
+          "name": "borderColor",
+          "type": "string"
+        },
+        {
+          "name": "borderLeft",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRadius",
+          "type": "number | string"
+        },
+        {
+          "name": "borderRight",
+          "type": "number | string"
+        },
+        {
+          "name": "borderStyle",
+          "type": "string"
+        },
+        {
+          "name": "borderTop",
+          "type": "number | string"
+        },
+        {
+          "name": "borderWidth",
+          "type": "number | string"
+        },
+        {
+          "name": "color",
+          "type": "string"
+        },
+        {
+          "name": "cols",
+          "type": "number"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean"
+        },
+        {
+          "name": "display",
+          "type": "string"
+        },
+        {
+          "name": "fontSize",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "fontWeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "form",
+          "type": "string"
+        },
+        {
+          "name": "height",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "letterSpacing",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "lineHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "m",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "margin",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "p",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "padding",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "placeholder",
+          "type": "string"
+        },
+        {
+          "name": "readonly",
+          "type": "boolean"
+        },
+        {
+          "name": "required",
+          "type": "boolean"
+        },
+        {
+          "name": "rows",
+          "type": "number"
+        },
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "textAlign",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "width",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "wrap",
+          "type": "\"hard\" | \"soft\""
+        }
+      ],
+      "events": []
+    }
+  ]
+}
