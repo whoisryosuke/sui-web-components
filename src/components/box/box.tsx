@@ -1,43 +1,6 @@
 import { Component, Element, Host, Prop, h } from "@stencil/core";
 
-import {
-  width,
-  height,
-  maxWidth,
-  minWidth,
-  maxHeight,
-  minHeight,
-  color,
-  bg,
-  fontSize,
-  textAlign,
-  lineHeight,
-  fontWeight,
-  letterSpacing,
-  display,
-  margin,
-  padding,
-  border,
-  borderTop,
-  borderBottom,
-  borderLeft,
-  borderRight,
-  borderWidth,
-  borderStyle,
-  borderColor,
-  borderRadius,
-  position,
-  zIndex,
-  top,
-  bottom,
-  left,
-  right,
-  alignItems,
-  alignContent,
-  justifyContent,
-  flexWrap,
-  flexDirection
-} from "../../utils/props";
+import { setup } from "../../utils/props";
 
 @Component({
   tag: "sui-box",
@@ -218,56 +181,100 @@ export class Box {
   @Prop() flexDirection: string;
 
   componentWillRender() {
-    // Sizing
-    width("box", this.width, this.el.style);
-    height("box", this.height, this.el.style);
-    maxWidth("box", this.maxWidth, this.el.style);
-    minWidth("box", this.minWidth, this.el.style);
-    maxHeight("box", this.maxHeight, this.el.style);
-    minHeight("box", this.minHeight, this.el.style);
-    const paddingProp = this.padding || this.p;
-    const marginProp = this.margin || this.m;
-    margin("box", marginProp, this.el.style);
-    padding("box", paddingProp, this.el.style);
+    setup(
+      [
+        "width",
+        "max-width",
+        "min-width",
+        "height",
+        "max-height",
+        "min-height",
+        "padding",
+        "margin",
+        "font-size",
+        "text-align",
 
-    // Color
-    color("box", this.color, this.el.style);
-    const bgProp = this.background || this.bg;
-    bg("box", bgProp, this.el.style);
+        "font-family",
+        "line-height",
+        "font-weight",
+        "letter-spacing",
+        "color",
+        "background-color",
+        "border",
+        "border-top",
+        "border-bottom",
+        "border-left",
+        "border-right",
+        "border-width",
+        "border-style",
+        "border-color",
+        "border-radius",
+        "display",
+        "position",
+        "z-index",
+        "top",
+        "bottom",
+        "left",
+        "right",
+        "align-items",
+        "align-content",
+        "justify-content",
+        "flex-wrap",
+        "flex-direction"
+      ],
+      "box",
+      this
+    );
+    // // Sizing
+    // width("box", this.width, this.el.style);
+    // height("box", this.height, this.el.style);
+    // maxWidth("box", this.maxWidth, this.el.style);
+    // minWidth("box", this.minWidth, this.el.style);
+    // maxHeight("box", this.maxHeight, this.el.style);
+    // minHeight("box", this.minHeight, this.el.style);
+    // const paddingProp = this.padding || this.p;
+    // const marginProp = this.margin || this.m;
+    // margin("box", marginProp, this.el.style);
+    // padding("box", paddingProp, this.el.style);
 
-    // Fonts
-    fontSize("box", this.fontSize, this.el.style);
-    textAlign("box", this.textAlign, this.el.style);
-    lineHeight("box", this.lineHeight, this.el.style);
-    fontWeight("box", this.fontWeight, this.el.style);
-    letterSpacing("box", this.letterSpacing, this.el.style);
+    // // Color
+    // color("box", this.color, this.el.style);
+    // const bgProp = this.background || this.bg;
+    // bg("box", bgProp, this.el.style);
 
-    // Border
-    border("box", this.border, this.el.style);
-    borderTop("box", this.borderTop, this.el.style);
-    borderBottom("box", this.borderBottom, this.el.style);
-    borderLeft("box", this.borderLeft, this.el.style);
-    borderRight("box", this.borderRight, this.el.style);
-    borderWidth("box", this.borderWidth, this.el.style);
-    borderStyle("box", this.borderStyle, this.el.style);
-    borderColor("box", this.borderColor, this.el.style);
-    borderRadius("box", this.borderRadius, this.el.style);
+    // // Fonts
+    // fontSize("box", this.fontSize, this.el.style);
+    // textAlign("box", this.textAlign, this.el.style);
+    // lineHeight("box", this.lineHeight, this.el.style);
+    // fontWeight("box", this.fontWeight, this.el.style);
+    // letterSpacing("box", this.letterSpacing, this.el.style);
 
-    // Position
-    display("box", this.display, this.el.style);
-    position("box", this.position, this.el.style);
-    zIndex("box", this.zIndex, this.el.style);
-    top("box", this.top, this.el.style);
-    bottom("box", this.bottom, this.el.style);
-    left("box", this.left, this.el.style);
-    right("box", this.right, this.el.style);
+    // // Border
+    // border("box", this.border, this.el.style);
+    // borderTop("box", this.borderTop, this.el.style);
+    // borderBottom("box", this.borderBottom, this.el.style);
+    // borderLeft("box", this.borderLeft, this.el.style);
+    // borderRight("box", this.borderRight, this.el.style);
+    // borderWidth("box", this.borderWidth, this.el.style);
+    // borderStyle("box", this.borderStyle, this.el.style);
+    // borderColor("box", this.borderColor, this.el.style);
+    // borderRadius("box", this.borderRadius, this.el.style);
 
-    // Flex
-    alignItems("box", this.alignItems, this.el.style);
-    alignContent("box", this.alignContent, this.el.style);
-    justifyContent("box", this.alignContent, this.el.style);
-    flexWrap("box", this.flexWrap, this.el.style);
-    flexDirection("box", this.flexDirection, this.el.style);
+    // // Position
+    // display("box", this.display, this.el.style);
+    // position("box", this.position, this.el.style);
+    // zIndex("box", this.zIndex, this.el.style);
+    // top("box", this.top, this.el.style);
+    // bottom("box", this.bottom, this.el.style);
+    // left("box", this.left, this.el.style);
+    // right("box", this.right, this.el.style);
+
+    // // Flex
+    // alignItems("box", this.alignItems, this.el.style);
+    // alignContent("box", this.alignContent, this.el.style);
+    // justifyContent("box", this.alignContent, this.el.style);
+    // flexWrap("box", this.flexWrap, this.el.style);
+    // flexDirection("box", this.flexDirection, this.el.style);
   }
   render() {
     return (

@@ -1,32 +1,6 @@
 import { Component, Element, Host, Prop, h } from "@stencil/core";
 
-import {
-  width,
-  height,
-  maxWidth,
-  minWidth,
-  maxHeight,
-  minHeight,
-  color,
-  bg,
-  fontSize,
-  textAlign,
-  lineHeight,
-  fontWeight,
-  letterSpacing,
-  display,
-  margin,
-  padding,
-  border,
-  borderTop,
-  borderBottom,
-  borderLeft,
-  borderRight,
-  borderWidth,
-  borderStyle,
-  borderColor,
-  borderRadius
-} from "../../utils/props";
+import { setup } from "../../utils/props";
 
 @Component({
   tag: "sui-select",
@@ -201,40 +175,37 @@ export class Select {
 
   componentWillRender() {
     // Sizing
-    width("select", this.width, this.el.style);
-    height("select", this.height, this.el.style);
-    maxWidth("select", this.maxWidth, this.el.style);
-    minWidth("select", this.minWidth, this.el.style);
-    maxHeight("select", this.maxHeight, this.el.style);
-    minHeight("select", this.minHeight, this.el.style);
-    const paddingProp = this.padding || this.p;
-    const marginProp = this.margin || this.m;
-    margin("select", marginProp, this.el.style);
-    padding("select", paddingProp, this.el.style);
-    display("select", this.display, this.el.style);
-
-    // Color
-    color("select", this.color, this.el.style);
-    const bgProp = this.background || this.bg;
-    bg("select", bgProp, this.el.style);
-
-    // Fonts
-    fontSize("select", this.fontSize, this.el.style);
-    textAlign("select", this.textAlign, this.el.style);
-    lineHeight("select", this.lineHeight, this.el.style);
-    fontWeight("select", this.fontWeight, this.el.style);
-    letterSpacing("select", this.letterSpacing, this.el.style);
-
-    // Border
-    border("select", this.border, this.el.style);
-    borderTop("select", this.borderTop, this.el.style);
-    borderBottom("select", this.borderBottom, this.el.style);
-    borderLeft("select", this.borderLeft, this.el.style);
-    borderRight("select", this.borderRight, this.el.style);
-    borderWidth("select", this.borderWidth, this.el.style);
-    borderStyle("select", this.borderStyle, this.el.style);
-    borderColor("select", this.borderColor, this.el.style);
-    borderRadius("select", this.borderRadius, this.el.style);
+    // width("select", this.width, this.el.style);
+    // height("select", this.height, this.el.style);
+    // maxWidth("select", this.maxWidth, this.el.style);
+    // minWidth("select", this.minWidth, this.el.style);
+    // maxHeight("select", this.maxHeight, this.el.style);
+    // minHeight("select", this.minHeight, this.el.style);
+    // const paddingProp = this.padding || this.p;
+    // const marginProp = this.margin || this.m;
+    // margin("select", marginProp, this.el.style);
+    // padding("select", paddingProp, this.el.style);
+    // display("select", this.display, this.el.style);
+    // // Color
+    // color("select", this.color, this.el.style);
+    // const bgProp = this.background || this.bg;
+    // bg("select", bgProp, this.el.style);
+    // // Fonts
+    // fontSize("select", this.fontSize, this.el.style);
+    // textAlign("select", this.textAlign, this.el.style);
+    // lineHeight("select", this.lineHeight, this.el.style);
+    // fontWeight("select", this.fontWeight, this.el.style);
+    // letterSpacing("select", this.letterSpacing, this.el.style);
+    // // Border
+    // border("select", this.border, this.el.style);
+    // borderTop("select", this.borderTop, this.el.style);
+    // borderBottom("select", this.borderBottom, this.el.style);
+    // borderLeft("select", this.borderLeft, this.el.style);
+    // borderRight("select", this.borderRight, this.el.style);
+    // borderWidth("select", this.borderWidth, this.el.style);
+    // borderStyle("select", this.borderStyle, this.el.style);
+    // borderColor("select", this.borderColor, this.el.style);
+    // borderRadius("select", this.borderRadius, this.el.style);
   }
 
   render() {

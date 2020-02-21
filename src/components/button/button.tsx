@@ -1,32 +1,6 @@
 import { Component, Element, Host, Prop, h } from "@stencil/core";
 
-import {
-  width,
-  height,
-  maxWidth,
-  minWidth,
-  maxHeight,
-  minHeight,
-  color,
-  bg,
-  fontSize,
-  textAlign,
-  lineHeight,
-  fontWeight,
-  letterSpacing,
-  display,
-  margin,
-  padding,
-  border,
-  borderTop,
-  borderBottom,
-  borderLeft,
-  borderRight,
-  borderWidth,
-  borderStyle,
-  borderColor,
-  borderRadius
-} from "../../utils/props";
+import { setup } from "../../utils/props";
 
 @Component({
   tag: "sui-button",
@@ -200,40 +174,37 @@ export class Button {
 
   componentWillRender() {
     // Sizing
-    width("button", this.width, this.el.style);
-    height("button", this.height, this.el.style);
-    maxWidth("button", this.maxWidth, this.el.style);
-    minWidth("button", this.minWidth, this.el.style);
-    maxHeight("button", this.maxHeight, this.el.style);
-    minHeight("button", this.minHeight, this.el.style);
-    const paddingProp = this.padding || this.p;
-    const marginProp = this.margin || this.m;
-    margin("button", marginProp, this.el.style);
-    padding("button", paddingProp, this.el.style);
-    display("button", this.display, this.el.style);
-
-    // Color
-    color("button", this.color, this.el.style);
-    const bgProp = this.background || this.bg;
-    bg("button", bgProp, this.el.style);
-
-    // Fonts
-    fontSize("button", this.fontSize, this.el.style);
-    textAlign("button", this.textAlign, this.el.style);
-    lineHeight("button", this.lineHeight, this.el.style);
-    fontWeight("button", this.fontWeight, this.el.style);
-    letterSpacing("button", this.letterSpacing, this.el.style);
-
-    // Border
-    border("button", this.border, this.el.style);
-    borderTop("button", this.borderTop, this.el.style);
-    borderBottom("button", this.borderBottom, this.el.style);
-    borderLeft("button", this.borderLeft, this.el.style);
-    borderRight("button", this.borderRight, this.el.style);
-    borderWidth("button", this.borderWidth, this.el.style);
-    borderStyle("button", this.borderStyle, this.el.style);
-    borderColor("button", this.borderColor, this.el.style);
-    borderRadius("button", this.borderRadius, this.el.style);
+    // width("button", this.width, this.el.style);
+    // height("button", this.height, this.el.style);
+    // maxWidth("button", this.maxWidth, this.el.style);
+    // minWidth("button", this.minWidth, this.el.style);
+    // maxHeight("button", this.maxHeight, this.el.style);
+    // minHeight("button", this.minHeight, this.el.style);
+    // const paddingProp = this.padding || this.p;
+    // const marginProp = this.margin || this.m;
+    // margin("button", marginProp, this.el.style);
+    // padding("button", paddingProp, this.el.style);
+    // display("button", this.display, this.el.style);
+    // // Color
+    // color("button", this.color, this.el.style);
+    // const bgProp = this.background || this.bg;
+    // bg("button", bgProp, this.el.style);
+    // // Fonts
+    // fontSize("button", this.fontSize, this.el.style);
+    // textAlign("button", this.textAlign, this.el.style);
+    // lineHeight("button", this.lineHeight, this.el.style);
+    // fontWeight("button", this.fontWeight, this.el.style);
+    // letterSpacing("button", this.letterSpacing, this.el.style);
+    // // Border
+    // border("button", this.border, this.el.style);
+    // borderTop("button", this.borderTop, this.el.style);
+    // borderBottom("button", this.borderBottom, this.el.style);
+    // borderLeft("button", this.borderLeft, this.el.style);
+    // borderRight("button", this.borderRight, this.el.style);
+    // borderWidth("button", this.borderWidth, this.el.style);
+    // borderStyle("button", this.borderStyle, this.el.style);
+    // borderColor("button", this.borderColor, this.el.style);
+    // borderRadius("button", this.borderRadius, this.el.style);
   }
 
   render() {

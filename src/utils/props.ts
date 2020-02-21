@@ -1,5 +1,42 @@
-const namespace = "sui";
-const breakpoints = ["desktop", "tablet", "mobile"];
+const camelCaseNames = {
+  "max-width": "maxWidth",
+  "min-width": "minWidth",
+  "max-height": "maxHeight",
+  "min-height": "minHeight",
+  "font-size": "fontSize",
+  "text-align": "textAlign",
+  "font-family": "fontFamily",
+  "line-height": "lineHeight",
+  "font-weight": "fontWeight",
+  "letter-spacing": "letterSpacing",
+  "background-color": "bg",
+  "border-top": "borderTop",
+  "border-bottom": "borderBottom",
+  "border-left": "borderLeft",
+  "border-right": "borderRight",
+  "border-width": "borderWidth",
+  "border-style": "borderStyle",
+  "border-color": "borderColor",
+  "border-radius": "borderRadius",
+  "z-index": "zIndex",
+  "align-items": "alignItems",
+  "align-content": "alignContent",
+  "justify-content": "justifyContent",
+  "flex-wrap": "flexWrap",
+  "flex-direction": "flexDirection",
+  width: "width",
+  height: "height",
+  padding: "padding",
+  margin: "margin",
+  color: "color",
+  border: "border",
+  display: "display",
+  position: "position",
+  top: "top",
+  bottom: "bottom",
+  left: "left",
+  right: "right"
+};
 
 /**
  * Converts number to percent
@@ -7,13 +44,13 @@ const breakpoints = ["desktop", "tablet", "mobile"];
  * @param number Number or string (of a number or CSS unit)
  */
 const convertNumToPercent = number => {
-  const parsedNum = parseFloat(number)
+  const parsedNum = parseFloat(number);
   // If it's a number type, assume user wants percent
   // If string passed, parsed num should be 1 or less, and contain no characters
   if (
-      typeof number == "number" || 
-    (typeof number == 'string' && parsedNum <= 1 && !/[a-z]/i.test(number))
-    ) {
+    typeof number == "number" ||
+    (typeof number == "string" && parsedNum <= 1 && !/[a-z]/i.test(number))
+  ) {
     return `${Math.floor(parsedNum * 100)}%`;
   }
   return number;
@@ -24,7 +61,7 @@ const convertNumToPercent = number => {
  * and returns custom property (or returns value)
  * @param number Component prop
  */
-const convertColorToUnit = color => {
+const convertColorToUnit = (color, namespace) => {
   if (
     typeof color === "string" &&
     (!color.includes("#") || !color.includes("hsl") || !color.includes("rgb"))
@@ -39,7 +76,7 @@ const convertColorToUnit = color => {
  * Or return value if possible CSS property (px/em)
  * @param number Component prop
  */
-const convertSpacingToUnit = spacing => {
+const convertSpacingToUnit = (spacing, namespace) => {
   if (
     (typeof spacing === "number" && spacing <= 9) ||
     (typeof spacing === "string" &&
@@ -94,18 +131,25 @@ export function convertProps(propName) {
 /**
  * Sets the custom property directly and converts prop to theme value if possible
  *
+ * @param namespace Namespace to preprend to beginning of CSS Custom Property
  * @param componentName Name of component, used for custom property namespacing
  * @param prop The prop value
  * @param propName The name of the CSS property to update
  * @param elementStyle Ref to the element's style object (document.getElementById('component').style)
  */
-export function setCustomProperty(componentName, prop, propName, elementStyle) {
+export function setCustomProperty(
+  namespace: string,
+  componentName: string,
+  prop,
+  propName: string,
+  elementStyle
+) {
   const conversion = convertProps(propName);
 
-  if (prop !== undefined) {
+  if (prop[camelCaseNames[propName]] !== undefined) {
     return elementStyle.setProperty(
       `--${namespace}-${componentName}-${propName}`,
-      conversion(prop)
+      conversion(prop[camelCaseNames[propName]], namespace)
     );
   }
 }
@@ -115,201 +159,310 @@ export function setCustomProperty(componentName, prop, propName, elementStyle) {
  * Checks if prop is array, then loops to set CSS Custom Props
  * Converts any numbers to units based on prop name/type
  *
+ * @param namespace Namespace to preprend to beginning of CSS Custom Property
  * @param componentName Name of component, used for custom property namespacing
  * @param prop The prop value
  * @param propName The name of the CSS property to update
  * @param elementStyle Ref to the element's style object (document.getElementById('component').style)
  */
-export function responsiveProps(componentName, prop, propName, elementStyle) {
+export function responsiveProps(
+  namespace: string,
+  componentName: string,
+  prop,
+  propName: string,
+  elementStyle,
+  breakpoints: string[]
+) {
   const customProperty = `--${namespace}-${componentName}-${propName}`;
   // Convert width/height to percent
   // Or convert to unit (em/px)
   const conversion = convertProps(propName);
 
-  let processProp = prop
-  if(typeof prop === 'string' && prop.includes(",")) {
+  // If string is comma separated, process into array
+  console.log(
+    "creating resp. prop",
+    prop,
+    propName,
+    camelCaseNames[propName],
+    prop[camelCaseNames[propName]]
+  );
+  let processProp = prop[camelCaseNames[propName]];
+  if (typeof prop === "string" && prop.includes(",")) {
     processProp = prop.split(",");
   }
   // Check if prop is an array we can loop through
   // Or sets prop to CSS var by default
-  if (processProp && (Array.isArray(processProp) || typeof processProp === "object")) {
-    // Loop through array and set CSS vars
-    processProp.reverse().map((currentValue, index) => {
+  if (
+    processProp &&
+    (Array.isArray(processProp) || typeof processProp === "object")
+  ) {
+    // Loop through array and map props to breakpoint CSS vars
+    processProp.map((currentValue, index) => {
       elementStyle.setProperty(
         `${customProperty}-${breakpoints[index]}`,
-        conversion(currentValue)
+        conversion(currentValue, namespace)
       );
       // Sets last array value to default breakpoint prop value
       if (processProp.length - 1 === index) {
-        elementStyle.setProperty(`${customProperty}`, conversion(currentValue));
+        elementStyle.setProperty(
+          `${customProperty}`,
+          conversion(currentValue, namespace)
+        );
       }
     });
   } else if (
     typeof prop === "string" &&
     (!prop.includes("px") || !prop.includes("em"))
   ) {
-    elementStyle.setProperty(`${customProperty}`, conversion(prop));
+    elementStyle.setProperty(`${customProperty}`, conversion(prop, namespace));
   } else if (prop !== undefined) {
     elementStyle.setProperty(`${customProperty}`, prop);
   }
 }
 
-// Sizing
+interface IComponentProps {
+  width: string | string[] | number | number[];
 
-export function width(componentName, prop, elementStyle) {
-  responsiveProps(componentName, prop, "width", elementStyle);
+  /**
+   * Responsive min-width
+   */
+  minWidth: string | string[] | number | number[];
+
+  /**
+   * Responsive max-width
+   */
+  maxWidth: string | string[] | number | number[];
+
+  /**
+   * Responsive height
+   */
+  height: string | string[] | number | number[];
+
+  /**
+   * Responsive min-height
+   */
+  minHeight: string | string[] | number | number[];
+
+  /**
+   * Responsive max-height
+   */
+  maxHeight: string | string[] | number | number[];
+
+  /**
+   * Responsive fontSize
+   */
+  fontSize: string | string[] | number | number[];
+
+  /**
+   * Responsive textAlign
+   */
+  textAlign: string | string[] | number | number[];
+
+  /**
+   * CSS property for lineHeight
+   */
+  lineHeight: string | string[] | number | number[];
+
+  /**
+   * CSS property for fontWeight
+   */
+  fontWeight: string | string[] | number | number[];
+
+  /**
+   * CSS property for letterSpacing
+   */
+  letterSpacing: string | string[] | number | number[];
+
+  /**
+   * CSS property for responsive margin
+   */
+  margin: string | string[] | number | number[];
+  m: string | string[] | number | number[];
+
+  /**
+   * CSS property for responsive padding
+   */
+  padding: string | string[] | number | number[];
+  p: string | string[] | number | number[];
+
+  /**
+   * CSS property for text color
+   */
+  color: string;
+
+  /**
+   * CSS property for background color
+   */
+  background: string;
+  bg: string;
+
+  /**
+   * CSS property display
+   */
+  display: string;
+
+  /**
+   * CSS property position
+   */
+  position: string;
+
+  /**
+   * CSS properties for positioning
+   */
+  top: string | number;
+  bottom: string | number;
+  left: string | number;
+  right: string | number;
+  zIndex: string | number;
+
+  /**
+   * CSS property for border
+   */
+  border: string | number;
+
+  /**
+   * CSS property for borderTop
+   */
+  borderTop: string | number;
+
+  /**
+   * CSS property for borderBottom
+   */
+  borderBottom: string | number;
+
+  /**
+   * CSS property for borderLeft
+   */
+  borderLeft: string | number;
+
+  /**
+   * CSS property for borderRight
+   */
+  borderRight: string | number;
+
+  /**
+   * CSS property for borderWidth
+   */
+  borderWidth: string | number;
+
+  /**
+   * CSS property for borderStyle
+   */
+  borderStyle: string;
+
+  /**
+   * CSS property for borderColor
+   */
+  borderColor: string;
+
+  /**
+   * CSS property for borderRadius
+   */
+  borderRadius: string | number;
+
+  /**
+   * Flex property align-items
+   */
+  alignItems: string;
+
+  /**
+   * Flex property align-content
+   */
+  alignContent: string;
+
+  /**
+   * Flex property justify-content
+   */
+  justifyContent: string;
+
+  /**
+   * Flex property flex-wrap
+   */
+  flexWrap: string;
+
+  /**
+   * Flex property flex-direction
+   */
+  flexDirection: string;
+
+  /**
+   * Ref to component in DOM
+   */
+  el: HTMLElement;
 }
 
-export function maxWidth(componentName, prop, elementStyle) {
-  responsiveProps(componentName, prop, "max-width", elementStyle);
+function createProp(
+  propName: string,
+  componentName: string,
+  props: IComponentProps,
+  namespace: string,
+  breakpoints: string[]
+) {
+  switch (propName) {
+    case "width":
+    case "max-width":
+    case "min-width":
+    case "height":
+    case "max-height":
+    case "min-height":
+    case "padding":
+    case "margin":
+    case "font-size":
+    case "text-align":
+      return responsiveProps(
+        namespace,
+        componentName,
+        props,
+        propName,
+        props.el.style,
+        breakpoints
+      );
+
+    case "font-family":
+    case "line-height":
+    case "font-weight":
+    case "letter-spacing":
+    case "color":
+    case "background-color":
+    case "border":
+    case "border-top":
+    case "border-bottom":
+    case "border-left":
+    case "border-right":
+    case "border-width":
+    case "border-style":
+    case "border-color":
+    case "border-radius":
+    case "display":
+    case "position":
+    case "z-index":
+    case "top":
+    case "bottom":
+    case "left":
+    case "right":
+    case "align-items":
+    case "align-content":
+    case "justify-content":
+    case "flex-wrap":
+    case "flex-direction":
+      return setCustomProperty(
+        namespace,
+        componentName,
+        props,
+        propName,
+        props.el.style
+      );
+  }
 }
 
-export function minWidth(componentName, prop, elementStyle) {
-  responsiveProps(componentName, prop, "min-width", elementStyle);
-}
-
-export function height(componentName, prop, elementStyle) {
-  responsiveProps(componentName, prop, "height", elementStyle);
-}
-
-export function maxHeight(componentName, prop, elementStyle) {
-  responsiveProps(componentName, prop, "max-height", elementStyle);
-}
-
-export function minHeight(componentName, prop, elementStyle) {
-  responsiveProps(componentName, prop, "min-height", elementStyle);
-}
-
-export function padding(componentName, prop, elementStyle) {
-  responsiveProps(componentName, prop, "padding", elementStyle);
-}
-
-export function margin(componentName, prop, elementStyle) {
-  responsiveProps(componentName, prop, "margin", elementStyle);
-}
-
-// Font
-
-export function fontFamily(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "font-family", elementStyle);
-}
-
-export function fontSize(componentName, prop, elementStyle) {
-  responsiveProps(componentName, prop, "font-size", elementStyle);
-}
-
-export function textAlign(componentName, prop, elementStyle) {
-  responsiveProps(componentName, prop, "text-align", elementStyle);
-}
-
-export function lineHeight(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "line-height", elementStyle);
-}
-
-export function fontWeight(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "font-weight", elementStyle);
-}
-
-export function letterSpacing(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "letter-spacing", elementStyle);
-}
-
-// Color
-
-export function color(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "color", elementStyle);
-}
-
-export function bg(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "background-color", elementStyle);
-}
-
-// Border
-
-export function border(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "border", elementStyle);
-}
-
-export function borderTop(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "border-top", elementStyle);
-}
-
-export function borderBottom(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "border-bottom", elementStyle);
-}
-
-export function borderLeft(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "border-left", elementStyle);
-}
-
-export function borderRight(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "border-right", elementStyle);
-}
-
-export function borderWidth(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "border-width", elementStyle);
-}
-
-export function borderStyle(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "border-style", elementStyle);
-}
-
-export function borderColor(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "border-color", elementStyle);
-}
-
-export function borderRadius(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "border-radius", elementStyle);
-}
-
-// Position
-
-export function display(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "display", elementStyle);
-}
-
-export function position(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "position", elementStyle);
-}
-
-export function zIndex(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "z-index", elementStyle);
-}
-
-export function top(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "top", elementStyle);
-}
-
-export function bottom(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "bottom", elementStyle);
-}
-
-export function left(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "left", elementStyle);
-}
-
-export function right(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "right", elementStyle);
-}
-
-// Flex values
-
-export function alignItems(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "align-items", elementStyle);
-}
-
-export function alignContent(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "align-content", elementStyle);
-}
-
-export function justifyContent(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "justify-content", elementStyle);
-}
-
-export function flexWrap(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "flex-wrap", elementStyle);
-}
-
-export function flexDirection(componentName, prop, elementStyle) {
-  setCustomProperty(componentName, prop, "flex-direction", elementStyle);
+export function setup(
+  propList: string[],
+  componentName: string,
+  props: IComponentProps,
+  namespace: string = "sui",
+  breakpoints: string[] = ["mobile", "tablet", "desktop"]
+) {
+  propList.forEach(propName =>
+    createProp(propName, componentName, props, namespace, breakpoints)
+  );
 }

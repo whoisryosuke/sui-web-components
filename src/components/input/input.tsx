@@ -11,33 +11,7 @@ import {
   h
 } from "@stencil/core";
 
-import {
-  width,
-  height,
-  maxWidth,
-  minWidth,
-  maxHeight,
-  minHeight,
-  color,
-  bg,
-  fontSize,
-  textAlign,
-  lineHeight,
-  fontWeight,
-  letterSpacing,
-  display,
-  margin,
-  padding,
-  border,
-  borderTop,
-  borderBottom,
-  borderLeft,
-  borderRight,
-  borderWidth,
-  borderStyle,
-  borderColor,
-  borderRadius
-} from "../../utils/props";
+import { setup } from "../../utils/props";
 
 import { InputChangeEventDetail, TextFieldTypes } from "../../interfaces";
 
@@ -356,40 +330,37 @@ export class Input {
 
   componentWillRender() {
     // Sizing
-    width("input", this.width, this.el.style);
-    height("input", this.height, this.el.style);
-    maxWidth("input", this.maxWidth, this.el.style);
-    minWidth("input", this.minWidth, this.el.style);
-    maxHeight("input", this.maxHeight, this.el.style);
-    minHeight("input", this.minHeight, this.el.style);
-    const paddingProp = this.padding || this.p;
-    const marginProp = this.margin || this.m;
-    margin("input", marginProp, this.el.style);
-    padding("input", paddingProp, this.el.style);
-    display("input", this.display, this.el.style);
-
-    // Color
-    color("input", this.color, this.el.style);
-    const bgProp = this.background || this.bg;
-    bg("input", bgProp, this.el.style);
-
-    // Fonts
-    fontSize("input", this.fontSize, this.el.style);
-    textAlign("input", this.textAlign, this.el.style);
-    lineHeight("input", this.lineHeight, this.el.style);
-    fontWeight("input", this.fontWeight, this.el.style);
-    letterSpacing("input", this.letterSpacing, this.el.style);
-
-    // Border
-    border("input", this.border, this.el.style);
-    borderTop("input", this.borderTop, this.el.style);
-    borderBottom("input", this.borderBottom, this.el.style);
-    borderLeft("input", this.borderLeft, this.el.style);
-    borderRight("input", this.borderRight, this.el.style);
-    borderWidth("input", this.borderWidth, this.el.style);
-    borderStyle("input", this.borderStyle, this.el.style);
-    borderColor("input", this.borderColor, this.el.style);
-    borderRadius("input", this.borderRadius, this.el.style);
+    // width("input", this.width, this.el.style);
+    // height("input", this.height, this.el.style);
+    // maxWidth("input", this.maxWidth, this.el.style);
+    // minWidth("input", this.minWidth, this.el.style);
+    // maxHeight("input", this.maxHeight, this.el.style);
+    // minHeight("input", this.minHeight, this.el.style);
+    // const paddingProp = this.padding || this.p;
+    // const marginProp = this.margin || this.m;
+    // margin("input", marginProp, this.el.style);
+    // padding("input", paddingProp, this.el.style);
+    // display("input", this.display, this.el.style);
+    // // Color
+    // color("input", this.color, this.el.style);
+    // const bgProp = this.background || this.bg;
+    // bg("input", bgProp, this.el.style);
+    // // Fonts
+    // fontSize("input", this.fontSize, this.el.style);
+    // textAlign("input", this.textAlign, this.el.style);
+    // lineHeight("input", this.lineHeight, this.el.style);
+    // fontWeight("input", this.fontWeight, this.el.style);
+    // letterSpacing("input", this.letterSpacing, this.el.style);
+    // // Border
+    // border("input", this.border, this.el.style);
+    // borderTop("input", this.borderTop, this.el.style);
+    // borderBottom("input", this.borderBottom, this.el.style);
+    // borderLeft("input", this.borderLeft, this.el.style);
+    // borderRight("input", this.borderRight, this.el.style);
+    // borderWidth("input", this.borderWidth, this.el.style);
+    // borderStyle("input", this.borderStyle, this.el.style);
+    // borderColor("input", this.borderColor, this.el.style);
+    // borderRadius("input", this.borderRadius, this.el.style);
   }
 
   render() {

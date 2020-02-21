@@ -1,32 +1,6 @@
 import { Component, Element, Host, Prop, h } from "@stencil/core";
 
-import {
-  width,
-  height,
-  maxWidth,
-  minWidth,
-  maxHeight,
-  minHeight,
-  color,
-  bg,
-  fontSize,
-  textAlign,
-  lineHeight,
-  fontWeight,
-  letterSpacing,
-  display,
-  margin,
-  padding,
-  border,
-  borderTop,
-  borderBottom,
-  borderLeft,
-  borderRight,
-  borderWidth,
-  borderStyle,
-  borderColor,
-  borderRadius
-} from "../../utils/props";
+import { setup } from "../../utils/props";
 
 @Component({
   tag: "sui-text",
@@ -173,40 +147,37 @@ export class Text {
 
   componentWillRender() {
     // Sizing
-    width("text", this.width, this.el.style);
-    height("text", this.height, this.el.style);
-    maxWidth("text", this.maxWidth, this.el.style);
-    minWidth("text", this.minWidth, this.el.style);
-    maxHeight("text", this.maxHeight, this.el.style);
-    minHeight("text", this.minHeight, this.el.style);
-    const paddingProp = this.padding || this.p;
-    const marginProp = this.margin || this.m;
-    margin("text", marginProp, this.el.style);
-    padding("text", paddingProp, this.el.style);
-    display("text", this.display, this.el.style);
-
-    // Color
-    color("text", this.color, this.el.style);
-    const bgProp = this.background || this.bg;
-    bg("text", bgProp, this.el.style);
-
-    // Fonts
-    fontSize("text", this.fontSize, this.el.style);
-    textAlign("text", this.textAlign, this.el.style);
-    lineHeight("text", this.lineHeight, this.el.style);
-    fontWeight("text", this.fontWeight, this.el.style);
-    letterSpacing("text", this.letterSpacing, this.el.style);
-
-    // Border
-    border("text", this.border, this.el.style);
-    borderTop("text", this.borderTop, this.el.style);
-    borderBottom("text", this.borderBottom, this.el.style);
-    borderLeft("text", this.borderLeft, this.el.style);
-    borderRight("text", this.borderRight, this.el.style);
-    borderWidth("text", this.borderWidth, this.el.style);
-    borderStyle("text", this.borderStyle, this.el.style);
-    borderColor("text", this.borderColor, this.el.style);
-    borderRadius("text", this.borderRadius, this.el.style);
+    // width("text", this.width, this.el.style);
+    // height("text", this.height, this.el.style);
+    // maxWidth("text", this.maxWidth, this.el.style);
+    // minWidth("text", this.minWidth, this.el.style);
+    // maxHeight("text", this.maxHeight, this.el.style);
+    // minHeight("text", this.minHeight, this.el.style);
+    // const paddingProp = this.padding || this.p;
+    // const marginProp = this.margin || this.m;
+    // margin("text", marginProp, this.el.style);
+    // padding("text", paddingProp, this.el.style);
+    // display("text", this.display, this.el.style);
+    // // Color
+    // color("text", this.color, this.el.style);
+    // const bgProp = this.background || this.bg;
+    // bg("text", bgProp, this.el.style);
+    // // Fonts
+    // fontSize("text", this.fontSize, this.el.style);
+    // textAlign("text", this.textAlign, this.el.style);
+    // lineHeight("text", this.lineHeight, this.el.style);
+    // fontWeight("text", this.fontWeight, this.el.style);
+    // letterSpacing("text", this.letterSpacing, this.el.style);
+    // // Border
+    // border("text", this.border, this.el.style);
+    // borderTop("text", this.borderTop, this.el.style);
+    // borderBottom("text", this.borderBottom, this.el.style);
+    // borderLeft("text", this.borderLeft, this.el.style);
+    // borderRight("text", this.borderRight, this.el.style);
+    // borderWidth("text", this.borderWidth, this.el.style);
+    // borderStyle("text", this.borderStyle, this.el.style);
+    // borderColor("text", this.borderColor, this.el.style);
+    // borderRadius("text", this.borderRadius, this.el.style);
   }
 
   render() {
