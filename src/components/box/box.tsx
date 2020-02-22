@@ -71,13 +71,11 @@ export class Box {
   /**
    * CSS property for responsive margin
    */
-  @Prop() margin: string | string[] | number | number[];
   @Prop() m: string | string[] | number | number[];
 
   /**
    * CSS property for responsive padding
    */
-  @Prop() padding: string | string[] | number | number[];
   @Prop() p: string | string[] | number | number[];
 
   /**
@@ -118,22 +116,22 @@ export class Box {
   /**
    * CSS property for borderTop
    */
-  @Prop() borderTop: string | number;
+  @Prop() bt: string | number;
 
   /**
    * CSS property for borderBottom
    */
-  @Prop() borderBottom: string | number;
+  @Prop() bb: string | number;
 
   /**
    * CSS property for borderLeft
    */
-  @Prop() borderLeft: string | number;
+  @Prop() bl: string | number;
 
   /**
    * CSS property for borderRight
    */
-  @Prop() borderRight: string | number;
+  @Prop() br: string | number;
 
   /**
    * CSS property for borderWidth

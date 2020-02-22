@@ -28,44 +28,44 @@ export namespace Components {
     * CSS property for background color
     */
     'background': string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb': string | number;
     'bg': string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl': string | number;
     /**
     * CSS property for border
     */
     'border': string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom': string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor': string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft': string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius': string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight': string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle': string;
-    /**
-    * CSS property for borderTop
-    */
-    'borderTop': string | number;
     /**
     * CSS property for borderWidth
     */
     'borderWidth': string | number;
     'bottom': string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br': string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt': string | number;
     /**
     * CSS property for text color
     */
@@ -107,11 +107,10 @@ export namespace Components {
     * CSS property for lineHeight
     */
     'lineHeight': string | string[] | number | number[];
-    'm': string | string[] | number | number[];
     /**
     * CSS property for responsive margin
     */
-    'margin': string | string[] | number | number[];
+    'm': string | string[] | number | number[];
     /**
     * Responsive max-height
     */
@@ -128,11 +127,10 @@ export namespace Components {
     * Responsive min-width
     */
     'minWidth': string | string[] | number | number[];
-    'p': string | string[] | number | number[];
     /**
     * CSS property for responsive padding
     */
-    'padding': string | string[] | number | number[];
+    'p': string | string[] | number | number[];
     /**
     * CSS property position
     */
@@ -1125,44 +1123,44 @@ declare namespace LocalJSX {
     * CSS property for background color
     */
     'background'?: string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb'?: string | number;
     'bg'?: string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl'?: string | number;
     /**
     * CSS property for border
     */
     'border'?: string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom'?: string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor'?: string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft'?: string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius'?: string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight'?: string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle'?: string;
-    /**
-    * CSS property for borderTop
-    */
-    'borderTop'?: string | number;
     /**
     * CSS property for borderWidth
     */
     'borderWidth'?: string | number;
     'bottom'?: string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br'?: string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt'?: string | number;
     /**
     * CSS property for text color
     */
@@ -1204,11 +1202,10 @@ declare namespace LocalJSX {
     * CSS property for lineHeight
     */
     'lineHeight'?: string | string[] | number | number[];
-    'm'?: string | string[] | number | number[];
     /**
     * CSS property for responsive margin
     */
-    'margin'?: string | string[] | number | number[];
+    'm'?: string | string[] | number | number[];
     /**
     * Responsive max-height
     */
@@ -1225,11 +1222,10 @@ declare namespace LocalJSX {
     * Responsive min-width
     */
     'minWidth'?: string | string[] | number | number[];
-    'p'?: string | string[] | number | number[];
     /**
     * CSS property for responsive padding
     */
-    'padding'?: string | string[] | number | number[];
+    'p'?: string | string[] | number | number[];
     /**
     * CSS property position
     */

@@ -1,3 +1,174 @@
+interface IComponentProps {
+  /**
+   * Ref to component in DOM
+   */
+  el: HTMLElement;
+
+  /**
+   * Responsive width
+   */
+  width?: string | string[] | number | number[];
+
+  /**
+   * Responsive min-width
+   */
+  minWidth?: string | string[] | number | number[];
+
+  /**
+   * Responsive max-width
+   */
+  maxWidth?: string | string[] | number | number[];
+
+  /**
+   * Responsive height
+   */
+  height?: string | string[] | number | number[];
+
+  /**
+   * Responsive min-height
+   */
+  minHeight?: string | string[] | number | number[];
+
+  /**
+   * Responsive max-height
+   */
+  maxHeight?: string | string[] | number | number[];
+
+  /**
+   * Responsive fontSize
+   */
+  fontSize?: string | string[] | number | number[];
+
+  /**
+   * Responsive textAlign
+   */
+  textAlign?: string | string[] | number | number[];
+
+  /**
+   * CSS property for lineHeight
+   */
+  lineHeight?: string | string[] | number | number[];
+
+  /**
+   * CSS property for fontWeight
+   */
+  fontWeight?: string | string[] | number | number[];
+
+  /**
+   * CSS property for letterSpacing
+   */
+  letterSpacing?: string | string[] | number | number[];
+
+  /**
+   * CSS property for responsive margin
+   */
+  m?: string | string[] | number | number[];
+
+  /**
+   * CSS property for responsive padding
+   */
+  p?: string | string[] | number | number[];
+
+  /**
+   * CSS property for text color
+   */
+  color?: string;
+
+  /**
+   * CSS property for background color
+   */
+  bg?: string;
+
+  /**
+   * CSS property display
+   */
+  display?: string;
+
+  /**
+   * CSS property position
+   */
+  position?: string;
+
+  /**
+   * CSS properties for positioning
+   */
+  top?: string | number;
+  bottom?: string | number;
+  left?: string | number;
+  right?: string | number;
+  zIndex?: string | number;
+
+  /**
+   * CSS property for border
+   */
+  border?: string | number;
+
+  /**
+   * CSS property for borderTop
+   */
+  bt?: string | number;
+
+  /**
+   * CSS property for borderBottom
+   */
+  bb?: string | number;
+
+  /**
+   * CSS property for borderLeft
+   */
+  bl?: string | number;
+
+  /**
+   * CSS property for borderRight
+   */
+  br?: string | number;
+
+  /**
+   * CSS property for borderWidth
+   */
+  bw?: string | number;
+
+  /**
+   * CSS property for borderStyle
+   */
+  borderStyle?: string;
+
+  /**
+   * CSS property for borderColor
+   */
+  borderColor?: string;
+
+  /**
+   * CSS property for borderRadius
+   */
+  borderRadius?: string | number;
+
+  /**
+   * Flex property align-items
+   */
+  alignItems?: string;
+
+  /**
+   * Flex property align-content
+   */
+  alignContent?: string;
+
+  /**
+   * Flex property justify-content
+   */
+  justifyContent?: string;
+
+  /**
+   * Flex property flex-wrap
+   */
+  flexWrap?: string;
+
+  /**
+   * Flex property flex-direction
+   */
+  flexDirection?: string;
+}
+
 const camelCaseNames = {
   "max-width": "maxWidth",
   "min-width": "minWidth",
@@ -10,10 +181,10 @@ const camelCaseNames = {
   "font-weight": "fontWeight",
   "letter-spacing": "letterSpacing",
   "background-color": "bg",
-  "border-top": "borderTop",
-  "border-bottom": "borderBottom",
-  "border-left": "borderLeft",
-  "border-right": "borderRight",
+  "border-top": "bt",
+  "border-bottom": "bb",
+  "border-left": "bl",
+  "border-right": "br",
   "border-width": "borderWidth",
   "border-style": "borderStyle",
   "border-color": "borderColor",
@@ -26,8 +197,8 @@ const camelCaseNames = {
   "flex-direction": "flexDirection",
   width: "width",
   height: "height",
-  padding: "padding",
-  margin: "margin",
+  padding: "p",
+  margin: "m",
   color: "color",
   border: "border",
   display: "display",
@@ -140,14 +311,13 @@ export function convertProps(propName) {
 export function setCustomProperty(
   namespace: string,
   componentName: string,
-  prop,
-  propName: string,
-  elementStyle
+  prop: IComponentProps,
+  propName: string
 ) {
   const conversion = convertProps(propName);
 
   if (prop[camelCaseNames[propName]] !== undefined) {
-    return elementStyle.setProperty(
+    return prop.el.style.setProperty(
       `--${namespace}-${componentName}-${propName}`,
       conversion(prop[camelCaseNames[propName]], namespace)
     );
@@ -168,9 +338,8 @@ export function setCustomProperty(
 export function responsiveProps(
   namespace: string,
   componentName: string,
-  prop,
+  prop: IComponentProps,
   propName: string,
-  elementStyle,
   breakpoints: string[]
 ) {
   const customProperty = `--${namespace}-${componentName}-${propName}`;
@@ -179,16 +348,9 @@ export function responsiveProps(
   const conversion = convertProps(propName);
 
   // If string is comma separated, process into array
-  console.log(
-    "creating resp. prop",
-    prop,
-    propName,
-    camelCaseNames[propName],
-    prop[camelCaseNames[propName]]
-  );
   let processProp = prop[camelCaseNames[propName]];
-  if (typeof prop === "string" && prop.includes(",")) {
-    processProp = prop.split(",");
+  if (typeof processProp === "string" && processProp.includes(",")) {
+    processProp = processProp.split(",");
   }
   // Check if prop is an array we can loop through
   // Or sets prop to CSS var by default
@@ -198,197 +360,29 @@ export function responsiveProps(
   ) {
     // Loop through array and map props to breakpoint CSS vars
     processProp.map((currentValue, index) => {
-      elementStyle.setProperty(
+      prop.el.style.setProperty(
         `${customProperty}-${breakpoints[index]}`,
         conversion(currentValue, namespace)
       );
       // Sets last array value to default breakpoint prop value
       if (processProp.length - 1 === index) {
-        elementStyle.setProperty(
+        prop.el.style.setProperty(
           `${customProperty}`,
           conversion(currentValue, namespace)
         );
       }
     });
   } else if (
-    typeof prop === "string" &&
-    (!prop.includes("px") || !prop.includes("em"))
+    typeof processProp === "string" &&
+    (!processProp.includes("px") || !processProp.includes("em"))
   ) {
-    elementStyle.setProperty(`${customProperty}`, conversion(prop, namespace));
-  } else if (prop !== undefined) {
-    elementStyle.setProperty(`${customProperty}`, prop);
+    prop.el.style.setProperty(
+      `${customProperty}`,
+      conversion(processProp, namespace)
+    );
+  } else if (processProp !== undefined) {
+    prop.el.style.setProperty(`${customProperty}`, processProp);
   }
-}
-
-interface IComponentProps {
-  width: string | string[] | number | number[];
-
-  /**
-   * Responsive min-width
-   */
-  minWidth: string | string[] | number | number[];
-
-  /**
-   * Responsive max-width
-   */
-  maxWidth: string | string[] | number | number[];
-
-  /**
-   * Responsive height
-   */
-  height: string | string[] | number | number[];
-
-  /**
-   * Responsive min-height
-   */
-  minHeight: string | string[] | number | number[];
-
-  /**
-   * Responsive max-height
-   */
-  maxHeight: string | string[] | number | number[];
-
-  /**
-   * Responsive fontSize
-   */
-  fontSize: string | string[] | number | number[];
-
-  /**
-   * Responsive textAlign
-   */
-  textAlign: string | string[] | number | number[];
-
-  /**
-   * CSS property for lineHeight
-   */
-  lineHeight: string | string[] | number | number[];
-
-  /**
-   * CSS property for fontWeight
-   */
-  fontWeight: string | string[] | number | number[];
-
-  /**
-   * CSS property for letterSpacing
-   */
-  letterSpacing: string | string[] | number | number[];
-
-  /**
-   * CSS property for responsive margin
-   */
-  margin: string | string[] | number | number[];
-  m: string | string[] | number | number[];
-
-  /**
-   * CSS property for responsive padding
-   */
-  padding: string | string[] | number | number[];
-  p: string | string[] | number | number[];
-
-  /**
-   * CSS property for text color
-   */
-  color: string;
-
-  /**
-   * CSS property for background color
-   */
-  background: string;
-  bg: string;
-
-  /**
-   * CSS property display
-   */
-  display: string;
-
-  /**
-   * CSS property position
-   */
-  position: string;
-
-  /**
-   * CSS properties for positioning
-   */
-  top: string | number;
-  bottom: string | number;
-  left: string | number;
-  right: string | number;
-  zIndex: string | number;
-
-  /**
-   * CSS property for border
-   */
-  border: string | number;
-
-  /**
-   * CSS property for borderTop
-   */
-  borderTop: string | number;
-
-  /**
-   * CSS property for borderBottom
-   */
-  borderBottom: string | number;
-
-  /**
-   * CSS property for borderLeft
-   */
-  borderLeft: string | number;
-
-  /**
-   * CSS property for borderRight
-   */
-  borderRight: string | number;
-
-  /**
-   * CSS property for borderWidth
-   */
-  borderWidth: string | number;
-
-  /**
-   * CSS property for borderStyle
-   */
-  borderStyle: string;
-
-  /**
-   * CSS property for borderColor
-   */
-  borderColor: string;
-
-  /**
-   * CSS property for borderRadius
-   */
-  borderRadius: string | number;
-
-  /**
-   * Flex property align-items
-   */
-  alignItems: string;
-
-  /**
-   * Flex property align-content
-   */
-  alignContent: string;
-
-  /**
-   * Flex property justify-content
-   */
-  justifyContent: string;
-
-  /**
-   * Flex property flex-wrap
-   */
-  flexWrap: string;
-
-  /**
-   * Flex property flex-direction
-   */
-  flexDirection: string;
-
-  /**
-   * Ref to component in DOM
-   */
-  el: HTMLElement;
 }
 
 function createProp(
@@ -414,7 +408,6 @@ function createProp(
         componentName,
         props,
         propName,
-        props.el.style,
         breakpoints
       );
 
@@ -445,13 +438,7 @@ function createProp(
     case "justify-content":
     case "flex-wrap":
     case "flex-direction":
-      return setCustomProperty(
-        namespace,
-        componentName,
-        props,
-        propName,
-        props.el.style
-      );
+      return setCustomProperty(namespace, componentName, props, propName);
   }
 }
 
