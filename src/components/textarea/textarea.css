@@ -38,14 +38,15 @@
   --sui-textarea-font-weight: var(--sui-fonts-weights-body);
   --sui-textarea-line-height: var(--sui-fonts-line-body);
 
-  --sui-textarea-border-top: var(--sui-textarea-border, 0);
-  --sui-textarea-border-bottom: var(--sui-textarea-border, 0);
-  --sui-textarea-border-left: var(--sui-textarea-border, 0);
-  --sui-textarea-border-right: var(--sui-textarea-border, 0);
+  --sui-textarea-border-width: 1px;
   --sui-textarea-border-style: solid;
   --sui-textarea-border-color: var(--sui-colors-black);
+  --sui-textarea-border: var(--sui-textarea-border-width) var(--sui-textarea-border-style) var(--sui-textarea-border-color);
+  --sui-textarea-border-top: var(--sui-textarea-border, var(--sui-textarea-border-width));
+  --sui-textarea-border-bottom: var(--sui-textarea-border, var(--sui-textarea-border-width));
+  --sui-textarea-border-left: var(--sui-textarea-border, var(--sui-textarea-border-width));
+  --sui-textarea-border-right: var(--sui-textarea-border, var(--sui-textarea-border-width));
   --sui-textarea-border-radius: var(--sui-borders-radius);
-  --sui-textarea-border-width: 1px;
 
   width: var(--sui-textarea-width);
   min-width: var(--sui-textarea-min-width);

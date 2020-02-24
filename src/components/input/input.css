@@ -32,14 +32,15 @@
   --sui-input-font-weight: var(--sui-fonts-weights-body);
   --sui-input-line-height: var(--sui-fonts-line-body);
 
-  --sui-input-border-top: var(--sui-input-border, 0);
-  --sui-input-border-bottom: var(--sui-input-border, 0);
-  --sui-input-border-left: var(--sui-input-border, 0);
-  --sui-input-border-right: var(--sui-input-border, 0);
+  --sui-input-border-width: 1px;
   --sui-input-border-style: solid;
   --sui-input-border-color: var(--sui-colors-black);
+  --sui-input-border: var(--sui-input-border-width) var(--sui-input-border-style) var(--sui-input-border-color);
+  --sui-input-border-top: var(--sui-input-border, var(--sui-input-border-width));
+  --sui-input-border-bottom: var(--sui-input-border, var(--sui-input-border-width));
+  --sui-input-border-left: var(--sui-input-border, var(--sui-input-border-width));
+  --sui-input-border-right: var(--sui-input-border, var(--sui-input-border-width));
   --sui-input-border-radius: var(--sui-borders-radius);
-  --sui-input-border-width: 1px;
 
   width: var(--sui-input-width);
   min-width: var(--sui-input-min-width);
