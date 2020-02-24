@@ -21,15 +21,19 @@
           "type": "string"
         },
         {
+          "name": "bb",
+          "type": "number | string"
+        },
+        {
           "name": "bg",
           "type": "string"
         },
         {
-          "name": "border",
+          "name": "bl",
           "type": "number | string"
         },
         {
-          "name": "borderBottom",
+          "name": "border",
           "type": "number | string"
         },
         {
@@ -37,15 +41,7 @@
           "type": "string"
         },
         {
-          "name": "borderLeft",
-          "type": "number | string"
-        },
-        {
           "name": "borderRadius",
-          "type": "number | string"
-        },
-        {
-          "name": "borderRight",
           "type": "number | string"
         },
         {
@@ -53,15 +49,19 @@
           "type": "string"
         },
         {
-          "name": "borderTop",
-          "type": "number | string"
-        },
-        {
           "name": "borderWidth",
           "type": "number | string"
         },
         {
           "name": "bottom",
+          "type": "number | string"
+        },
+        {
+          "name": "br",
+          "type": "number | string"
+        },
+        {
+          "name": "bt",
           "type": "number | string"
         },
         {
@@ -81,6 +81,10 @@
           "type": "string"
         },
         {
+          "name": "fontFamily",
+          "type": "number | number[] | string | string[]"
+        },
+        {
           "name": "fontSize",
           "type": "number | number[] | string | string[]"
         },
@@ -94,6 +98,156 @@
         },
         {
           "name": "justifyContent",
+          "type": "string"
+        },
+        {
+          "name": "left",
+          "type": "number | string"
+        },
+        {
+          "name": "letterSpacing",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "lineHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "m",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "maxWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minHeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "minWidth",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "p",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "position",
+          "type": "string"
+        },
+        {
+          "name": "right",
+          "type": "number | string"
+        },
+        {
+          "name": "textAlign",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "top",
+          "type": "number | string"
+        },
+        {
+          "name": "width",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "zIndex",
+          "type": "number | string"
+        }
+      ],
+      "events": []
+    },
+    {
+      "name": "sui-button",
+      "properties": [
+        {
+          "name": "as",
+          "type": "string"
+        },
+        {
+          "name": "background",
+          "type": "string"
+        },
+        {
+          "name": "bb",
+          "type": "number | string"
+        },
+        {
+          "name": "bg",
+          "type": "string"
+        },
+        {
+          "name": "bl",
+          "type": "number | string"
+        },
+        {
+          "name": "border",
+          "type": "number | string"
+        },
+        {
+          "name": "borderColor",
+          "type": "string"
+        },
+        {
+          "name": "borderRadius",
+          "type": "number | string"
+        },
+        {
+          "name": "borderStyle",
+          "type": "string"
+        },
+        {
+          "name": "borderWidth",
+          "type": "number | string"
+        },
+        {
+          "name": "bottom",
+          "type": "number | string"
+        },
+        {
+          "name": "br",
+          "type": "number | string"
+        },
+        {
+          "name": "bt",
+          "type": "number | string"
+        },
+        {
+          "name": "color",
+          "type": "string"
+        },
+        {
+          "name": "disabled",
+          "type": "boolean"
+        },
+        {
+          "name": "display",
+          "type": "string"
+        },
+        {
+          "name": "fontFamily",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "fontSize",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "fontWeight",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "height",
+          "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "href",
           "type": "string"
         },
         {
@@ -149,144 +303,6 @@
           "type": "number | string"
         },
         {
-          "name": "textAlign",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "top",
-          "type": "number | string"
-        },
-        {
-          "name": "width",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "zIndex",
-          "type": "number | string"
-        }
-      ],
-      "events": []
-    },
-    {
-      "name": "sui-button",
-      "properties": [
-        {
-          "name": "as",
-          "type": "string"
-        },
-        {
-          "name": "background",
-          "type": "string"
-        },
-        {
-          "name": "bg",
-          "type": "string"
-        },
-        {
-          "name": "border",
-          "type": "number | string"
-        },
-        {
-          "name": "borderBottom",
-          "type": "number | string"
-        },
-        {
-          "name": "borderColor",
-          "type": "string"
-        },
-        {
-          "name": "borderLeft",
-          "type": "number | string"
-        },
-        {
-          "name": "borderRadius",
-          "type": "number | string"
-        },
-        {
-          "name": "borderRight",
-          "type": "number | string"
-        },
-        {
-          "name": "borderStyle",
-          "type": "string"
-        },
-        {
-          "name": "borderTop",
-          "type": "number | string"
-        },
-        {
-          "name": "borderWidth",
-          "type": "number | string"
-        },
-        {
-          "name": "color",
-          "type": "string"
-        },
-        {
-          "name": "disabled",
-          "type": "boolean"
-        },
-        {
-          "name": "display",
-          "type": "string"
-        },
-        {
-          "name": "fontSize",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "fontWeight",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "height",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "href",
-          "type": "string"
-        },
-        {
-          "name": "letterSpacing",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "lineHeight",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "m",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "margin",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "maxHeight",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "maxWidth",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "minHeight",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "minWidth",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "p",
-          "type": "number | number[] | string | string[]"
-        },
-        {
-          "name": "padding",
-          "type": "number | number[] | string | string[]"
-        },
-        {
           "name": "target",
           "type": "string"
         },
@@ -299,6 +315,10 @@
           "type": "number | number[] | string | string[]"
         },
         {
+          "name": "top",
+          "type": "number | string"
+        },
+        {
           "name": "type",
           "type": "\"button\" | \"reset\" | \"submit\""
         },
@@ -309,6 +329,10 @@
         {
           "name": "width",
           "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "zIndex",
+          "type": "number | string"
         }
       ],
       "events": []
@@ -349,15 +373,19 @@
           "type": "string"
         },
         {
+          "name": "bb",
+          "type": "number | string"
+        },
+        {
           "name": "bg",
           "type": "string"
         },
         {
-          "name": "border",
+          "name": "bl",
           "type": "number | string"
         },
         {
-          "name": "borderBottom",
+          "name": "border",
           "type": "number | string"
         },
         {
@@ -365,15 +393,7 @@
           "type": "string"
         },
         {
-          "name": "borderLeft",
-          "type": "number | string"
-        },
-        {
           "name": "borderRadius",
-          "type": "number | string"
-        },
-        {
-          "name": "borderRight",
           "type": "number | string"
         },
         {
@@ -381,11 +401,19 @@
           "type": "string"
         },
         {
-          "name": "borderTop",
+          "name": "borderWidth",
           "type": "number | string"
         },
         {
-          "name": "borderWidth",
+          "name": "bottom",
+          "type": "number | string"
+        },
+        {
+          "name": "br",
+          "type": "number | string"
+        },
+        {
+          "name": "bt",
           "type": "number | string"
         },
         {
@@ -403,6 +431,10 @@
           "type": "string"
         },
         {
+          "name": "fontFamily",
+          "type": "number | number[] | string | string[]"
+        },
+        {
           "name": "fontSize",
           "type": "number | number[] | string | string[]"
         },
@@ -417,6 +449,10 @@
         {
           "name": "inputmode",
           "type": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\""
+        },
+        {
+          "name": "left",
+          "type": "number | string"
         },
         {
           "name": "letterSpacing",
@@ -493,6 +529,10 @@
           "type": "string"
         },
         {
+          "name": "position",
+          "type": "string"
+        },
+        {
           "name": "readonly",
           "type": "boolean",
           "default": "false",
@@ -503,6 +543,10 @@
           "type": "boolean",
           "default": "false",
           "defaultValue": "false"
+        },
+        {
+          "name": "right",
+          "type": "number | string"
         },
         {
           "name": "size",
@@ -523,6 +567,10 @@
           "type": "number | number[] | string | string[]"
         },
         {
+          "name": "top",
+          "type": "number | string"
+        },
+        {
           "name": "type",
           "type": "\"checkbox\" | \"date\" | \"email\" | \"number\" | \"password\" | \"radio\" | \"range\" | \"search\" | \"tel\" | \"text\" | \"time\" | \"url\"",
           "default": "\"text\"",
@@ -537,6 +585,10 @@
         {
           "name": "width",
           "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "zIndex",
+          "type": "number | string"
         }
       ],
       "events": [
@@ -562,15 +614,19 @@
           "type": "string"
         },
         {
+          "name": "bb",
+          "type": "number | string"
+        },
+        {
           "name": "bg",
           "type": "string"
         },
         {
-          "name": "border",
+          "name": "bl",
           "type": "number | string"
         },
         {
-          "name": "borderBottom",
+          "name": "border",
           "type": "number | string"
         },
         {
@@ -578,15 +634,7 @@
           "type": "string"
         },
         {
-          "name": "borderLeft",
-          "type": "number | string"
-        },
-        {
           "name": "borderRadius",
-          "type": "number | string"
-        },
-        {
-          "name": "borderRight",
           "type": "number | string"
         },
         {
@@ -594,11 +642,15 @@
           "type": "string"
         },
         {
-          "name": "borderTop",
+          "name": "borderWidth",
           "type": "number | string"
         },
         {
-          "name": "borderWidth",
+          "name": "br",
+          "type": "number | string"
+        },
+        {
+          "name": "bt",
           "type": "number | string"
         },
         {
@@ -612,6 +664,10 @@
         {
           "name": "display",
           "type": "string"
+        },
+        {
+          "name": "fontFamily",
+          "type": "number | number[] | string | string[]"
         },
         {
           "name": "fontSize",
@@ -704,15 +760,19 @@
           "type": "string"
         },
         {
+          "name": "bb",
+          "type": "number | string"
+        },
+        {
           "name": "bg",
           "type": "string"
         },
         {
-          "name": "border",
+          "name": "bl",
           "type": "number | string"
         },
         {
-          "name": "borderBottom",
+          "name": "border",
           "type": "number | string"
         },
         {
@@ -720,15 +780,7 @@
           "type": "string"
         },
         {
-          "name": "borderLeft",
-          "type": "number | string"
-        },
-        {
           "name": "borderRadius",
-          "type": "number | string"
-        },
-        {
-          "name": "borderRight",
           "type": "number | string"
         },
         {
@@ -736,11 +788,19 @@
           "type": "string"
         },
         {
-          "name": "borderTop",
+          "name": "borderWidth",
           "type": "number | string"
         },
         {
-          "name": "borderWidth",
+          "name": "bottom",
+          "type": "number | string"
+        },
+        {
+          "name": "br",
+          "type": "number | string"
+        },
+        {
+          "name": "bt",
           "type": "number | string"
         },
         {
@@ -754,6 +814,10 @@
         {
           "name": "display",
           "type": "string"
+        },
+        {
+          "name": "fontFamily",
+          "type": "number | number[] | string | string[]"
         },
         {
           "name": "fontSize",
@@ -770,6 +834,10 @@
         {
           "name": "height",
           "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "left",
+          "type": "number | string"
         },
         {
           "name": "letterSpacing",
@@ -820,8 +888,16 @@
           "type": "number | number[] | string | string[]"
         },
         {
+          "name": "position",
+          "type": "string"
+        },
+        {
           "name": "required",
           "type": "boolean"
+        },
+        {
+          "name": "right",
+          "type": "number | string"
         },
         {
           "name": "size",
@@ -832,8 +908,16 @@
           "type": "number | number[] | string | string[]"
         },
         {
+          "name": "top",
+          "type": "number | string"
+        },
+        {
           "name": "width",
           "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "zIndex",
+          "type": "number | string"
         }
       ],
       "events": []
@@ -879,15 +963,19 @@
           "type": "string"
         },
         {
+          "name": "bb",
+          "type": "number | string"
+        },
+        {
           "name": "bg",
           "type": "string"
         },
         {
-          "name": "border",
+          "name": "bl",
           "type": "number | string"
         },
         {
-          "name": "borderBottom",
+          "name": "border",
           "type": "number | string"
         },
         {
@@ -895,15 +983,7 @@
           "type": "string"
         },
         {
-          "name": "borderLeft",
-          "type": "number | string"
-        },
-        {
           "name": "borderRadius",
-          "type": "number | string"
-        },
-        {
-          "name": "borderRight",
           "type": "number | string"
         },
         {
@@ -911,11 +991,19 @@
           "type": "string"
         },
         {
-          "name": "borderTop",
+          "name": "borderWidth",
           "type": "number | string"
         },
         {
-          "name": "borderWidth",
+          "name": "bottom",
+          "type": "number | string"
+        },
+        {
+          "name": "br",
+          "type": "number | string"
+        },
+        {
+          "name": "bt",
           "type": "number | string"
         },
         {
@@ -925,6 +1013,10 @@
         {
           "name": "display",
           "type": "string"
+        },
+        {
+          "name": "fontFamily",
+          "type": "number | number[] | string | string[]"
         },
         {
           "name": "fontSize",
@@ -937,6 +1029,10 @@
         {
           "name": "height",
           "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "left",
+          "type": "number | string"
         },
         {
           "name": "letterSpacing",
@@ -979,6 +1075,14 @@
           "type": "number | number[] | string | string[]"
         },
         {
+          "name": "position",
+          "type": "string"
+        },
+        {
+          "name": "right",
+          "type": "number | string"
+        },
+        {
           "name": "text",
           "type": "string"
         },
@@ -987,8 +1091,16 @@
           "type": "number | number[] | string | string[]"
         },
         {
+          "name": "top",
+          "type": "number | string"
+        },
+        {
           "name": "width",
           "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "zIndex",
+          "type": "number | string"
         }
       ],
       "events": []
@@ -1005,15 +1117,19 @@
           "type": "string"
         },
         {
+          "name": "bb",
+          "type": "number | string"
+        },
+        {
           "name": "bg",
           "type": "string"
         },
         {
-          "name": "border",
+          "name": "bl",
           "type": "number | string"
         },
         {
-          "name": "borderBottom",
+          "name": "border",
           "type": "number | string"
         },
         {
@@ -1021,15 +1137,7 @@
           "type": "string"
         },
         {
-          "name": "borderLeft",
-          "type": "number | string"
-        },
-        {
           "name": "borderRadius",
-          "type": "number | string"
-        },
-        {
-          "name": "borderRight",
           "type": "number | string"
         },
         {
@@ -1037,11 +1145,19 @@
           "type": "string"
         },
         {
-          "name": "borderTop",
+          "name": "borderWidth",
           "type": "number | string"
         },
         {
-          "name": "borderWidth",
+          "name": "bottom",
+          "type": "number | string"
+        },
+        {
+          "name": "br",
+          "type": "number | string"
+        },
+        {
+          "name": "bt",
           "type": "number | string"
         },
         {
@@ -1061,6 +1177,10 @@
           "type": "string"
         },
         {
+          "name": "fontFamily",
+          "type": "number | number[] | string | string[]"
+        },
+        {
           "name": "fontSize",
           "type": "number | number[] | string | string[]"
         },
@@ -1075,6 +1195,10 @@
         {
           "name": "height",
           "type": "number | number[] | string | string[]"
+        },
+        {
+          "name": "left",
+          "type": "number | string"
         },
         {
           "name": "letterSpacing",
@@ -1125,12 +1249,20 @@
           "type": "string"
         },
         {
+          "name": "position",
+          "type": "string"
+        },
+        {
           "name": "readonly",
           "type": "boolean"
         },
         {
           "name": "required",
           "type": "boolean"
+        },
+        {
+          "name": "right",
+          "type": "number | string"
         },
         {
           "name": "rows",
@@ -1145,12 +1277,20 @@
           "type": "number | number[] | string | string[]"
         },
         {
+          "name": "top",
+          "type": "number | string"
+        },
+        {
           "name": "width",
           "type": "number | number[] | string | string[]"
         },
         {
           "name": "wrap",
           "type": "\"hard\" | \"soft\""
+        },
+        {
+          "name": "zIndex",
+          "type": "number | string"
         }
       ],
       "events": []
