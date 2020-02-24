@@ -1,6 +1,6 @@
 import { Component, Element, Host, Prop, h } from "@stencil/core";
 
-import { setup } from "../../utils/props";
+import { setup } from "utility-props";
 
 @Component({
   tag: "sui-link",
@@ -76,6 +76,11 @@ export class Link {
   @Prop() display: string;
 
   /**
+   * CSS property for font-family
+   */
+  @Prop() fontFamily: string | string[] | number | number[];
+
+  /**
    * Responsive fontSize
    */
   @Prop() fontSize: string | string[] | number | number[];
@@ -131,19 +136,22 @@ export class Link {
   /**
    * CSS property for borderTop
    */
-  @Prop() borderTop: string | number;
+  @Prop() bt: string | number;
+
   /**
    * CSS property for borderBottom
    */
-  @Prop() borderBottom: string | number;
+  @Prop() bb: string | number;
+
   /**
    * CSS property for borderLeft
    */
-  @Prop() borderLeft: string | number;
+  @Prop() bl: string | number;
+
   /**
    * CSS property for borderRight
    */
-  @Prop() borderRight: string | number;
+  @Prop() br: string | number;
 
   /**
    * CSS property for borderWidth
@@ -163,38 +171,50 @@ export class Link {
   @Prop() borderRadius: string | number;
 
   componentWillRender() {
-    // Sizing
-    // width("link", this.width, this.el.style);
-    // height("link", this.height, this.el.style);
-    // maxWidth("link", this.maxWidth, this.el.style);
-    // minWidth("link", this.minWidth, this.el.style);
-    // maxHeight("link", this.maxHeight, this.el.style);
-    // minHeight("link", this.minHeight, this.el.style);
-    // const paddingProp = this.padding || this.p;
-    // const marginProp = this.margin || this.m;
-    // margin("link", marginProp, this.el.style);
-    // padding("link", paddingProp, this.el.style);
-    // display("link", this.display, this.el.style);
-    // // Color
-    // color("link", this.color, this.el.style);
-    // const bgProp = this.background || this.bg;
-    // bg("link", bgProp, this.el.style);
-    // // Fonts
-    // fontSize("link", this.fontSize, this.el.style);
-    // textAlign("link", this.textAlign, this.el.style);
-    // lineHeight("link", this.lineHeight, this.el.style);
-    // fontWeight("link", this.fontWeight, this.el.style);
-    // letterSpacing("link", this.letterSpacing, this.el.style);
-    // // Border
-    // border("link", this.border, this.el.style);
-    // borderTop("link", this.borderTop, this.el.style);
-    // borderBottom("link", this.borderBottom, this.el.style);
-    // borderLeft("link", this.borderLeft, this.el.style);
-    // borderRight("link", this.borderRight, this.el.style);
-    // borderWidth("link", this.borderWidth, this.el.style);
-    // borderStyle("link", this.borderStyle, this.el.style);
-    // borderColor("link", this.borderColor, this.el.style);
-    // borderRadius("link", this.borderRadius, this.el.style);
+    setup(
+      [
+        "width",
+        "max-width",
+        "min-width",
+        "height",
+        "max-height",
+        "min-height",
+        "padding",
+        "margin",
+        "font-size",
+        "text-align",
+
+        "font-family",
+        "line-height",
+        "font-weight",
+        "letter-spacing",
+        "color",
+        "background-color",
+        "border",
+        "border-top",
+        "border-bottom",
+        "border-left",
+        "border-right",
+        "border-width",
+        "border-style",
+        "border-color",
+        "border-radius",
+        "display",
+        "position",
+        "z-index",
+        "top",
+        "bottom",
+        "left",
+        "right",
+        "align-items",
+        "align-content",
+        "justify-content",
+        "flex-wrap",
+        "flex-direction"
+      ],
+      "link",
+      this
+    );
   }
 
   render() {

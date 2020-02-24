@@ -11,7 +11,7 @@ import {
   h
 } from "@stencil/core";
 
-import { setup } from "../../utils/props";
+import { setup } from "utility-props";
 
 import { InputChangeEventDetail, TextFieldTypes } from "../../interfaces";
 
@@ -242,6 +242,25 @@ export class Input {
   @Prop() display: string;
 
   /**
+   * CSS property position
+   */
+  @Prop() position: string;
+
+  /**
+   * CSS properties for positioning
+   */
+  @Prop() top: string | number;
+  @Prop() bottom: string | number;
+  @Prop() left: string | number;
+  @Prop() right: string | number;
+  @Prop() zIndex: string | number;
+
+  /**
+   * CSS property for font-family
+   */
+  @Prop() fontFamily: string | string[] | number | number[];
+
+  /**
    * Responsive fontSize
    */
   @Prop() fontSize: string | string[] | number | number[];
@@ -297,19 +316,22 @@ export class Input {
   /**
    * CSS property for borderTop
    */
-  @Prop() borderTop: string | number;
+  @Prop() bt: string | number;
+
   /**
    * CSS property for borderBottom
    */
-  @Prop() borderBottom: string | number;
+  @Prop() bb: string | number;
+
   /**
    * CSS property for borderLeft
    */
-  @Prop() borderLeft: string | number;
+  @Prop() bl: string | number;
+
   /**
    * CSS property for borderRight
    */
-  @Prop() borderRight: string | number;
+  @Prop() br: string | number;
 
   /**
    * CSS property for borderWidth
@@ -329,38 +351,50 @@ export class Input {
   @Prop() borderRadius: string | number;
 
   componentWillRender() {
-    // Sizing
-    // width("input", this.width, this.el.style);
-    // height("input", this.height, this.el.style);
-    // maxWidth("input", this.maxWidth, this.el.style);
-    // minWidth("input", this.minWidth, this.el.style);
-    // maxHeight("input", this.maxHeight, this.el.style);
-    // minHeight("input", this.minHeight, this.el.style);
-    // const paddingProp = this.padding || this.p;
-    // const marginProp = this.margin || this.m;
-    // margin("input", marginProp, this.el.style);
-    // padding("input", paddingProp, this.el.style);
-    // display("input", this.display, this.el.style);
-    // // Color
-    // color("input", this.color, this.el.style);
-    // const bgProp = this.background || this.bg;
-    // bg("input", bgProp, this.el.style);
-    // // Fonts
-    // fontSize("input", this.fontSize, this.el.style);
-    // textAlign("input", this.textAlign, this.el.style);
-    // lineHeight("input", this.lineHeight, this.el.style);
-    // fontWeight("input", this.fontWeight, this.el.style);
-    // letterSpacing("input", this.letterSpacing, this.el.style);
-    // // Border
-    // border("input", this.border, this.el.style);
-    // borderTop("input", this.borderTop, this.el.style);
-    // borderBottom("input", this.borderBottom, this.el.style);
-    // borderLeft("input", this.borderLeft, this.el.style);
-    // borderRight("input", this.borderRight, this.el.style);
-    // borderWidth("input", this.borderWidth, this.el.style);
-    // borderStyle("input", this.borderStyle, this.el.style);
-    // borderColor("input", this.borderColor, this.el.style);
-    // borderRadius("input", this.borderRadius, this.el.style);
+    setup(
+      [
+        "width",
+        "max-width",
+        "min-width",
+        "height",
+        "max-height",
+        "min-height",
+        "padding",
+        "margin",
+        "font-size",
+        "text-align",
+
+        "font-family",
+        "line-height",
+        "font-weight",
+        "letter-spacing",
+        "color",
+        "background-color",
+        "border",
+        "border-top",
+        "border-bottom",
+        "border-left",
+        "border-right",
+        "border-width",
+        "border-style",
+        "border-color",
+        "border-radius",
+        "display",
+        "position",
+        "z-index",
+        "top",
+        "bottom",
+        "left",
+        "right",
+        "align-items",
+        "align-content",
+        "justify-content",
+        "flex-wrap",
+        "flex-direction"
+      ],
+      "input",
+      this
+    );
   }
 
   render() {

@@ -1,6 +1,6 @@
 import { Component, Element, Host, Prop, h } from "@stencil/core";
 
-import { setup } from "../../utils/props";
+import { setup } from "utility-props";
 
 @Component({
   tag: "sui-select",
@@ -87,6 +87,25 @@ export class Select {
   @Prop() display: string;
 
   /**
+   * CSS property position
+   */
+  @Prop() position: string;
+
+  /**
+   * CSS properties for positioning
+   */
+  @Prop() top: string | number;
+  @Prop() bottom: string | number;
+  @Prop() left: string | number;
+  @Prop() right: string | number;
+  @Prop() zIndex: string | number;
+
+  /**
+   * CSS property for font-family
+   */
+  @Prop() fontFamily: string | string[] | number | number[];
+
+  /**
    * Responsive fontSize
    */
   @Prop() fontSize: string | string[] | number | number[];
@@ -142,19 +161,22 @@ export class Select {
   /**
    * CSS property for borderTop
    */
-  @Prop() borderTop: string | number;
+  @Prop() bt: string | number;
+
   /**
    * CSS property for borderBottom
    */
-  @Prop() borderBottom: string | number;
+  @Prop() bb: string | number;
+
   /**
    * CSS property for borderLeft
    */
-  @Prop() borderLeft: string | number;
+  @Prop() bl: string | number;
+
   /**
    * CSS property for borderRight
    */
-  @Prop() borderRight: string | number;
+  @Prop() br: string | number;
 
   /**
    * CSS property for borderWidth
@@ -174,38 +196,45 @@ export class Select {
   @Prop() borderRadius: string | number;
 
   componentWillRender() {
-    // Sizing
-    // width("select", this.width, this.el.style);
-    // height("select", this.height, this.el.style);
-    // maxWidth("select", this.maxWidth, this.el.style);
-    // minWidth("select", this.minWidth, this.el.style);
-    // maxHeight("select", this.maxHeight, this.el.style);
-    // minHeight("select", this.minHeight, this.el.style);
-    // const paddingProp = this.padding || this.p;
-    // const marginProp = this.margin || this.m;
-    // margin("select", marginProp, this.el.style);
-    // padding("select", paddingProp, this.el.style);
-    // display("select", this.display, this.el.style);
-    // // Color
-    // color("select", this.color, this.el.style);
-    // const bgProp = this.background || this.bg;
-    // bg("select", bgProp, this.el.style);
-    // // Fonts
-    // fontSize("select", this.fontSize, this.el.style);
-    // textAlign("select", this.textAlign, this.el.style);
-    // lineHeight("select", this.lineHeight, this.el.style);
-    // fontWeight("select", this.fontWeight, this.el.style);
-    // letterSpacing("select", this.letterSpacing, this.el.style);
-    // // Border
-    // border("select", this.border, this.el.style);
-    // borderTop("select", this.borderTop, this.el.style);
-    // borderBottom("select", this.borderBottom, this.el.style);
-    // borderLeft("select", this.borderLeft, this.el.style);
-    // borderRight("select", this.borderRight, this.el.style);
-    // borderWidth("select", this.borderWidth, this.el.style);
-    // borderStyle("select", this.borderStyle, this.el.style);
-    // borderColor("select", this.borderColor, this.el.style);
-    // borderRadius("select", this.borderRadius, this.el.style);
+    setup(
+      [
+        "width",
+        "max-width",
+        "min-width",
+        "height",
+        "max-height",
+        "min-height",
+        "padding",
+        "margin",
+        "font-size",
+        "text-align",
+
+        "font-family",
+        "line-height",
+        "font-weight",
+        "letter-spacing",
+        "color",
+        "background-color",
+        "border",
+        "border-top",
+        "border-bottom",
+        "border-left",
+        "border-right",
+        "border-width",
+        "border-style",
+        "border-color",
+        "border-radius",
+        "display",
+        "position",
+        "z-index",
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "select",
+      this
+    );
   }
 
   render() {

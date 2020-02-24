@@ -83,6 +83,10 @@ export namespace Components {
     */
     'flexWrap': string;
     /**
+    * CSS property for font-family
+    */
+    'fontFamily': string | string[] | number | number[];
+    /**
     * Responsive fontSize
     */
     'fontSize': string | string[] | number | number[];
@@ -159,43 +163,44 @@ export namespace Components {
     * CSS property for background color
     */
     'background': string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb': string | number;
     'bg': string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl': string | number;
     /**
     * CSS property for border
     */
     'border': string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom': string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor': string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft': string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius': string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight': string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle': string;
     /**
-    * CSS property for borderTop
-    */
-    'borderTop': string | number;
-    /**
     * CSS property for borderWidth
     */
     'borderWidth': string | number;
+    'bottom': string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br': string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt': string | number;
     /**
     * CSS property for text color
     */
@@ -208,6 +213,10 @@ export namespace Components {
     * CSS property display
     */
     'display': string;
+    /**
+    * CSS property for font-family
+    */
+    'fontFamily': string | string[] | number | number[];
     /**
     * Responsive fontSize
     */
@@ -224,6 +233,7 @@ export namespace Components {
     * Displays button as link
     */
     'href': string | undefined;
+    'left': string | number;
     /**
     * CSS property for letterSpacing
     */
@@ -259,6 +269,11 @@ export namespace Components {
     */
     'padding': string | string[] | number | number[];
     /**
+    * CSS property position
+    */
+    'position': string;
+    'right': string | number;
+    /**
     * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
     */
     'target': string | undefined;
@@ -271,6 +286,10 @@ export namespace Components {
     */
     'textAlign': string | string[] | number | number[];
     /**
+    * CSS properties for positioning
+    */
+    'top': string | number;
+    /**
     * The button or input type (usually submit)
     */
     'type': "submit" | "reset" | "button";
@@ -282,6 +301,7 @@ export namespace Components {
     * Responsive width
     */
     'width': string | string[] | number | number[];
+    'zIndex': string | number;
   }
   interface SuiInput {
     /**
@@ -308,43 +328,44 @@ export namespace Components {
     * CSS property for background color
     */
     'background': string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb': string | number;
     'bg': string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl': string | number;
     /**
     * CSS property for border
     */
     'border': string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom': string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor': string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft': string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius': string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight': string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle': string;
     /**
-    * CSS property for borderTop
-    */
-    'borderTop': string | number;
-    /**
     * CSS property for borderWidth
     */
     'borderWidth': string | number;
+    'bottom': string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br': string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt': string | number;
     /**
     * CSS property for text color
     */
@@ -357,6 +378,10 @@ export namespace Components {
     * CSS property display
     */
     'display': string;
+    /**
+    * CSS property for font-family
+    */
+    'fontFamily': string | string[] | number | number[];
     /**
     * Responsive fontSize
     */
@@ -384,6 +409,7 @@ export namespace Components {
     | "numeric"
     | "decimal"
     | "search";
+    'left': string | number;
     /**
     * CSS property for letterSpacing
     */
@@ -451,6 +477,10 @@ export namespace Components {
     */
     'placeholder'?: string | null;
     /**
+    * CSS property position
+    */
+    'position': string;
+    /**
     * If `true`, the user cannot modify the value.
     */
     'readonly': boolean;
@@ -458,6 +488,7 @@ export namespace Components {
     * If `true`, the user must fill in a value before submitting a form.
     */
     'required': boolean;
+    'right': string | number;
     /**
     * Sets focus on the specified `ion-input`. Use this method instead of the global `input.focus()`.
     */
@@ -479,6 +510,10 @@ export namespace Components {
     */
     'textAlign': string | string[] | number | number[];
     /**
+    * CSS properties for positioning
+    */
+    'top': string | number;
+    /**
     * The type of control to display. The default type is text.
     */
     'type': TextFieldTypes;
@@ -490,6 +525,7 @@ export namespace Components {
     * Responsive width
     */
     'width': string | string[] | number | number[];
+    'zIndex': string | number;
   }
   interface SuiLink {
     /**
@@ -500,43 +536,43 @@ export namespace Components {
     * CSS property for background color
     */
     'background': string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb': string | number;
     'bg': string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl': string | number;
     /**
     * CSS property for border
     */
     'border': string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom': string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor': string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft': string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius': string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight': string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle': string;
     /**
-    * CSS property for borderTop
-    */
-    'borderTop': string | number;
-    /**
     * CSS property for borderWidth
     */
     'borderWidth': string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br': string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt': string | number;
     /**
     * CSS property for text color
     */
@@ -549,6 +585,10 @@ export namespace Components {
     * CSS property display
     */
     'display': string;
+    /**
+    * CSS property for font-family
+    */
+    'fontFamily': string | string[] | number | number[];
     /**
     * Responsive fontSize
     */
@@ -629,43 +669,44 @@ export namespace Components {
     * CSS property for background color
     */
     'background': string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb': string | number;
     'bg': string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl': string | number;
     /**
     * CSS property for border
     */
     'border': string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom': string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor': string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft': string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius': string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight': string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle': string;
     /**
-    * CSS property for borderTop
-    */
-    'borderTop': string | number;
-    /**
     * CSS property for borderWidth
     */
     'borderWidth': string | number;
+    'bottom': string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br': string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt': string | number;
     /**
     * CSS property for text color
     */
@@ -678,6 +719,10 @@ export namespace Components {
     * CSS property display
     */
     'display': string;
+    /**
+    * CSS property for font-family
+    */
+    'fontFamily': string | string[] | number | number[];
     /**
     * Responsive fontSize
     */
@@ -694,6 +739,7 @@ export namespace Components {
     * Responsive height
     */
     'height': string | string[] | number | number[];
+    'left': string | number;
     /**
     * CSS property for letterSpacing
     */
@@ -737,9 +783,14 @@ export namespace Components {
     */
     'padding': string | string[] | number | number[];
     /**
+    * CSS property position
+    */
+    'position': string;
+    /**
     * Sets dropdown as a required field
     */
     'required'?: boolean;
+    'right': string | number;
     /**
     * Number of visible options
     */
@@ -749,9 +800,14 @@ export namespace Components {
     */
     'textAlign': string | string[] | number | number[];
     /**
+    * CSS properties for positioning
+    */
+    'top': string | number;
+    /**
     * Responsive width
     */
     'width': string | string[] | number | number[];
+    'zIndex': string | number;
   }
   interface SuiSwitch {
     /**
@@ -784,43 +840,44 @@ export namespace Components {
     * CSS property for background color
     */
     'background': string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb': string | number;
     'bg': string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl': string | number;
     /**
     * CSS property for border
     */
     'border': string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom': string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor': string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft': string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius': string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight': string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle': string;
     /**
-    * CSS property for borderTop
-    */
-    'borderTop': string | number;
-    /**
     * CSS property for borderWidth
     */
     'borderWidth': string | number;
+    'bottom': string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br': string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt': string | number;
     /**
     * CSS property for text color
     */
@@ -829,6 +886,10 @@ export namespace Components {
     * CSS property display
     */
     'display': string;
+    /**
+    * CSS property for font-family
+    */
+    'fontFamily': string | string[] | number | number[];
     /**
     * Responsive fontSize
     */
@@ -841,6 +902,7 @@ export namespace Components {
     * Responsive height
     */
     'height': string | string[] | number | number[];
+    'left': string | number;
     /**
     * CSS property for letterSpacing
     */
@@ -876,6 +938,11 @@ export namespace Components {
     */
     'padding': string | string[] | number | number[];
     /**
+    * CSS property position
+    */
+    'position': string;
+    'right': string | number;
+    /**
     * Sets component content to this text. Alternative to slots.
     */
     'text': string | undefined;
@@ -884,9 +951,14 @@ export namespace Components {
     */
     'textAlign': string | string[] | number | number[];
     /**
+    * CSS properties for positioning
+    */
+    'top': string | number;
+    /**
     * Responsive width
     */
     'width': string | string[] | number | number[];
+    'zIndex': string | number;
   }
   interface SuiTextarea {
     /**
@@ -897,43 +969,44 @@ export namespace Components {
     * CSS property for background color
     */
     'background': string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb': string | number;
     'bg': string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl': string | number;
     /**
     * CSS property for border
     */
     'border': string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom': string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor': string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft': string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius': string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight': string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle': string;
     /**
-    * CSS property for borderTop
-    */
-    'borderTop': string | number;
-    /**
     * CSS property for borderWidth
     */
     'borderWidth': string | number;
+    'bottom': string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br': string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt': string | number;
     /**
     * CSS property for text color
     */
@@ -951,6 +1024,10 @@ export namespace Components {
     */
     'display': string;
     /**
+    * CSS property for font-family
+    */
+    'fontFamily': string | string[] | number | number[];
+    /**
     * Responsive fontSize
     */
     'fontSize': string | string[] | number | number[];
@@ -966,6 +1043,7 @@ export namespace Components {
     * Responsive height
     */
     'height': string | string[] | number | number[];
+    'left': string | number;
     /**
     * CSS property for letterSpacing
     */
@@ -1009,6 +1087,10 @@ export namespace Components {
     */
     'placeholder'?: string;
     /**
+    * CSS property position
+    */
+    'position': string;
+    /**
     * Sets dropdown as a readonly field
     */
     'readonly'?: boolean;
@@ -1016,6 +1098,7 @@ export namespace Components {
     * Sets dropdown as a required field
     */
     'required'?: boolean;
+    'right': string | number;
     /**
     * The visible number of lines in a text area
     */
@@ -1029,6 +1112,10 @@ export namespace Components {
     */
     'textAlign': string | string[] | number | number[];
     /**
+    * CSS properties for positioning
+    */
+    'top': string | number;
+    /**
     * Responsive width
     */
     'width': string | string[] | number | number[];
@@ -1036,6 +1123,7 @@ export namespace Components {
     * Add newlines to your form submission (soft by default)
     */
     'wrap'?: "hard" | "soft";
+    'zIndex': string | number;
   }
 }
 
@@ -1178,6 +1266,10 @@ declare namespace LocalJSX {
     */
     'flexWrap'?: string;
     /**
+    * CSS property for font-family
+    */
+    'fontFamily'?: string | string[] | number | number[];
+    /**
     * Responsive fontSize
     */
     'fontSize'?: string | string[] | number | number[];
@@ -1254,43 +1346,44 @@ declare namespace LocalJSX {
     * CSS property for background color
     */
     'background'?: string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb'?: string | number;
     'bg'?: string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl'?: string | number;
     /**
     * CSS property for border
     */
     'border'?: string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom'?: string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor'?: string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft'?: string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius'?: string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight'?: string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle'?: string;
     /**
-    * CSS property for borderTop
-    */
-    'borderTop'?: string | number;
-    /**
     * CSS property for borderWidth
     */
     'borderWidth'?: string | number;
+    'bottom'?: string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br'?: string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt'?: string | number;
     /**
     * CSS property for text color
     */
@@ -1303,6 +1396,10 @@ declare namespace LocalJSX {
     * CSS property display
     */
     'display'?: string;
+    /**
+    * CSS property for font-family
+    */
+    'fontFamily'?: string | string[] | number | number[];
     /**
     * Responsive fontSize
     */
@@ -1319,6 +1416,7 @@ declare namespace LocalJSX {
     * Displays button as link
     */
     'href'?: string | undefined;
+    'left'?: string | number;
     /**
     * CSS property for letterSpacing
     */
@@ -1354,6 +1452,11 @@ declare namespace LocalJSX {
     */
     'padding'?: string | string[] | number | number[];
     /**
+    * CSS property position
+    */
+    'position'?: string;
+    'right'?: string | number;
+    /**
     * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
     */
     'target'?: string | undefined;
@@ -1366,6 +1469,10 @@ declare namespace LocalJSX {
     */
     'textAlign'?: string | string[] | number | number[];
     /**
+    * CSS properties for positioning
+    */
+    'top'?: string | number;
+    /**
     * The button or input type (usually submit)
     */
     'type'?: "submit" | "reset" | "button";
@@ -1377,6 +1484,7 @@ declare namespace LocalJSX {
     * Responsive width
     */
     'width'?: string | string[] | number | number[];
+    'zIndex'?: string | number;
   }
   interface SuiInput {
     /**
@@ -1403,43 +1511,44 @@ declare namespace LocalJSX {
     * CSS property for background color
     */
     'background'?: string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb'?: string | number;
     'bg'?: string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl'?: string | number;
     /**
     * CSS property for border
     */
     'border'?: string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom'?: string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor'?: string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft'?: string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius'?: string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight'?: string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle'?: string;
     /**
-    * CSS property for borderTop
-    */
-    'borderTop'?: string | number;
-    /**
     * CSS property for borderWidth
     */
     'borderWidth'?: string | number;
+    'bottom'?: string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br'?: string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt'?: string | number;
     /**
     * CSS property for text color
     */
@@ -1452,6 +1561,10 @@ declare namespace LocalJSX {
     * CSS property display
     */
     'display'?: string;
+    /**
+    * CSS property for font-family
+    */
+    'fontFamily'?: string | string[] | number | number[];
     /**
     * Responsive fontSize
     */
@@ -1475,6 +1588,7 @@ declare namespace LocalJSX {
     | "numeric"
     | "decimal"
     | "search";
+    'left'?: string | number;
     /**
     * CSS property for letterSpacing
     */
@@ -1550,6 +1664,10 @@ declare namespace LocalJSX {
     */
     'placeholder'?: string | null;
     /**
+    * CSS property position
+    */
+    'position'?: string;
+    /**
     * If `true`, the user cannot modify the value.
     */
     'readonly'?: boolean;
@@ -1557,6 +1675,7 @@ declare namespace LocalJSX {
     * If `true`, the user must fill in a value before submitting a form.
     */
     'required'?: boolean;
+    'right'?: string | number;
     /**
     * The initial size of the control. This value is in pixels unless the value of the type attribute is `"text"` or `"password"`, in which case it is an integer number of characters. This attribute applies only when the `type` attribute is set to `"text"`, `"search"`, `"tel"`, `"url"`, `"email"`, or `"password"`, otherwise it is ignored.
     */
@@ -1574,6 +1693,10 @@ declare namespace LocalJSX {
     */
     'textAlign'?: string | string[] | number | number[];
     /**
+    * CSS properties for positioning
+    */
+    'top'?: string | number;
+    /**
     * The type of control to display. The default type is text.
     */
     'type'?: TextFieldTypes;
@@ -1585,6 +1708,7 @@ declare namespace LocalJSX {
     * Responsive width
     */
     'width'?: string | string[] | number | number[];
+    'zIndex'?: string | number;
   }
   interface SuiLink {
     /**
@@ -1595,43 +1719,43 @@ declare namespace LocalJSX {
     * CSS property for background color
     */
     'background'?: string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb'?: string | number;
     'bg'?: string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl'?: string | number;
     /**
     * CSS property for border
     */
     'border'?: string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom'?: string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor'?: string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft'?: string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius'?: string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight'?: string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle'?: string;
     /**
-    * CSS property for borderTop
-    */
-    'borderTop'?: string | number;
-    /**
     * CSS property for borderWidth
     */
     'borderWidth'?: string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br'?: string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt'?: string | number;
     /**
     * CSS property for text color
     */
@@ -1644,6 +1768,10 @@ declare namespace LocalJSX {
     * CSS property display
     */
     'display'?: string;
+    /**
+    * CSS property for font-family
+    */
+    'fontFamily'?: string | string[] | number | number[];
     /**
     * Responsive fontSize
     */
@@ -1724,43 +1852,44 @@ declare namespace LocalJSX {
     * CSS property for background color
     */
     'background'?: string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb'?: string | number;
     'bg'?: string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl'?: string | number;
     /**
     * CSS property for border
     */
     'border'?: string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom'?: string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor'?: string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft'?: string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius'?: string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight'?: string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle'?: string;
     /**
-    * CSS property for borderTop
-    */
-    'borderTop'?: string | number;
-    /**
     * CSS property for borderWidth
     */
     'borderWidth'?: string | number;
+    'bottom'?: string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br'?: string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt'?: string | number;
     /**
     * CSS property for text color
     */
@@ -1773,6 +1902,10 @@ declare namespace LocalJSX {
     * CSS property display
     */
     'display'?: string;
+    /**
+    * CSS property for font-family
+    */
+    'fontFamily'?: string | string[] | number | number[];
     /**
     * Responsive fontSize
     */
@@ -1789,6 +1922,7 @@ declare namespace LocalJSX {
     * Responsive height
     */
     'height'?: string | string[] | number | number[];
+    'left'?: string | number;
     /**
     * CSS property for letterSpacing
     */
@@ -1832,9 +1966,14 @@ declare namespace LocalJSX {
     */
     'padding'?: string | string[] | number | number[];
     /**
+    * CSS property position
+    */
+    'position'?: string;
+    /**
     * Sets dropdown as a required field
     */
     'required'?: boolean;
+    'right'?: string | number;
     /**
     * Number of visible options
     */
@@ -1844,9 +1983,14 @@ declare namespace LocalJSX {
     */
     'textAlign'?: string | string[] | number | number[];
     /**
+    * CSS properties for positioning
+    */
+    'top'?: string | number;
+    /**
     * Responsive width
     */
     'width'?: string | string[] | number | number[];
+    'zIndex'?: string | number;
   }
   interface SuiSwitch {
     /**
@@ -1875,43 +2019,44 @@ declare namespace LocalJSX {
     * CSS property for background color
     */
     'background'?: string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb'?: string | number;
     'bg'?: string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl'?: string | number;
     /**
     * CSS property for border
     */
     'border'?: string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom'?: string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor'?: string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft'?: string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius'?: string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight'?: string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle'?: string;
     /**
-    * CSS property for borderTop
-    */
-    'borderTop'?: string | number;
-    /**
     * CSS property for borderWidth
     */
     'borderWidth'?: string | number;
+    'bottom'?: string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br'?: string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt'?: string | number;
     /**
     * CSS property for text color
     */
@@ -1920,6 +2065,10 @@ declare namespace LocalJSX {
     * CSS property display
     */
     'display'?: string;
+    /**
+    * CSS property for font-family
+    */
+    'fontFamily'?: string | string[] | number | number[];
     /**
     * Responsive fontSize
     */
@@ -1932,6 +2081,7 @@ declare namespace LocalJSX {
     * Responsive height
     */
     'height'?: string | string[] | number | number[];
+    'left'?: string | number;
     /**
     * CSS property for letterSpacing
     */
@@ -1967,6 +2117,11 @@ declare namespace LocalJSX {
     */
     'padding'?: string | string[] | number | number[];
     /**
+    * CSS property position
+    */
+    'position'?: string;
+    'right'?: string | number;
+    /**
     * Sets component content to this text. Alternative to slots.
     */
     'text'?: string | undefined;
@@ -1975,9 +2130,14 @@ declare namespace LocalJSX {
     */
     'textAlign'?: string | string[] | number | number[];
     /**
+    * CSS properties for positioning
+    */
+    'top'?: string | number;
+    /**
     * Responsive width
     */
     'width'?: string | string[] | number | number[];
+    'zIndex'?: string | number;
   }
   interface SuiTextarea {
     /**
@@ -1988,43 +2148,44 @@ declare namespace LocalJSX {
     * CSS property for background color
     */
     'background'?: string;
+    /**
+    * CSS property for borderBottom
+    */
+    'bb'?: string | number;
     'bg'?: string;
+    /**
+    * CSS property for borderLeft
+    */
+    'bl'?: string | number;
     /**
     * CSS property for border
     */
     'border'?: string | number;
     /**
-    * CSS property for borderBottom
-    */
-    'borderBottom'?: string | number;
-    /**
     * CSS property for borderColor
     */
     'borderColor'?: string;
-    /**
-    * CSS property for borderLeft
-    */
-    'borderLeft'?: string | number;
     /**
     * CSS property for borderRadius
     */
     'borderRadius'?: string | number;
     /**
-    * CSS property for borderRight
-    */
-    'borderRight'?: string | number;
-    /**
     * CSS property for borderStyle
     */
     'borderStyle'?: string;
     /**
-    * CSS property for borderTop
-    */
-    'borderTop'?: string | number;
-    /**
     * CSS property for borderWidth
     */
     'borderWidth'?: string | number;
+    'bottom'?: string | number;
+    /**
+    * CSS property for borderRight
+    */
+    'br'?: string | number;
+    /**
+    * CSS property for borderTop
+    */
+    'bt'?: string | number;
     /**
     * CSS property for text color
     */
@@ -2042,6 +2203,10 @@ declare namespace LocalJSX {
     */
     'display'?: string;
     /**
+    * CSS property for font-family
+    */
+    'fontFamily'?: string | string[] | number | number[];
+    /**
     * Responsive fontSize
     */
     'fontSize'?: string | string[] | number | number[];
@@ -2057,6 +2222,7 @@ declare namespace LocalJSX {
     * Responsive height
     */
     'height'?: string | string[] | number | number[];
+    'left'?: string | number;
     /**
     * CSS property for letterSpacing
     */
@@ -2100,6 +2266,10 @@ declare namespace LocalJSX {
     */
     'placeholder'?: string;
     /**
+    * CSS property position
+    */
+    'position'?: string;
+    /**
     * Sets dropdown as a readonly field
     */
     'readonly'?: boolean;
@@ -2107,6 +2277,7 @@ declare namespace LocalJSX {
     * Sets dropdown as a required field
     */
     'required'?: boolean;
+    'right'?: string | number;
     /**
     * The visible number of lines in a text area
     */
@@ -2120,6 +2291,10 @@ declare namespace LocalJSX {
     */
     'textAlign'?: string | string[] | number | number[];
     /**
+    * CSS properties for positioning
+    */
+    'top'?: string | number;
+    /**
     * Responsive width
     */
     'width'?: string | string[] | number | number[];
@@ -2127,6 +2302,7 @@ declare namespace LocalJSX {
     * Add newlines to your form submission (soft by default)
     */
     'wrap'?: "hard" | "soft";
+    'zIndex'?: string | number;
   }
 
   interface IntrinsicElements {

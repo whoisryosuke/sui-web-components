@@ -1,6 +1,6 @@
 import { Component, Element, Host, Prop, h } from "@stencil/core";
 
-import { setup } from "../../utils/props";
+import { setup } from "utility-props";
 
 @Component({
   tag: "sui-textarea",
@@ -104,6 +104,25 @@ export class Textarea {
   @Prop() display: string;
 
   /**
+   * CSS property position
+   */
+  @Prop() position: string;
+
+  /**
+   * CSS properties for positioning
+   */
+  @Prop() top: string | number;
+  @Prop() bottom: string | number;
+  @Prop() left: string | number;
+  @Prop() right: string | number;
+  @Prop() zIndex: string | number;
+
+  /**
+   * CSS property for font-family
+   */
+  @Prop() fontFamily: string | string[] | number | number[];
+
+  /**
    * Responsive fontSize
    */
   @Prop() fontSize: string | string[] | number | number[];
@@ -159,19 +178,22 @@ export class Textarea {
   /**
    * CSS property for borderTop
    */
-  @Prop() borderTop: string | number;
+  @Prop() bt: string | number;
+
   /**
    * CSS property for borderBottom
    */
-  @Prop() borderBottom: string | number;
+  @Prop() bb: string | number;
+
   /**
    * CSS property for borderLeft
    */
-  @Prop() borderLeft: string | number;
+  @Prop() bl: string | number;
+
   /**
    * CSS property for borderRight
    */
-  @Prop() borderRight: string | number;
+  @Prop() br: string | number;
 
   /**
    * CSS property for borderWidth
@@ -191,38 +213,45 @@ export class Textarea {
   @Prop() borderRadius: string | number;
 
   componentWillRender() {
-    // Sizing
-    // width("textarea", this.width, this.el.style);
-    // height("textarea", this.height, this.el.style);
-    // maxWidth("textarea", this.maxWidth, this.el.style);
-    // minWidth("textarea", this.minWidth, this.el.style);
-    // maxHeight("textarea", this.maxHeight, this.el.style);
-    // minHeight("textarea", this.minHeight, this.el.style);
-    // const paddingProp = this.padding || this.p;
-    // const marginProp = this.margin || this.m;
-    // margin("textarea", marginProp, this.el.style);
-    // padding("textarea", paddingProp, this.el.style);
-    // display("textarea", this.display, this.el.style);
-    // // Color
-    // color("textarea", this.color, this.el.style);
-    // const bgProp = this.background || this.bg;
-    // bg("textarea", bgProp, this.el.style);
-    // // Fonts
-    // fontSize("textarea", this.fontSize, this.el.style);
-    // textAlign("textarea", this.textAlign, this.el.style);
-    // lineHeight("textarea", this.lineHeight, this.el.style);
-    // fontWeight("textarea", this.fontWeight, this.el.style);
-    // letterSpacing("textarea", this.letterSpacing, this.el.style);
-    // // Border
-    // border("textarea", this.border, this.el.style);
-    // borderTop("textarea", this.borderTop, this.el.style);
-    // borderBottom("textarea", this.borderBottom, this.el.style);
-    // borderLeft("textarea", this.borderLeft, this.el.style);
-    // borderRight("textarea", this.borderRight, this.el.style);
-    // borderWidth("textarea", this.borderWidth, this.el.style);
-    // borderStyle("textarea", this.borderStyle, this.el.style);
-    // borderColor("textarea", this.borderColor, this.el.style);
-    // borderRadius("textarea", this.borderRadius, this.el.style);
+    setup(
+      [
+        "width",
+        "max-width",
+        "min-width",
+        "height",
+        "max-height",
+        "min-height",
+        "padding",
+        "margin",
+        "font-size",
+        "text-align",
+
+        "font-family",
+        "line-height",
+        "font-weight",
+        "letter-spacing",
+        "color",
+        "background-color",
+        "border",
+        "border-top",
+        "border-bottom",
+        "border-left",
+        "border-right",
+        "border-width",
+        "border-style",
+        "border-color",
+        "border-radius",
+        "display",
+        "position",
+        "z-index",
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "textarea",
+      this
+    );
   }
 
   render() {
