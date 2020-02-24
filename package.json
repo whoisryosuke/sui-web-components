@@ -39,5 +39,7 @@
     "storybook-addon-web-components-knobs": "^0.2.8"
   },
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "utility-props": "^0.1.0"
+  }
 }
