@@ -10,13 +10,6 @@ import { withA11y } from "@storybook/addon-a11y";
 
 import customElements from "../custom-elements.json";
 
-import { applyPolyfills, defineCustomElements } from "../loader";
-
-// Load Stencil.JS Web Components
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
-
 // Wrap all stories in the base component
 addDecorator(
   storyFn =>

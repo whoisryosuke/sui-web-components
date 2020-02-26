@@ -73,7 +73,7 @@ yarn test
 
 `yarn storybook`
 
-> **Requires production build of StencilJS components** (for the `./loader/` and `./dist/` folders). Run `yarn build` before running Storybook, or after any changes to components. Can't use with StencilJS in development mode, requires different configuration, [see here.](https://whoisryosuke.com/blog/2019/using-stencil-with-storybook/)
+> **Requires production build of StencilJS components** (for the `./dist/` folder). Run `yarn build` before running Storybook and after any changes to components. Can't use with StencilJS in development mode, requires different configuration, [see here.](https://whoisryosuke.com/blog/2019/using-stencil-with-storybook/)
 
 ### CSF Format
 

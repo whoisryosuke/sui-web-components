@@ -20,8 +20,8 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006 -s ./dist",
+    "build-storybook": "build-storybook -s ./dist"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
