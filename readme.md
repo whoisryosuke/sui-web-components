@@ -10,7 +10,7 @@ Component library built using Web Components and [utility-props](https://www.npm
 <sui-box width={[1, 0.5, 0.3]} bg="black" color="white" p="2"></sui-box>
 ```
 
-[Browse all the components and documentation in Storybook.](http://whoisryosuke.github.io/sui-web-components/)
+[Browse component documentation in Storybook.](http://sui-web-components.netlify.com/)
 
 ## Components
 
