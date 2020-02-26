@@ -42,6 +42,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "utility-props": "^0.1.0"
+    "utility-props": "^0.1.6"
   }
 }
