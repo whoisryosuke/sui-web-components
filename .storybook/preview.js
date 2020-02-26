@@ -39,6 +39,10 @@ addParameters({
       restoreScroll: true
     }
   },
+  backgrounds: [
+    { name: "light", value: "#FFF", default: true },
+    { name: "dark", value: "#010101" }
+  ],
   options: {
     showRoots: true
   },
