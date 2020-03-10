@@ -156,6 +156,14 @@ export namespace Components {
   }
   interface SuiButton {
     /**
+    * Flex property align-content
+    */
+    'alignContent': string;
+    /**
+    * Flex property align-items
+    */
+    'alignItems': string;
+    /**
     * HTML element to use as basis
     */
     'as': string;
@@ -214,6 +222,14 @@ export namespace Components {
     */
     'display': string;
     /**
+    * Flex property flex-direction
+    */
+    'flexDirection': string;
+    /**
+    * Flex property flex-wrap
+    */
+    'flexWrap': string;
+    /**
     * CSS property for font-family
     */
     'fontFamily': string | string[] | number | number[];
@@ -233,6 +249,10 @@ export namespace Components {
     * Displays button as link
     */
     'href': string | undefined;
+    /**
+    * Flex property justify-content
+    */
+    'justifyContent': string;
     'left': string | number;
     /**
     * CSS property for letterSpacing
@@ -309,6 +329,14 @@ export namespace Components {
     */
     'accept'?: string;
     /**
+    * Flex property align-content
+    */
+    'alignContent': string;
+    /**
+    * Flex property align-items
+    */
+    'alignItems': string;
+    /**
     * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.
     */
     'autocapitalize': string;
@@ -379,6 +407,14 @@ export namespace Components {
     */
     'display': string;
     /**
+    * Flex property flex-direction
+    */
+    'flexDirection': string;
+    /**
+    * Flex property flex-wrap
+    */
+    'flexWrap': string;
+    /**
     * CSS property for font-family
     */
     'fontFamily': string | string[] | number | number[];
@@ -409,6 +445,10 @@ export namespace Components {
     | "numeric"
     | "decimal"
     | "search";
+    /**
+    * Flex property justify-content
+    */
+    'justifyContent': string;
     'left': string | number;
     /**
     * CSS property for letterSpacing
@@ -529,6 +569,14 @@ export namespace Components {
   }
   interface SuiLink {
     /**
+    * Flex property align-content
+    */
+    'alignContent': string;
+    /**
+    * Flex property align-items
+    */
+    'alignItems': string;
+    /**
     * HTML element to use as basis
     */
     'as': string;
@@ -565,6 +613,7 @@ export namespace Components {
     * CSS property for borderWidth
     */
     'borderWidth': string | number;
+    'bottom': string | number;
     /**
     * CSS property for borderRight
     */
@@ -586,6 +635,14 @@ export namespace Components {
     */
     'display': string;
     /**
+    * Flex property flex-direction
+    */
+    'flexDirection': string;
+    /**
+    * Flex property flex-wrap
+    */
+    'flexWrap': string;
+    /**
     * CSS property for font-family
     */
     'fontFamily': string | string[] | number | number[];
@@ -605,6 +662,11 @@ export namespace Components {
     * Displays link as link
     */
     'href': string | undefined;
+    /**
+    * Flex property justify-content
+    */
+    'justifyContent': string;
+    'left': string | number;
     /**
     * CSS property for letterSpacing
     */
@@ -640,6 +702,11 @@ export namespace Components {
     */
     'padding': string | string[] | number | number[];
     /**
+    * CSS property position
+    */
+    'position': string;
+    'right': string | number;
+    /**
     * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
     */
     'target': string | undefined;
@@ -652,9 +719,14 @@ export namespace Components {
     */
     'textAlign': string | string[] | number | number[];
     /**
+    * CSS properties for positioning
+    */
+    'top': string | number;
+    /**
     * Responsive width
     */
     'width': string | string[] | number | number[];
+    'zIndex': string | number;
   }
   interface SuiSelect {
     /**
@@ -833,6 +905,14 @@ export namespace Components {
   }
   interface SuiText {
     /**
+    * Flex property align-content
+    */
+    'alignContent': string;
+    /**
+    * Flex property align-items
+    */
+    'alignItems': string;
+    /**
     * HTML element to use as basis
     */
     'as'?: string;
@@ -887,6 +967,14 @@ export namespace Components {
     */
     'display': string;
     /**
+    * Flex property flex-direction
+    */
+    'flexDirection': string;
+    /**
+    * Flex property flex-wrap
+    */
+    'flexWrap': string;
+    /**
     * CSS property for font-family
     */
     'fontFamily': string | string[] | number | number[];
@@ -902,6 +990,10 @@ export namespace Components {
     * Responsive height
     */
     'height': string | string[] | number | number[];
+    /**
+    * Flex property justify-content
+    */
+    'justifyContent': string;
     'left': string | number;
     /**
     * CSS property for letterSpacing
@@ -1339,6 +1431,14 @@ declare namespace LocalJSX {
   }
   interface SuiButton {
     /**
+    * Flex property align-content
+    */
+    'alignContent'?: string;
+    /**
+    * Flex property align-items
+    */
+    'alignItems'?: string;
+    /**
     * HTML element to use as basis
     */
     'as'?: string;
@@ -1397,6 +1497,14 @@ declare namespace LocalJSX {
     */
     'display'?: string;
     /**
+    * Flex property flex-direction
+    */
+    'flexDirection'?: string;
+    /**
+    * Flex property flex-wrap
+    */
+    'flexWrap'?: string;
+    /**
     * CSS property for font-family
     */
     'fontFamily'?: string | string[] | number | number[];
@@ -1416,6 +1524,10 @@ declare namespace LocalJSX {
     * Displays button as link
     */
     'href'?: string | undefined;
+    /**
+    * Flex property justify-content
+    */
+    'justifyContent'?: string;
     'left'?: string | number;
     /**
     * CSS property for letterSpacing
@@ -1492,6 +1604,14 @@ declare namespace LocalJSX {
     */
     'accept'?: string;
     /**
+    * Flex property align-content
+    */
+    'alignContent'?: string;
+    /**
+    * Flex property align-items
+    */
+    'alignItems'?: string;
+    /**
     * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.
     */
     'autocapitalize'?: string;
@@ -1562,6 +1682,14 @@ declare namespace LocalJSX {
     */
     'display'?: string;
     /**
+    * Flex property flex-direction
+    */
+    'flexDirection'?: string;
+    /**
+    * Flex property flex-wrap
+    */
+    'flexWrap'?: string;
+    /**
     * CSS property for font-family
     */
     'fontFamily'?: string | string[] | number | number[];
@@ -1588,6 +1716,10 @@ declare namespace LocalJSX {
     | "numeric"
     | "decimal"
     | "search";
+    /**
+    * Flex property justify-content
+    */
+    'justifyContent'?: string;
     'left'?: string | number;
     /**
     * CSS property for letterSpacing
@@ -1712,6 +1844,14 @@ declare namespace LocalJSX {
   }
   interface SuiLink {
     /**
+    * Flex property align-content
+    */
+    'alignContent'?: string;
+    /**
+    * Flex property align-items
+    */
+    'alignItems'?: string;
+    /**
     * HTML element to use as basis
     */
     'as'?: string;
@@ -1748,6 +1888,7 @@ declare namespace LocalJSX {
     * CSS property for borderWidth
     */
     'borderWidth'?: string | number;
+    'bottom'?: string | number;
     /**
     * CSS property for borderRight
     */
@@ -1769,6 +1910,14 @@ declare namespace LocalJSX {
     */
     'display'?: string;
     /**
+    * Flex property flex-direction
+    */
+    'flexDirection'?: string;
+    /**
+    * Flex property flex-wrap
+    */
+    'flexWrap'?: string;
+    /**
     * CSS property for font-family
     */
     'fontFamily'?: string | string[] | number | number[];
@@ -1788,6 +1937,11 @@ declare namespace LocalJSX {
     * Displays link as link
     */
     'href'?: string | undefined;
+    /**
+    * Flex property justify-content
+    */
+    'justifyContent'?: string;
+    'left'?: string | number;
     /**
     * CSS property for letterSpacing
     */
@@ -1823,6 +1977,11 @@ declare namespace LocalJSX {
     */
     'padding'?: string | string[] | number | number[];
     /**
+    * CSS property position
+    */
+    'position'?: string;
+    'right'?: string | number;
+    /**
     * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
     */
     'target'?: string | undefined;
@@ -1835,9 +1994,14 @@ declare namespace LocalJSX {
     */
     'textAlign'?: string | string[] | number | number[];
     /**
+    * CSS properties for positioning
+    */
+    'top'?: string | number;
+    /**
     * Responsive width
     */
     'width'?: string | string[] | number | number[];
+    'zIndex'?: string | number;
   }
   interface SuiSelect {
     /**
@@ -2012,6 +2176,14 @@ declare namespace LocalJSX {
   }
   interface SuiText {
     /**
+    * Flex property align-content
+    */
+    'alignContent'?: string;
+    /**
+    * Flex property align-items
+    */
+    'alignItems'?: string;
+    /**
     * HTML element to use as basis
     */
     'as'?: string;
@@ -2066,6 +2238,14 @@ declare namespace LocalJSX {
     */
     'display'?: string;
     /**
+    * Flex property flex-direction
+    */
+    'flexDirection'?: string;
+    /**
+    * Flex property flex-wrap
+    */
+    'flexWrap'?: string;
+    /**
     * CSS property for font-family
     */
     'fontFamily'?: string | string[] | number | number[];
@@ -2081,6 +2261,10 @@ declare namespace LocalJSX {
     * Responsive height
     */
     'height'?: string | string[] | number | number[];
+    /**
+    * Flex property justify-content
+    */
+    'justifyContent'?: string;
     'left'?: string | number;
     /**
     * CSS property for letterSpacing

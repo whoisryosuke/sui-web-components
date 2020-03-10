@@ -76,6 +76,20 @@ export class Link {
   @Prop() display: string;
 
   /**
+   * CSS property position
+   */
+  @Prop() position: string;
+
+  /**
+   * CSS properties for positioning
+   */
+  @Prop() top: string | number;
+  @Prop() bottom: string | number;
+  @Prop() left: string | number;
+  @Prop() right: string | number;
+  @Prop() zIndex: string | number;
+
+  /**
    * CSS property for font-family
    */
   @Prop() fontFamily: string | string[] | number | number[];
@@ -169,6 +183,31 @@ export class Link {
    * CSS property for borderRadius
    */
   @Prop() borderRadius: string | number;
+
+  /**
+   * Flex property align-items
+   */
+  @Prop() alignItems: string;
+
+  /**
+   * Flex property align-content
+   */
+  @Prop() alignContent: string;
+
+  /**
+   * Flex property justify-content
+   */
+  @Prop() justifyContent: string;
+
+  /**
+   * Flex property flex-wrap
+   */
+  @Prop() flexWrap: string;
+
+  /**
+   * Flex property flex-direction
+   */
+  @Prop() flexDirection: string;
 
   componentWillRender() {
     setup(

@@ -194,6 +194,31 @@ export class Button {
    */
   @Prop() borderRadius: string | number;
 
+  /**
+   * Flex property align-items
+   */
+  @Prop() alignItems: string;
+
+  /**
+   * Flex property align-content
+   */
+  @Prop() alignContent: string;
+
+  /**
+   * Flex property justify-content
+   */
+  @Prop() justifyContent: string;
+
+  /**
+   * Flex property flex-wrap
+   */
+  @Prop() flexWrap: string;
+
+  /**
+   * Flex property flex-direction
+   */
+  @Prop() flexDirection: string;
+
   componentWillRender() {
     setup(
       [
