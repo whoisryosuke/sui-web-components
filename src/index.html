@@ -14,18 +14,10 @@
 <body>
 
   <sui-base>
-    <sui-button text="Submit"></sui-button>
+    <!-- <sui-button text="Submit"></sui-button>
     <sui-link href="#">A link component</sui-link>
     <sui-text as="h1">Lorem ipsum or something right?</sui-text>
     <sui-text>Lorem ipsum or something right?</sui-text>
-    <sui-box display="flex">
-      <sui-text as="h2" width="50%">Side by side</sui-text>
-      <sui-text as="h2" width="50%">Side by side</sui-text>
-    </sui-box>
-    <sui-box display="flex">
-      <sui-text as="h2" width="50%">Side by side</sui-text>
-      <sui-button width="50%" text="Side by side"></sui-button>
-    </sui-box>
     <form>
       <sui-input type="text" placeholder="First Name"></sui-input>
       <sui-select>
@@ -38,7 +30,15 @@
       <sui-input type="range"></sui-input>
       <sui-switch></sui-switch>
       <sui-switch></sui-switch>
-    </form>
+    </form>-->
+    <sui-box display="flex">
+      <sui-text as="h2" width="50%">Side by side</sui-text>
+      <sui-text as="h2" width="50%">Side by side</sui-text>
+    </sui-box>
+    <sui-box display="flex">
+      <sui-text as="h2" width="50%">Side by side</sui-text>
+      <sui-button width="50%" text="Side by side"></sui-button>
+    </sui-box>
     <sui-box display="flex">
       <sui-box color="white" bg="black" letter-spacing="10px">
         Box
@@ -49,18 +49,20 @@
       <sui-box color="white" bg="red" text-align="right" font-weight="bold" bb="5px solid green">
         Box
       </sui-box>
+    </sui-box>
 
-      <sui-box display="flex" flex-direction="column">
-        <sui-box color="white" bg="black" letter-spacing="10px" height="30px">
-          Stacked Box
-        </sui-box>
-        <sui-box color="white" bg="blue" font-size="24px" text-align="center" bt="4px solid red" height="30px">
-          Stacked Box
-        </sui-box>
-        <sui-box color="white" bg="red" text-align="right" font-weight="bold" bb="5px solid red" height="30px">
-          Stacked Box
-        </sui-box>
+    <sui-box display="flex" flex-direction="column" flex-wrap="wrap">
+      <sui-box color="white" bg="black" letter-spacing="10px" height="30px">
+        Stacked Box
       </sui-box>
+      <sui-box color="white" bg="blue" font-size="24px" text-align="center" bt="4px solid red" height="30px">
+        Stacked Box
+      </sui-box>
+      <sui-box color="white" bg="red" text-align="right" font-weight="bold" bb="5px solid red" height="30px">
+        Stacked Box
+      </sui-box>
+    </sui-box> 
+    <!-- <sui-box width="33%" color="white" bg="black" letter-spacing="10px" height="30px">Test</sui-box> -->
   </sui-base>
 
   <script>

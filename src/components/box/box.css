@@ -14,11 +14,69 @@
   --sui-box-font-weight: var(--sui-fonts-weights-body);
   --sui-box-line-height: var(--sui-fonts-line-body);
 
+  --sui-box-width-mobile: var(--sui-box-width);
+  --sui-box-max-width-mobile: var(--sui-box-max-width);
+  --sui-box-min-width-mobile: var(--sui-box-min-width);
+  --sui-box-height-mobile: var(--sui-box-height);
+  --sui-box-max-height-mobile: var(--sui-box-max-height);
+  --sui-box-min-height-mobile: var(--sui-box-min-height);
+  --sui-box-padding-mobile: var(--sui-box-padding);
+  --sui-box-margin-mobile: var(--sui-box-margin);
+  --sui-box-font-size-mobile: var(--sui-box-font-size);
+  --sui-box-text-align-mobile: var(--sui-box-text-align);
+
+  --sui-box-width-tablet: var(--sui-box-width);
+  --sui-box-max-width-tablet: var(--sui-box-max-width);
+  --sui-box-min-width-tablet: var(--sui-box-min-width);
+  --sui-box-height-tablet: var(--sui-box-height);
+  --sui-box-max-height-tablet: var(--sui-box-max-height);
+  --sui-box-min-height-tablet: var(--sui-box-min-height);
+  --sui-box-padding-tablet: var(--sui-box-padding);
+  --sui-box-margin-tablet: var(--sui-box-margin);
+  --sui-box-font-size-tablet: var(--sui-box-font-size);
+  --sui-box-text-align-tablet: var(--sui-box-text-align);
+
+  --sui-box-width-desktop: var(--sui-box-width);
+  --sui-box-max-width-desktop: var(--sui-box-max-width);
+  --sui-box-min-width-desktop: var(--sui-box-min-width);
+  --sui-box-height-desktop: var(--sui-box-height);
+  --sui-box-max-height-desktop: var(--sui-box-max-height);
+  --sui-box-min-height-desktop: var(--sui-box-min-height);
+  --sui-box-padding-desktop: var(--sui-box-padding);
+  --sui-box-margin-desktop: var(--sui-box-margin);
+  --sui-box-font-size-desktop: var(--sui-box-font-size);
+  --sui-box-text-align-desktop: var(--sui-box-text-align);
+
   --sui-box-align-items: center;
   --sui-box-align-content: center;
   --sui-box-justify-content: normal;
   --sui-box-flex-direction: row;
   --sui-box-flex-wrap: wrap;
+
+  --sui-box-min-width: inherit;
+  --sui-box-max-width: inherit;
+  --sui-box-max-height: inherit;
+  --sui-box-min-height: inherit;
+
+  --sui-box-position: inherit;
+  --sui-box-zIndex: inherit;
+  --sui-box-top: inherit;
+  --sui-box-bottom: inherit;
+  --sui-box-left: inherit;
+  --sui-box-right: inherit;
+
+  --sui-box-text-align: inherit;
+  --sui-box-letter-spacing: inherit;
+
+  --sui-box-border-width: inherit;
+  --sui-box-border-style: inherit;
+  --sui-box-border-color: inherit;
+  --sui-box-border: inherit;
+  --sui-box-border-top: inherit;
+  --sui-box-border-bottom: inherit;
+  --sui-box-border-left: inherit;
+  --sui-box-border-right: inherit;
+  --sui-box-border-radius: inherit;
 
   width: var(--sui-box-width);
   min-width: var(--sui-box-min-width);
@@ -68,51 +126,51 @@
 
 @media only screen and (min-width: 400px) {
   :host {
-    width: var(--sui-box-width-mobile, var(--sui-box-width));
-    max-width: var(--sui-box-max-width-mobile, var(--sui-box-max-width));
-    min-width: var(--sui-box-min-width-mobile, var(--sui-box-min-width));
-    height: var(--sui-box-height-mobile, var(--sui-box-height));
-    max-height: var(--sui-box-max-height-mobile, var(--sui-box-max-height));
-    min-height: var(--sui-box-min-height-mobile, var(--sui-box-min-height));
+    width: var(--sui-box-width-mobile);
+    max-width: var(--sui-box-max-width-mobile);
+    min-width: var(--sui-box-min-width-mobile);
+    height: var(--sui-box-height-mobile);
+    max-height: var(--sui-box-max-height-mobile);
+    min-height: var(--sui-box-min-height-mobile);
 
-    padding: var(--sui-box-padding-mobile, var(--sui-box-padding));
-    margin: var(--sui-box-margin-mobile, var(--sui-box-margin));
+    padding: var(--sui-box-padding-mobile);
+    margin: var(--sui-box-margin-mobile);
 
-    font-size: var(--sui-box-font-size-mobile, var(--sui-box-font-size));
-    text-align: var(--sui-box-text-align-mobile, var(--sui-box-text-align));
+    font-size: var(--sui-box-font-size-mobile);
+    text-align: var(--sui-box-text-align-mobile);
   }
 }
 
 @media only screen and (min-width: 800px) {
   :host {
-    width: var(--sui-box-width-tablet, var(--sui-box-width));
-    max-width: var(--sui-box-max-width-tablet, var(--sui-box-max-width));
-    min-width: var(--sui-box-min-width-tablet, var(--sui-box-min-width));
-    height: var(--sui-box-height-tablet, var(--sui-box-height));
-    max-height: var(--sui-box-max-height-tablet, var(--sui-box-max-height));
-    min-height: var(--sui-box-min-height-tablet, var(--sui-box-min-height));
+    width: var(--sui-box-width-tablet);
+    max-width: var(--sui-box-max-width-tablet);
+    min-width: var(--sui-box-min-width-tablet);
+    height: var(--sui-box-height-tablet);
+    max-height: var(--sui-box-max-height-tablet);
+    min-height: var(--sui-box-min-height-tablet);
 
-    padding: var(--sui-box-padding-tablet, var(--sui-box-padding));
-    margin: var(--sui-box-margin-tablet, var(--sui-box-margin));
+    padding: var(--sui-box-padding-tablet);
+    margin: var(--sui-box-margin-tablet);
 
-    font-size: var(--sui-box-font-size-tablet, var(--sui-box-font-size));
-    text-align: var(--sui-box-text-align-tablet, var(--sui-box-text-align));
+    font-size: var(--sui-box-font-size-tablet);
+    text-align: var(--sui-box-text-align-tablet);
   }
 }
 
 @media only screen and (min-width: 1200px) {
   :host {
-    width: var(--sui-box-width-desktop, var(--sui-box-width));
-    max-width: var(--sui-box-max-width-desktop, var(--sui-box-max-width));
-    min-width: var(--sui-box-min-width-desktop, var(--sui-box-min-width));
-    height: var(--sui-box-height-desktop, var(--sui-box-height));
-    max-height: var(--sui-box-max-height-desktop, var(--sui-box-max-height));
-    min-height: var(--sui-box-min-height-desktop, var(--sui-box-min-height));
+    width: var(--sui-box-width-desktop);
+    max-width: var(--sui-box-max-width-desktop);
+    min-width: var(--sui-box-min-width-desktop);
+    height: var(--sui-box-height-desktop);
+    max-height: var(--sui-box-max-height-desktop);
+    min-height: var(--sui-box-min-height-desktop);
 
-    padding: var(--sui-box-padding-desktop, var(--sui-box-padding));
-    margin: var(--sui-box-margin-desktop, var(--sui-box-margin));
+    padding: var(--sui-box-padding-desktop);
+    margin: var(--sui-box-margin-desktop);
 
-    font-size: var(--sui-box-font-size-desktop, var(--sui-box-font-size));
-    text-align: var(--sui-box-text-align-desktop, var(--sui-box-text-align));
+    font-size: var(--sui-box-font-size-desktop);
+    text-align: var(--sui-box-text-align-desktop);
   }
 }

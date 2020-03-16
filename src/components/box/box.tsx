@@ -183,7 +183,7 @@ export class Box {
    */
   @Prop() flexDirection: string;
 
-  componentWillRender() {
+  componentDidRender() {
     setup(
       [
         "width",
